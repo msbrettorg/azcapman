@@ -2,7 +2,7 @@
 layout: default
 title: ISV Capacity Management Framework
 description: Three-layer framework for managing Azure capacity across quota, reservations, and deployment topology
-nav_order: 1
+nav_order: 2
 has_children: false
 ---
 
@@ -19,7 +19,7 @@ Traditional approaches treat capacity as a single concern. ISVs operating in Azu
 - **Zone asymmetry**: Availability zones aren't uniform—Zone 1 may have capacity while Zone 3 is sold out
 - **Temporal constraints**: The "6:30 PM Friday flight problem"—plenty of cloud capacity globally, just not the specific SKU you need, in the specific zone, at the specific time
 
-**The risk**: Taking customer payment without guaranteed provisioning capability is business suicide.
+**The risk**: Accepting customer payment without confirmed capacity availability creates significant operational and reputational challenges.
 
 ## The three-layer solution
 
@@ -35,7 +35,7 @@ Traditional approaches treat capacity as a single concern. ISVs operating in Azu
 
 **ISV benefit**: Eliminate the "subscription doesn't have enough quota" failure during customer onboarding
 
-**Deep dive**: [Quota Groups Guide](getting-started.html)
+**Deep dive**: [Quota Groups Guide](layer1-permission/)
 
 ### Layer 2: Guarantee (capacity reservation groups)
 
@@ -49,7 +49,7 @@ Traditional approaches treat capacity as a single concern. ISVs operating in Azu
 
 **ISV benefit**: Eliminate the "AllocationFailed" or "SkuNotAvailable" failure even when you have quota
 
-**Deep dive**: [CRG Sharing Guide](docs/crg-sharing-guide.html)
+**Deep dive**: [CRG Sharing Guide](reference/crg-sharing-guide.html)
 
 ### Layer 3: Topology (stamps + zones)
 
@@ -63,7 +63,7 @@ Traditional approaches treat capacity as a single concern. ISVs operating in Azu
 
 **ISV benefit**: Flexible capacity management with fault isolation and efficient resource utilization
 
-**Deep dive**: [Stamps Pattern Guide](docs/stamps-capacity-planning.html)
+**Deep dive**: [Stamps Pattern Guide](reference/stamps-capacity-planning.html)
 
 ## How the layers work together
 
@@ -195,28 +195,28 @@ Common myths that create capacity problems:
 
 **Step 2: Implement Layer 1 (Quota Groups)**
 - Foundation for multi-subscription capacity management
-- Start with [Getting Started Guide](getting-started.html)
+- Start with [Quota Groups Guide](layer1-permission/)
 - Implement quota group lifecycle (create, onboard, transfer, offboard)
 
 **Step 3: Evaluate Layer 2 (CRG)**
 - Production workloads in hot regions benefit most
 - Cost vs reputational risk analysis
-- See [CRG Sharing Guide](docs/crg-sharing-guide.html)
+- See [CRG Sharing Guide](reference/crg-sharing-guide.html)
 
 **Step 4: Consider Layer 3 (Stamps)**
 - Multi-tenant architectures require stamps
 - Legacy architectures can skip unless replatforming
-- Review [Stamps Pattern Guide](docs/stamps-capacity-planning.html)
+- Review [Stamps Pattern Guide](reference/stamps-capacity-planning.html)
 
 ## Related resources
 
 - **[AGENTS.md](AGENTS.md)** - The capacity manager operating mindset and philosophy
-- **[Quota Groups Deep Dive](getting-started.html)** - Layer 1 implementation details
-- **[CRG Sharing Guide](docs/crg-sharing-guide.html)** - Layer 2 cross-subscription patterns
-- **[Stamps Capacity Planning](docs/stamps-capacity-planning.html)** - Layer 3 scale unit architecture
+- **[Quota Groups Deep Dive](layer1-permission/)** - Layer 1 implementation details
+- **[CRG Sharing Guide](reference/crg-sharing-guide.html)** - Layer 2 cross-subscription patterns
+- **[Stamps Capacity Planning](reference/stamps-capacity-planning.html)** - Layer 3 scale unit architecture
 - **[Microsoft Learn: Quota Groups](https://learn.microsoft.com/azure/quotas/quota-groups)** - Official quota groups documentation
 - **[Microsoft Learn: Capacity Reservations](https://learn.microsoft.com/azure/virtual-machines/capacity-reservation-group-share)** - Official CRG sharing documentation
 
 ---
 
-**Bottom line**: Don't take customer payment without guaranteed provisioning capability. The three-layer framework—Permission (quota groups), Guarantee (CRGs), and Topology (stamps)—eliminates the "Russian roulette" of capacity gambling.
+**Bottom line**: The three-layer framework—Permission (quota groups), Guarantee (CRGs), and Topology (stamps)—enables predictable customer onboarding by confirming capacity availability before accepting payment.

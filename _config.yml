@@ -4,8 +4,9 @@
 title: "Quota Group Onboarding Guide for ISVs"
 description: "Comprehensive guide for Independent Software Vendors to implement and manage Azure Quota Groups."
 
-# Remote theme for GitHub Pages compatibility
-remote_theme: just-the-docs/just-the-docs
+# Remote theme for GitHub Pages compatibility (disabled for local dev due to SSL)
+# remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs
 
 # URL (update to your repo's GitHub Pages URL)
 url: "https://msbrett.github.io"

@@ -2,8 +2,7 @@
 layout: default
 title: Stamps Pattern - Capacity Planning for Scale Units
 description: Using deployment stamps as capacity management units for ISV multi-tenant platforms
-parent: Documentation
-nav_order: 14
+nav_exclude: true
 ---
 
 # Stamps pattern: Capacity planning for scale units

@@ -2,8 +2,7 @@
 layout: default
 title: Capacity Reservation Groups - Cross-Subscription Sharing
 description: CRG sharing patterns for ISV multi-subscription capacity management
-parent: Documentation
-nav_order: 13
+nav_exclude: true
 ---
 
 # Capacity reservation groups: Cross-subscription sharing for ISVs
