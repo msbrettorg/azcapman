@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Layer 3 - Deployment Stamps
-nav_order: 5
-has_children: true
 ---
 
 # Layer 3: Deployment Stamps (Topology Organization)

@@ -1,13 +1,11 @@
 ---
-layout: default
 title: Stamps Pattern - Capacity Planning for Scale Units
 description: Using deployment stamps as capacity management units for ISV multi-tenant platforms
-nav_exclude: true
 ---
 
 # Stamps pattern: Capacity planning for scale units
 
-The Stamps Pattern (also called Deployment Stamp Pattern) organizes SaaS infrastructure into modular, self-contained units called **stamps** or **cells**. This is Layer 3 of the [ISV Capacity Management Framework](../capacity-management-framework.html).
+The Stamps Pattern (also called Deployment Stamp Pattern) organizes SaaS infrastructure into modular, self-contained units called **stamps** or **cells**. This is Layer 3 of the [ISV Capacity Management Framework](../index.html).
 
 ## Critical insight: Stamps as capacity units
 
@@ -523,7 +521,7 @@ Don't force stamps if:
 
 ## Related resources
 
-- **[ISV Capacity Management Framework](../capacity-management-framework.html)** - Three-layer model overview
+- **[ISV Capacity Management Framework](../index.html)** - Three-layer model overview
 - **[Quota Groups Guide](../getting-started.html)** - Layer 1 (Permission) implementation
 - **[CRG Sharing Guide](crg-sharing-guide.html)** - Layer 2 (Guarantee) cross-subscription patterns
 - **[AGENTS.md](../AGENTS.md)** - Capacity manager operating mindset

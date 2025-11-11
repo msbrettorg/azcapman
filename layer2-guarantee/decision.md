@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Decision Framework
-parent: Layer 2 - Capacity Reservations
-nav_order: 1
 ---
 
 # Capacity Reservations: Decision Framework

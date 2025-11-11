@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Troubleshooting
-parent: Layer 1 - Quota Groups
-nav_order: 4
 ---
 
 # Quota Groups: Troubleshooting

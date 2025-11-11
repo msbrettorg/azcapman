@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Operations
-parent: Layer 1 - Quota Groups
-nav_order: 3
 ---
 
 # Quota Groups: Operations

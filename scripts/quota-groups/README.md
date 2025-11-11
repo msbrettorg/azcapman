@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Quota Group Management
-parent: Tools & Scripts
-nav_order: 2
 ---
 
 # Quota Group Management Scripts

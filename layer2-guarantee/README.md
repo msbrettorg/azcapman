@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Layer 2 - Capacity Reservations
-nav_order: 4
-has_children: true
 ---
 
 # Layer 2: Capacity Reservation Groups (Capacity Guarantee)

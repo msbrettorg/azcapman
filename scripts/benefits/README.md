@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Benefits Analysis
-parent: Tools & Scripts
-nav_order: 1
 ---
 
 # Benefits Analysis Scripts

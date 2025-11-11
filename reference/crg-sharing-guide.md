@@ -1,13 +1,11 @@
 ---
-layout: default
 title: Capacity Reservation Groups - Cross-Subscription Sharing
 description: CRG sharing patterns for ISV multi-subscription capacity management
-nav_exclude: true
 ---
 
 # Capacity reservation groups: Cross-subscription sharing for ISVs
 
-Capacity Reservation Groups (CRGs) provide **actual reserved capacity** (not just permission like quota groups) that can be shared across up to 100 consumer subscriptions. This is Layer 2 of the [ISV Capacity Management Framework](../capacity-management-framework.html).
+Capacity Reservation Groups (CRGs) provide **actual reserved capacity** (not just permission like quota groups) that can be shared across up to 100 consumer subscriptions. This is Layer 2 of the [ISV Capacity Management Framework](../index.html).
 
 ## Critical distinction: Quota vs CRG
 
@@ -382,7 +380,7 @@ az capacity reservation group show \
 
 ## Related resources
 
-- **[ISV Capacity Management Framework](../capacity-management-framework.html)** - Three-layer model overview
+- **[ISV Capacity Management Framework](../index.html)** - Three-layer model overview
 - **[Quota Groups Guide](../getting-started.html)** - Layer 1 (Permission) implementation
 - **[Stamps Capacity Planning](stamps-capacity-planning.html)** - Layer 3 (Topology) architecture
 - **[Microsoft Learn: CRG Sharing](https://learn.microsoft.com/azure/virtual-machines/capacity-reservation-group-share)** - Official Microsoft documentation

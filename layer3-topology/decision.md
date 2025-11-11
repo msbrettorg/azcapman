@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Decision Framework
-parent: Layer 3 - Deployment Stamps
-nav_order: 1
 ---
 
 # Deployment Stamps: Decision Framework

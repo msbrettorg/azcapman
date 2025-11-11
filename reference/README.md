@@ -51,7 +51,7 @@ These API references provide **technical command syntax and API specifications**
 - [Layer 3: Deployment Stamps (Topology)](../layer3-topology/)
 
 **Framework**:
-- [ISV Capacity Management Framework](../capacity-management-framework.html) - Three-layer model overview
+- [ISV Capacity Management Framework](../index.html) - Three-layer model overview
 - [AGENTS.md](../AGENTS.md) - Capacity manager operating mindset
 
 ## Official Microsoft documentation
