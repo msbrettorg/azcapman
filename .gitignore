@@ -8,6 +8,7 @@ QuotaQuery*.pbix
 # Development tools
 .vscode/
 CLAUDE.md
+azcapman-docusaurus/
 .github/copilot-*.md
 .github/prompts/*
 style-guide/
