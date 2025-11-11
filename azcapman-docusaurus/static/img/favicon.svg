@@ -1,0 +1,11 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="azureFaviconGradient" x1="10%" y1="0%" x2="90%" y2="100%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#50E6FF" />
+      <stop offset="100%" stop-color="#0078D4" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" ry="12" fill="#F2F6FB" />
+  <path d="M12 50L30 12a3 3 0 0 1 5.4-.2l7.4 15a3 3 0 0 1-2.7 4.3H32L21 50a3 3 0 0 1-2.7 1.7h-4.3A2 2 0 0 1 12 50z" fill="url(#azureFaviconGradient)" />
+  <path d="M52 50L38 22a3 3 0 0 0-2.7-1.7h-6.3l15 31a2 2 0 0 0 1.8 1.2h4A1.5 1.5 0 0 0 52 50z" fill="#106EBE" />
+</svg>

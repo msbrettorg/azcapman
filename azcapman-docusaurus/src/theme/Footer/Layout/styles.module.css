@@ -1,0 +1,107 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.heroBar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2.25rem;
+  padding: 2.5rem 3rem;
+  border-radius: calc(var(--brand-radius) + 6px);
+  background: var(--brand-hero-background);
+  border: 1px solid var(--brand-outline);
+  box-shadow: var(--brand-card-shadow);
+  align-items: center;
+}
+
+.heroContent {
+  max-width: 600px;
+}
+
+.heroEyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--brand-text-subtle);
+  margin-bottom: 0.75rem;
+}
+
+.heroHeading {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--brand-text);
+  margin: 0 0 0.65rem;
+}
+
+.heroSubheading {
+  margin: 0;
+  color: var(--brand-text);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  min-width: 230px;
+}
+
+.secondaryCta {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.6rem;
+  transition: border-color 120ms ease, color 120ms ease, background 120ms ease;
+}
+
+.secondaryCta:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+}
+
+:global([data-theme='light']) .secondaryCta {
+  border-color: rgba(0, 90, 158, 0.35);
+  color: var(--brand-color-primary);
+}
+
+:global([data-theme='light']) .secondaryCta:hover {
+  background: rgba(0, 90, 158, 0.12);
+  color: var(--brand-color-primary-dark);
+}
+
+@media (max-width: 996px) {
+  .heroBar {
+    grid-template-columns: 1fr;
+    text-align: left;
+    padding: 2rem;
+  }
+
+  .heroActions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .heroActions > * {
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroBar {
+    padding: 1.75rem;
+  }
+
+  .heroActions {
+    flex-direction: column;
+  }
+}
