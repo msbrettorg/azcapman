@@ -1,10 +1,3 @@
----
-layout: default
-title: Reference
-nav_order: 7
-has_children: true
----
-
 # API Reference
 
 Technical reference documentation for Azure capacity management APIs, CLI commands, and SDK operations.

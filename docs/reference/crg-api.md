@@ -1,10 +1,3 @@
----
-layout: default
-title: Capacity Reservations API Reference
-parent: Reference
-nav_order: 2
----
-
 # Capacity Reservation Groups API Reference
 
 Technical reference for Capacity Reservation Group (CRG) APIs, CLI commands, and cross-subscription sharing operations.

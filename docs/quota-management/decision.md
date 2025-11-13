@@ -1,10 +1,3 @@
----
-layout: default
-title: Decision Framework
-parent: Layer 1 - Quota Groups
-nav_order: 1
----
-
 # Quota Groups: Decision Framework
 
 This guide helps you determine when and how much quota to pre-position across your quota groups based on projected customer demand and operational patterns.

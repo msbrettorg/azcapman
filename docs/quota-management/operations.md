@@ -1,7 +1,3 @@
----
-title: Operations
----
-
 # Quota Groups: Operations
 
 This guide covers ongoing operational procedures for managing quota groups in production environments.

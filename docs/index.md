@@ -1,14 +1,6 @@
----
-layout: default
-title: Home
-description: Three-layer framework for managing Azure capacity across quota, reservations, and deployment topology
-nav_order: 1
-has_children: false
----
+# ISV capacity management
 
-# ISV capacity management framework
-
-This framework helps Independent Software Vendors navigate the complexity of Azure capacity management through three integrated layers: **Permission**, **Guarantee**, and **Topology**.
+This guide helps Independent Software Vendors navigate the complexity of Azure capacity management through three core areas: **Quota Management** (universal), **Capacity Management** (optional insurance), and **Rate Management** (financial optimization).
 
 ## The core problem
 
@@ -18,156 +10,152 @@ Traditional approaches treat capacity as a single concern. ISVs operating in Azu
 - **Payment-first provisioning**: Sales closes deals and collects payment before confirming capacity availability
 - **Zone asymmetry**: Availability zones aren't uniform—Zone 1 may have capacity while Zone 3 is sold out
 - **Temporal constraints**: The "6:30 PM Friday flight problem"—plenty of cloud capacity globally, just not the specific SKU you need, in the specific zone, at the specific time
+- **Cost optimization**: Paying full price without leveraging commitment-based discounts
 
-**The risk**: Accepting customer payment without confirmed capacity availability creates significant operational and reputational challenges.
+**The risk**: Accepting customer payment without confirmed capacity availability and cost-optimized rates creates significant operational, reputational, and financial challenges.
 
-## The three-layer solution
+## The three-part solution
 
-### Layer 1: Permission (quota groups)
+### Part 1: Quota Management (Universal - everyone needs this)
 
 **Purpose**: Control who can request resources across multiple subscriptions
 
 **Key capabilities**:
-- Pool quota at enrollment account level
-- Share quota across up to thousands of subscriptions
+- Pool quota at enrollment account level using quota groups
+- Share quota across thousands of subscriptions
 - Self-service quota transfers without support tickets
 - Pre-stage quota before customer payment
 
 **ISV benefit**: Eliminate the "subscription doesn't have enough quota" failure during customer onboarding
 
-**Deep dive**: [Quota Groups Guide](layer1-permission/)
+**Reality**: Quota is permission to request capacity, not guaranteed capacity itself. You can have 10,000 vCPU quota and still get `AllocationFailed` if the region is sold out.
 
-### Layer 2: Guarantee (capacity reservation groups)
+**Deep dive**: [Quota Management Guide](quota-management/)
 
-**Purpose**: Reserve actual physical capacity (not just permission to request it)
+### Part 2: Capacity Management (Optional insurance for hot regions)
+
+**Purpose**: Reserve actual physical capacity when operating in constrained regions
 
 **Key capabilities**:
-- Reserve specific SKUs in specific regions/zones
+- Reserve specific SKUs in specific regions/zones using CRGs
 - Share reserved capacity across up to 100 subscriptions
 - SLA-backed capacity guarantee
 - Pre-position capacity before customers sign
 
+**When you need this**:
+- Operating in hot regions where `AllocationFailed` is common (East US, West Europe)
+- Production workloads that must survive reboots/maintenance (cores must return after reboot)
+- Pre-positioning capacity before deployment windows (customer signed Friday, needs service Monday)
+
+**When you don't need this**:
+- Operating in regions with consistent availability
+- Dev/test workloads where temporary unavailability is acceptable
+- Architectures with flexible region/zone placement
+
 **ISV benefit**: Eliminate the "AllocationFailed" or "SkuNotAvailable" failure even when you have quota
 
-**Deep dive**: [CRG Sharing Guide](reference/crg-sharing-guide.html)
+**Reality**: CRGs cost money whether you use them or not. This is insurance—pay upfront for guaranteed capacity.
 
-### Layer 3: Topology (stamps + zones)
+**Deep dive**: [Capacity Management Guide](capacity-management/)
 
-**Purpose**: Define how capacity is physically distributed with blast radius isolation
+### Part 3: Rate Management (Financial optimization for sustained workloads)
+
+**Purpose**: Reduce per-unit costs without modifying workload architecture or functionality
 
 **Key capabilities**:
-- Organize infrastructure into deployment stamps (scale units)
-- Support mixed tenancy (shared vs dedicated stamps)
-- Pragmatic zone configurations (0-3 zones based on actual availability)
-- Horizontal scaling by adding stamps
+- Commit to Azure Reservations for specific SKUs/regions (up to 72% savings)
+- Use Azure Savings Plans for flexible hourly spend commitments (up to 65% savings)
+- Apply Azure Hybrid Benefit for existing licenses
+- Leverage Azure Spot Instances for fault-tolerant workloads (up to 90% savings)
 
-**ISV benefit**: Flexible capacity management with fault isolation and efficient resource utilization
+**When you need this**:
+- Predictable production workloads running consistently for 1-3 years
+- Stable VM SKUs and regions with known usage patterns
+- Cost optimization priority (FinOps cultural practice)
 
-**Deep dive**: [Stamps Pattern Guide](reference/stamps-capacity-planning.html)
+**When you don't need this**:
+- Short-term projects (<1 year duration)
+- Highly variable or unpredictable workloads
+- Dev/test environments with frequent changes
 
-## How the layers work together
+**ISV benefit**: Reduce costs by 30-70% on sustained workloads without changing architecture
 
-**Customer onboarding workflow** (the complete solution):
+**Reality**: Commitment-based discounts require financial commitment (pay for reserved capacity whether used or not). Must monitor utilization to ensure value.
+
+**Deep dive**: [Rate Management Guide](rate-management/)
+
+## How the three parts work together
+
+**Customer onboarding workflow**:
 
 1. **Customer signs contract** → Payment received
 2. **Create customer subscription** → New subscription provisioned
-3. **Layer 1: Join quota group** → Subscription gets permission to request resources
-4. **Layer 2: Grant CRG access** → Subscription can use pre-reserved capacity
-5. **Layer 3: Place in stamp** → Assign customer to appropriate deployment stamp (shared or dedicated)
-6. **Customer deploys** → Workload provisions immediately with guaranteed capacity
+3. **Quota: Join quota group** → Subscription gets permission to request resources
+4. **Capacity (optional): Grant CRG access** → Subscription can use pre-reserved capacity
+5. **Rate (optional): Apply commitment discounts** → Reduce per-unit costs for sustained workloads
+6. **Customer deploys** → Workload provisions reliably at optimized cost
 
-**Why all three layers matter**:
+**Why all three matter**:
 
-- **Quota alone** (Layer 1): Permission to request capacity, but no guarantee it exists
-- **CRG alone** (Layer 2): Reserved capacity, but requires quota in each subscription
-- **Stamps alone** (Layer 3): Logical organization, but no capacity guarantee mechanism
+- **Quota alone**: Permission to request capacity, but no guarantee it exists (`AllocationFailed` risk)
+- **Quota + Capacity**: Permission + guaranteed capacity, but paying full price
+- **Quota + Rate**: Permission + discounted pricing, but still risk `AllocationFailed`
+- **All three combined**: Permission + guaranteed capacity + discounted rates = reliable, cost-optimized customer onboarding
 
-**Combined**: Permission + Guarantee + Topology = Reliable customer onboarding
+## Decision framework
 
-## Decision frameworks
+### When to use each component
 
-### When to use each layer
-
-| Scenario | Quota Groups | CRG | Stamps |
-|----------|--------------|-----|--------|
+| Scenario | Quota Groups | CRG | Rate Management |
+|----------|--------------|-----|-----------------|
 | Multi-subscription ISV architecture | ✅ Required | Optional | Optional |
-| Production workloads requiring capacity assurance | ✅ Required | ✅ Required | Recommended |
-| Multi-tenant SaaS platform | ✅ Required | Optional | ✅ Required |
-| "Hot region" deployments (frequent stockouts) | ✅ Required | ✅ Required | Recommended |
-| Legacy customer-per-subscription products | ✅ Required | Optional | Not needed |
+| Production workloads in hot regions | ✅ Required | ✅ Recommended | ✅ Recommended |
+| Predictable workloads (1-3 years) | ✅ Required | Optional | ✅ Recommended |
+| Variable/unpredictable workloads | ✅ Required | Not needed | Not needed |
+| Legacy customer-per-subscription | ✅ Required | Optional | Optional |
 | Dev/test environments | ✅ Required | Not needed | Not needed |
+| Short-term projects (<1 year) | ✅ Required | Not needed | Not needed |
 
 ### Cost vs risk trade-off
 
-**Layer 1 (Quota Groups)**: No direct cost—just permission management overhead
+**Quota Groups**: No direct cost—just permission management overhead
 
-**Layer 2 (CRG)**: Pay for reserved capacity whether used or not
+**CRG**: Pay for reserved capacity whether used or not
 - Cost: ~$500-$10,000+/month depending on SKU and quantity
-- Benefit: Eliminate reputational risk of deployment failures
+- Benefit: Eliminate reputational risk of deployment failures in hot regions
 - Decision: Compare CRG cost vs potential revenue loss from failed customer onboarding
 
-**Layer 3 (Stamps)**: Architectural decision with operational implications
-- Cost: Stamp management overhead (monitoring, orchestration)
-- Benefit: Blast radius isolation, flexible scaling, efficient capacity utilization
-- Decision: Multi-tenant platforms benefit more than customer-per-subscription architectures
-
-## Legacy vs modern architectures
-
-### Legacy: Customer-per-subscription
-
-**Characteristics**:
-- Each customer gets dedicated subscription
-- VM + database per customer
-- Simple chargeback (subscription cost = customer cost)
-- Perfect blast radius isolation
-
-**Capacity management**:
-- **Quota**: Need quota per customer → use quota groups for pooling
-- **CRG**: Optional (can reserve per customer if critical)
-- **Stamps**: Not needed (subscription is the isolation boundary)
-
-**Challenge**: Capacity management complexity scales linearly with customer count
-
-### Modern: Multi-tenant PaaS
-
-**Characteristics**:
-- Shared infrastructure across customers
-- Tenant isolation via application logic
-- Complex chargeback (allocate shared costs)
-- Engineered blast radius isolation
-
-**Capacity management**:
-- **Quota**: Pool quota for platform subscriptions
-- **CRG**: Reserve capacity for critical production stamps
-- **Stamps**: Required (stamps are the capacity management unit)
-
-**Challenge**: Chargeback complexity and noisy neighbor mitigation
-
-### Hybrid reality: Both simultaneously
-
-Most ISVs operate both legacy and modern products. The three-layer framework supports both:
-
-- **Layer 1 (Quota)**: Works for both subscription-per-customer and multi-tenant
-- **Layer 2 (CRG)**: Flexible sharing across either model
-- **Layer 3 (Stamps)**: Optional for legacy, required for modern
+**Rate Management**: Commitment-based discounts
+- Savings: 30-70% off pay-as-you-go rates
+- Commitment: 1-year or 3-year financial obligation
+- Benefit: Reduce operational costs significantly for sustained workloads
+- Decision: Compare discount savings vs risk of underutilization if usage changes
 
 ## Operational mindset
 
 ### Think like a supply chain manager
 
-The cloud isn't scarce—it's temporally and geographically constrained. Like airlines:
+> "A supply chain is a standardized suite of tools and processes that you use to affect infrastructure and application change across environments."
+>
+> Source: [Workload supply chain management](https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/workload-supply-chain)
+
+The cloud isn't scarce—it's temporally and geographically constrained. Managing Azure capacity requires supply chain thinking:
+
 - Thousands of empty seats globally (massive cloud capacity)
 - The 6:30 PM Friday Vegas flight is sold out (D32s_v5 in East US Zone 2 at business hours)
 - The 2 AM Tuesday flight has room (same SKU at 3 AM or in Brazil South)
 
-**The challenge isn't finding capacity—it's finding the right capacity at the right time in the right place.**
+**The challenge isn't finding capacity—it's finding the right capacity at the right time in the right place at the right price.**
+
+Quota groups and CRGs are your supply chain tools—standardized processes for provisioning capacity across multiple subscriptions reliably and repeatably.
 
 ### Pre-positioning strategy
 
 **The airline booking game**:
-- Book popular flights early → Reserve capacity in hot regions before needing it (Layer 2)
-- Maintain quota headroom → Keep quota groups ahead of demand (Layer 1)
-- Be flexible on routes → Deploy across multiple regions/zones (Layer 3)
+- Book popular flights early → Reserve capacity (CRG) in hot regions before needing it
+- Maintain quota headroom → Keep quota groups ahead of demand
+- Lock in advance fares → Use commitment-based discounts for predictable workloads
+- Be flexible on routes → Deploy across multiple regions/zones
 - Document fallbacks → Know alternative SKUs and regions
 
 ### Challenge cargo cult practices
@@ -175,48 +163,54 @@ The cloud isn't scarce—it's temporally and geographically constrained. Like ai
 Common myths that create capacity problems:
 
 ❌ **"Three availability zones are required"**
-→ Reality: Microsoft's own SLA is 99.99% for 2+ zones—no benefit from adding third zone
+Reality: Microsoft's own SLA is 99.99% for 2+ zones—no benefit from adding third zone
 
 ❌ **"Reference architectures guarantee deployability"**
-→ Reality: Beautiful architecture diagrams don't provision services—capacity does
+Reality: Beautiful architecture diagrams don't provision services—capacity does
 
 ❌ **"Zone symmetry is non-negotiable"**
-→ Reality: 2+0+1 asymmetric deployment running TODAY beats 1+1+1 waiting for capacity
+Reality: 2+0+1 asymmetric deployment running TODAY beats 1+1+1 waiting for capacity
 
 ❌ **"Overallocated capacity is reliable"**
-→ Reality: Overallocated VMs can lose capacity at any time during reallocation
+Reality: Overallocated VMs can lose capacity at any time during reallocation
+
+❌ **"Pay-as-you-go is most flexible"**
+Reality: Commitment-based discounts reduce costs 30-70% for predictable workloads without changing architecture
 
 ## Getting started
 
-**Step 1: Assess your architecture**
-- Customer-per-subscription (legacy) or multi-tenant (modern)?
-- Current capacity pain points (deployment failures, quota exhaustion)?
-- Regions/SKUs with frequent stockouts?
-
-**Step 2: Implement Layer 1 (Quota Groups)**
+**Step 1: Implement quota management (universal)**
 - Foundation for multi-subscription capacity management
-- Start with [Quota Groups Guide](layer1-permission/)
+- Start with [Quota Management Guide](quota-management/)
 - Implement quota group lifecycle (create, onboard, transfer, offboard)
 
-**Step 3: Evaluate Layer 2 (CRG)**
-- Production workloads in hot regions benefit most
-- Cost vs reputational risk analysis
-- See [CRG Sharing Guide](reference/crg-sharing-guide.html)
+**Step 2: Evaluate capacity reservations (optional insurance)**
+- Analyze your allocation failure rates by region
+- Calculate cost vs reputational risk
+- See [Capacity Management Guide](capacity-management/)
 
-**Step 4: Consider Layer 3 (Stamps)**
-- Multi-tenant architectures require stamps
-- Legacy architectures can skip unless replatforming
-- Review [Stamps Pattern Guide](reference/stamps-capacity-planning.html)
+**Step 3: Optimize rates (financial optimization)**
+- Analyze historical usage patterns for predictability
+- Calculate potential savings from commitment-based discounts
+- See [Rate Management Guide](rate-management/)
+
+**Step 4: Monitor and adjust**
+- Track allocation failures, quota exhaustion, and commitment utilization
+- Adjust reservation sizing and commitment levels based on actual demand
+- Document regional capacity patterns and cost optimization opportunities
 
 ## Related resources
 
 - **[AGENTS](agents.md)** - The capacity manager operating mindset and philosophy
-- **[Quota Groups Deep Dive](layer1-permission/)** - Layer 1 implementation details
-- **[CRG Sharing Guide](reference/crg-sharing-guide.html)** - Layer 2 cross-subscription patterns
-- **[Stamps Capacity Planning](reference/stamps-capacity-planning.html)** - Layer 3 scale unit architecture
+- **[Quota Management](quota-management/)** - Quota groups implementation details
+- **[Capacity Management](capacity-management/)** - CRG cross-subscription patterns
+- **[Rate Management](rate-management/)** - Commitment-based discount optimization
+- **[Supply Chain Automation](../scripts/supply-chain/)** - Official Microsoft Bicep template references for quota groups and CRGs
 - **[Microsoft Learn: Quota Groups](https://learn.microsoft.com/azure/quotas/quota-groups)** - Official quota groups documentation
 - **[Microsoft Learn: Capacity Reservations](https://learn.microsoft.com/azure/virtual-machines/capacity-reservation-group-share)** - Official CRG sharing documentation
+- **[Microsoft Learn: FinOps](https://learn.microsoft.com/en-us/cloud-computing/finops/overview)** - Official FinOps framework documentation
+- **[Microsoft Learn: Workload Supply Chain](https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/workload-supply-chain)** - Official IaC and automation guidance
 
 ---
 
-**Bottom line**: The three-layer framework—Permission (quota groups), Guarantee (CRGs), and Topology (stamps)—enables predictable customer onboarding by confirming capacity availability before accepting payment.
+**Bottom line**: Quota management is universal (everyone needs it). Capacity reservations are optional insurance for hot regions. Rate management is financial optimization for sustained workloads. Together they enable predictable, cost-optimized customer onboarding.

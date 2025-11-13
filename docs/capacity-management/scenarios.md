@@ -1,10 +1,3 @@
----
-layout: default
-title: Troubleshooting
-parent: Layer 2 - Capacity Reservations
-nav_order: 4
----
-
 # Capacity Reservations: Troubleshooting
 
 This guide provides resolution guidance for common CRG operational challenges.

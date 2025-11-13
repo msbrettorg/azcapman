@@ -1,8 +1,3 @@
----
-title: Capacity Reservation Groups - Cross-Subscription Sharing
-description: CRG sharing patterns for ISV multi-subscription capacity management
----
-
 # Capacity reservation groups: Cross-subscription sharing for ISVs
 
 Capacity Reservation Groups (CRGs) provide **actual reserved capacity** (not just permission like quota groups) that can be shared across up to 100 consumer subscriptions. This is Layer 2 of the [ISV Capacity Management Framework](../index.html).

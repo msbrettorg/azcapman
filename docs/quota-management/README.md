@@ -1,15 +1,8 @@
----
-layout: default
-title: Layer 1 - Quota Groups
-nav_order: 3
-has_children: true
----
-
-# Layer 1: Quota Groups (Permission Management)
+# Quota Management
 
 Quota Groups enable centralized quota management across multiple Azure subscriptions, providing the foundation for predictable resource provisioning in multi-subscription ISV architectures.
 
-## What Layer 1 provides
+## What quota management provides
 
 **Challenge**: Managing compute quota independently for each customer subscription creates administrative overhead and can result in quota exhaustion blocking customer deployments.
 
@@ -17,7 +10,7 @@ Quota Groups enable centralized quota management across multiple Azure subscript
 
 ## Key capabilities
 
-- **Centralized quota pooling**: Manage compute quota across up to thousands of subscriptions from a single quota group
+- **Centralized quota pooling**: Manage compute quota across thousands of subscriptions from a single quota group
 - **Self-service transfers**: Move quota between subscriptions without support tickets
 - **Group-level increases**: Request quota increases for the entire group, then allocate to specific subscriptions
 - **Reduced administrative overhead**: Eliminate per-subscription quota management complexity
@@ -45,12 +38,11 @@ Quota Groups elevate quota management from individual subscriptions to an enroll
 - Subscriptions must be within the same enrollment account
 - Only applies to IaaS compute resources
 
-## Integration with other layers
+## Important: Quota ≠ Capacity
 
-Quota Groups provide the **permission** layer of capacity management:
+**Quota is permission to request capacity, not guaranteed capacity itself.**
 
-- **Layer 2 (Capacity Reservations)**: Quota Groups provide permission to request resources; Capacity Reservations guarantee those resources are available
-- **Layer 3 (Deployment Stamps)**: Quota Groups enable flexible quota allocation across stamps as they scale
+You can have 10,000 vCPU quota and still get `AllocationFailed` if the region is sold out. Quota Groups solve the permission problem—for guaranteed capacity, see [Capacity Management](../capacity-management/).
 
 ## Getting started
 
@@ -96,4 +88,4 @@ Skipping this process results in permanent quota loss that requires a support ti
 
 - **[Azure Quota Groups documentation](https://learn.microsoft.com/azure/quotas/quota-groups)** - Official Microsoft documentation
 - **[Quota monitoring and alerting](https://learn.microsoft.com/azure/quotas/how-to-guide-monitoring-alerting)** - Set up proactive monitoring
-- **[Three-Layer Framework](../framework.html)** - Understanding how quota management fits into the complete capacity strategy
+- **[Capacity Management](../capacity-management/)** - Optional insurance for hot regions

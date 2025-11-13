@@ -1,10 +1,3 @@
----
-layout: default
-title: Quota Groups API Reference
-parent: Reference
-nav_order: 1
----
-
 # Quota Groups API Reference
 
 Technical reference for Azure Quota Groups APIs, CLI commands, and SDK operations.

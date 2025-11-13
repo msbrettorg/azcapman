@@ -1,10 +1,3 @@
----
-layout: default
-title: Operations
-parent: Layer 2 - Capacity Reservations
-nav_order: 3
----
-
 # Capacity Reservations: Operations
 
 This guide covers ongoing operational procedures for managing Capacity Reservation Groups in production environments.

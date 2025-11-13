@@ -1,7 +1,3 @@
----
-title: Decision Framework
----
-
 # Capacity Reservations: Decision Framework
 
 Determine when capacity reservations are justified and how much capacity to reserve.

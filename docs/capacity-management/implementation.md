@@ -1,10 +1,3 @@
----
-layout: default
-title: Implementation Guide
-parent: Layer 2 - Capacity Reservations
-nav_order: 2
----
-
 # Capacity Reservations: Implementation Guide
 
 This guide provides step-by-step instructions for creating Capacity Reservation Groups (CRGs), configuring cross-subscription sharing, and validating RBAC propagation.

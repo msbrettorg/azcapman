@@ -1,10 +1,3 @@
----
-layout: default
-title: Implementation Guide
-parent: Layer 1 - Quota Groups
-nav_order: 2
----
-
 # Quota Groups: Implementation Guide
 
 This guide provides step-by-step instructions for setting up quota groups, allocating quota to subscriptions, and validating the configuration.

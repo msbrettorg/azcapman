@@ -1,7 +1,3 @@
----
-title: Troubleshooting
----
-
 # Quota Groups: Troubleshooting
 
 This guide provides resolution guidance for common quota group challenges.
