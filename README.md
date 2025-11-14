@@ -1,38 +1,29 @@
 # Azure Quota and Capacity Management Documentation
 
-This repository contains the Azure quota and capacity management playbooks, now delivered with [Docusaurus](https://docusaurus.io/) so we can lean into Microsoft Learn styling, dark mode, and richer navigation.
+This repository contains Azure quota and capacity management playbooks for ISVs operating on Azure.
+
+## 📖 Documentation
+
+View the documentation at: **https://msbrettorg.github.io/azcapman/**
+
+The documentation is organized into:
+
+- **[Deployment](docs/deployment/)** - ISV deployment patterns (single-tenant vs multi-tenant)
+- **[Billing](docs/billing/)** - EA vs MCA billing guidance
+- **[Operations](docs/operations/)** - Quota, capacity, monitoring, and automation runbooks
+- **[Glossary](docs/operations/glossary.md)** - Key terms and concepts
 
 ## 🚀 Quick Start
 
-### Local Development (Docusaurus)
-
-1. Install Node.js ≥ 18
-2. Install dependencies inside the `docs/` project:
-   ```sh
-   cd docs
-   npm install
-   npm run start -- --port 3001 --host 0.0.0.0
-   ```
-3. Visit [http://localhost:3001/azcapman/](http://localhost:3001/azcapman/) (the site respects the `baseUrl` we publish from GitHub Pages).
-
-### Production Build
-```sh
-cd docs
-npm run build
-```
-The static assets will be written to `docs/build/`.
-
-## Deployment
-
-- The Docusaurus site is deployed to GitHub Pages on pushes to `main` via GitHub Actions.
-- Update documentation by editing Markdown/MDX files under `docs/docs/` and committing the changes. Don’t forget to run `npm run build` locally if you want to sanity check production output.
+All documentation is in pure Markdown format in the `docs/` directory. Browse locally or view on GitHub Pages.
 
 ## Structure
 
-- `docs/` — Docusaurus project (configuration, components, and Markdown content)
-- `docs/docs/` — Source Markdown/MDX files for the three capacity pillars and references
-- `docs/static/` — Static assets (Azure icon, social cards, favicons)
-- `scripts/` — Operational scripts for quota, CRG, and regional access workflows
-- `.github/workflows/` — Deployment automation
+- `docs/` — Markdown documentation with citations to Microsoft Learn
+  - `docs/billing/` — Billing guidance (modern MCA and legacy EA)
+  - `docs/deployment/` — ISV deployment playbooks
+  - `docs/operations/` — Operations runbooks for quota and capacity management
+- `scripts/` — PowerShell and Python scripts for quota, capacity, and rate optimization
+- `.github/workflows/` — GitHub Pages deployment automation
 
-Legacy Jekyll artifacts have been removed in favour of the new Docusaurus implementation.
+All documentation includes citations to official Microsoft Learn sources.
