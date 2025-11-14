@@ -1,3 +1,10 @@
+# Billing Overview
+
+Use this section to navigate between Microsoft Customer Agreement (modern) and Enterprise Agreement (legacy) billing guidance:
+
+- [`modern/`](modern/README.md) – MCA billing hierarchy, automation, and reservation scope guidance.
+- [`legacy/`](legacy/README.md) – Enterprise Agreement subscription creation and quota considerations.
+
 ## Enterprise Contract Models
 
 Azure enterprise customers typically operate under either the historic Enterprise Agreement (EA) or the modern Microsoft Customer Agreement (MCA). Both contracts deliver the same enterprise-grade commitment, but the MCA streamlines administration and automation workflows.

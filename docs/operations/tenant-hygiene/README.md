@@ -1,0 +1,31 @@
+# Tenant & Subscription Hygiene
+
+ISVs commonly manage subscriptions across multiple tenants while centralizing billing and governance. This guide documents best practices for maintaining clean tenant relationships, recycling subscriptions, and preserving zone mappings.
+
+## Align tenant and billing structures
+
+- Each Microsoft Customer Agreement (MCA) billing account links to a primary Microsoft Entra tenant but can associate additional tenants for billing operations.[^manage-tenants]
+- Billing owners can create, transfer, or link subscriptions across associated tenants without changing the resource tenant. Track which tenants are authorized for each billing profile and invoice section to avoid orphaned access.[^manage-tenants]
+- Invite guest users or associate tenant relationships before assigning billing roles to external teams, and ensure invitations are accepted to activate access.[^manage-tenants]
+
+## Subscription lifecycle hygiene
+
+- **Onboarding:** Use the subscription request workflow to provision subscriptions for other tenants while maintaining billing control. Capture required roles (Owner, Contributor, Azure subscription creator) and management group placement as part of the intake checklist.[^subscription-request]
+- **Recycling vs. deletion:** When workloads retire, reclaim quota and billing ownership but keep the subscription if zone enablement or region access was previously granted. Deleting the subscription can force new access requests, delaying future projects.[^region-access]
+
+## Preserve zone consistency
+
+- Logical-to-physical zone mappings differ per subscription and are assigned at creation. Export mappings through the `List Locations` API or the `checkZonePeers` API to document how subscriptions align across tenants.[^az-zones]
+- When planning cross-tenant high availability, compare zone mappings early to avoid placing redundant components in the same physical zone.
+
+## Automation opportunities
+
+- Script subscription request creation and acceptance for cross-tenant provisioning to reduce manual errors.[^subscription-request]
+- Automate zone mapping exports and store results in source control for auditability.[^az-zones]
+
+---
+
+[^manage-tenants]: [Manage tenants in your Microsoft Customer Agreement billing account](https://learn.microsoft.com/en-us/azure/cost-management-billing/microsoft-customer-agreement/manage-tenants)
+[^subscription-request]: [Create a Microsoft Customer Agreement subscription request](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription-request)
+[^region-access]: [Azure region access request process](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process)
+[^az-zones]: [Availability zones – physical and logical mapping](https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview#configuring-resources-for-availability-zone-support)
