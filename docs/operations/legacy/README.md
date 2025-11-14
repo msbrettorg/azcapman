@@ -1,3 +1,9 @@
+---
+title: EA Subscription Operations
+parent: Operations Runbooks
+nav_order: 2
+---
+
 # Enterprise Agreement Subscription Operations
 
 ## Roles and Prerequisites

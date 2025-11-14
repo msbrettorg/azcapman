@@ -1,3 +1,9 @@
+---
+title: Capacity Planning
+parent: Operations Runbooks
+nav_order: 3
+---
+
 # Capacity Planning Framework
 
 Effective capacity planning combines historical usage analysis, forecasting, and scaling strategies so Azure workloads remain reliable without overspending. Use this framework to structure planning cycles and link outputs to quota and reservation decisions.

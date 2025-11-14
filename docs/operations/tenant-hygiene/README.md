@@ -1,3 +1,9 @@
+---
+title: Tenant & Subscription Hygiene
+parent: Operations Runbooks
+nav_order: 10
+---
+
 # Tenant & Subscription Hygiene
 
 ISVs commonly manage subscriptions across multiple tenants while centralizing billing and governance. This guide documents best practices for maintaining clean tenant relationships, recycling subscriptions, and preserving zone mappings.

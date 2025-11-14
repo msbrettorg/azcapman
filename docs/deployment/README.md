@@ -1,3 +1,9 @@
+---
+title: Deployment Playbooks
+nav_order: 2
+has_children: true
+---
+
 # Deployment Playbooks
 
 ISVs operating on Azure often support two primary delivery models described in Microsoft's landing zone guidance:[^isv-landing-zone]

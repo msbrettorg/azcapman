@@ -1,3 +1,9 @@
+---
+title: Glossary & FAQ
+parent: Operations Runbooks
+nav_order: 11
+---
+
 # Glossary & FAQ
 
 Common terminology used across the quota and capacity management runbooks. Each entry links to the authoritative Microsoft documentation.

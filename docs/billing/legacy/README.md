@@ -1,3 +1,9 @@
+---
+title: Enterprise Agreement
+parent: Billing Guidance
+nav_order: 2
+---
+
 ## Enterprise Agreement Billing Model
 
 ### Contract & Hierarchy

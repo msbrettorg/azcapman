@@ -1,3 +1,9 @@
+---
+title: Microsoft Customer Agreement
+parent: Billing Guidance
+nav_order: 1
+---
+
 # Microsoft Customer Agreement Billing Model
 
 ## Contract Overview

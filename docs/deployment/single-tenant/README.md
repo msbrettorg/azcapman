@@ -1,3 +1,9 @@
+---
+title: Single-Tenant
+parent: Deployment Playbooks
+nav_order: 1
+---
+
 # Single-Tenant Deployment Playbook
 
 Use this playbook when each customer receives a dedicated Azure subscription or deployment stamp. Microsoft describes this "customer-deployed" model as one of the core ISV patterns—customers run your workloads inside subscriptions that you provision or manage on their behalf.[^isv-landing-zone] This approach maximizes isolation, aligns with per-customer regulatory requirements, and simplifies noisy-neighbor mitigation at the expense of higher infrastructure cost per tenant.[^deployment-stamps]

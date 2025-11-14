@@ -1,3 +1,9 @@
+---
+title: Billing Guidance
+nav_order: 3
+has_children: true
+---
+
 # Billing Overview
 
 Use this section to navigate between Microsoft Customer Agreement (modern) and Enterprise Agreement (legacy) billing guidance:

@@ -1,3 +1,9 @@
+---
+title: Operations Runbooks
+nav_order: 4
+has_children: true
+---
+
 # Subscription Operations Overview
 
 Use this section to access billing-era runbooks (modern MCA and legacy EA) and supporting operational guides. Each child directory contains its own detailed README:

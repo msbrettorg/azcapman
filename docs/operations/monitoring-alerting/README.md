@@ -1,3 +1,9 @@
+---
+title: Monitoring & Alerting
+parent: Operations Runbooks
+nav_order: 8
+---
+
 # Monitoring & Alerting Runbook
 
 Proactive monitoring prevents quota exhaustion and cost overruns from surprising application teams. This runbook outlines how to enable quota monitoring, author alert rules, and align quota telemetry with cost guardrails.

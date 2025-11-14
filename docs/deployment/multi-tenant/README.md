@@ -1,3 +1,9 @@
+---
+title: Multi-Tenant
+parent: Deployment Playbooks
+nav_order: 2
+---
+
 # Multi-Tenant Deployment Playbook
 
 This playbook supports SaaS offerings where multiple customers share a centralized platform. Microsoft labels these scenarios "pure SaaS" or "dual-deployment" models in the ISV landing zone guidance, depending on whether customers also receive dedicated environments.[^isv-landing-zone] Use this guide to plan tenant isolation, deployment stamps, and supporting services that maintain reliability at scale.

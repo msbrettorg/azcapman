@@ -1,3 +1,9 @@
+---
+title: Capacity Reservations
+parent: Operations Runbooks
+nav_order: 4
+---
+
 # Capacity Reservation Operations
 
 On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This runbook explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) so platform teams can coordinate with quota and deployment workflows.

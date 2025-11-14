@@ -1,3 +1,9 @@
+---
+title: Automation Patterns
+parent: Operations Runbooks
+nav_order: 7
+---
+
 # Automation Patterns
 
 Automation ensures quota management, subscription vending, and capacity reservations remain repeatable and auditable. This guide highlights common automation entry points and suggested pipeline practices.
