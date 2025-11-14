@@ -7,6 +7,8 @@ QuotaQuery*.pbix
 
 # Development tools
 .vscode/
+.cluade/
+.playwright-mcp/
 CLAUDE.md
 AGENTS.md
 azcapman-docusaurus/
