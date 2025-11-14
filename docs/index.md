@@ -3,7 +3,7 @@ title: Overview
 nav_order: 1
 ---
 
-# Azure Quota and Capacity Management Overview
+# ISV Considerations for Quota and Capacity Management in Azure
 
 This repository consolidates playbooks and runbooks that help independent software vendors (ISVs) design Azure landing zones, govern quota and capacity, and operate SaaS deployments in line with Microsoft's cloud guidance.[^isv-landing-zone][^saas-principles]
 
