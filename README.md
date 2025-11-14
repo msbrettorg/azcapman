@@ -1,34 +1,38 @@
 # Azure Quota and Capacity Management Documentation
 
-This repository contains comprehensive documentation for Azure quota and capacity management, built with Jekyll and the Just the Docs theme for GitHub Pages.
+This repository contains the Azure quota and capacity management playbooks, now delivered with [Docusaurus](https://docusaurus.io/) so we can lean into Microsoft Learn styling, dark mode, and richer navigation.
 
 ## 🚀 Quick Start
 
-### Local Development
+### Local Development (Docusaurus)
 
-1. Install Ruby (>= 3.2) and Bundler
-2. Run:
+1. Install Node.js ≥ 18
+2. Install dependencies inside the `docs/` project:
    ```sh
-   bundle install
-   bundle exec jekyll serve --livereload
+   cd docs
+   npm install
+   npm run start -- --port 3001 --host 0.0.0.0
    ```
-3. Visit [http://localhost:4000/azcapman/](http://localhost:4000/azcapman/) to preview the site
+3. Visit [http://localhost:3001/azcapman/](http://localhost:3001/azcapman/) (the site respects the `baseUrl` we publish from GitHub Pages).
 
-### GitHub Pages Deployment
-
-This site is configured for automatic deployment to GitHub Pages using the remote theme feature. Push changes to the main branch to trigger deployment.
+### Production Build
+```sh
+cd docs
+npm run build
+```
+The static assets will be written to `docs/build/`.
 
 ## Deployment
 
-- The site is automatically built and deployed to GitHub Pages on every push to `main` via GitHub Actions.
-- To update the site, edit Markdown files and push changes to `main`.
+- The Docusaurus site is deployed to GitHub Pages on pushes to `main` via GitHub Actions.
+- Update documentation by editing Markdown/MDX files under `docs/docs/` and committing the changes. Don’t forget to run `npm run build` locally if you want to sanity check production output.
 
 ## Structure
 
-- `index.md` — Home page
-- `docs/` — Documentation content
-- `_config.yml` — Jekyll/Just the Docs configuration
-- `Gemfile` — Ruby dependencies
-- `.github/workflows/gh-pages.yml` — GitHub Actions workflow for deployment
+- `docs/` — Docusaurus project (configuration, components, and Markdown content)
+- `docs/docs/` — Source Markdown/MDX files for the three capacity pillars and references
+- `docs/static/` — Static assets (Azure icon, social cards, favicons)
+- `scripts/` — Operational scripts for quota, CRG, and regional access workflows
+- `.github/workflows/` — Deployment automation
 
-For more, see [Just the Docs documentation](https://just-the-docs.github.io/just-the-docs/docs/).
+Legacy Jekyll artifacts have been removed in favour of the new Docusaurus implementation.

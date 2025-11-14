@@ -9,6 +9,7 @@ QuotaQuery*.pbix
 .vscode/
 CLAUDE.md
 AGENTS.md
+azcapman-docusaurus/
 .github/copilot-*.md
 .github/prompts/*
 style-guide/

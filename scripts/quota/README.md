@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Quota Management
-parent: Tools & Scripts
-nav_order: 2
 ---
 
 # Quota Management Scripts
@@ -141,53 +138,6 @@ $VMSize = 'Standard_D4d_v4'
 $SKU = Get-AzComputeResourceSku -Location $Location | Where-Object ResourceType -eq "virtualMachines" | Select-Object Name,Family
 $VMFamily = ($SKU | Where-Object Name -eq $VMSize | Select-Object -Property Family).Family
 $Usage = Get-AzVMUsage -Location $Location | Where-Object { $_.Name.Value -eq $VMFamily }
-```
-
----
-
-### Create quota requests automatically
-```powershell
-$QuotaPercentageThreshold = "80"
-$NewLimitIncrement = "25"
-$Location = 'EastUS'
-$VMSize = 'Standard_B2ms'
-
-$SKU = Get-AzComputeResourceSku -Location $Location | Where-Object ResourceType -eq "virtualMachines" | Select-Object Name,Family
-$VMFamily = ($SKU | Where-Object Name -eq $VMSize | Select-Object -Property Family).Family
-$Usage = Get-AzVMUsage -Location $Location | Where-Object { $_.Name.Value -eq $VMFamily } | Select-Object @{label="Name";expression={$_.name.LocalizedValue}},currentvalue,limit, @{label="PercentageUsed";expression={[math]::Round(($_.currentvalue/$_.limit)*100,1)}}
-$NewLimit = $Usage.Limit + $NewLimitIncrement
-
-#Ticket Details
-$TicketName =  "Quota Request"
-$TicketTitle = "Quota Request"
-$TicketDescription = "Quota request for $VMSize"
-$Severity = "Critical" #Minimal, Moderate, Critical, HighestCriticalImpact
-$ContactFirstName = "[Your First Name]"
-$ContactLastName = "[Your Last Name]"
-$TimeZone = "pacific standard time"
-$Language = "en-us"
-$Country = "USA"
-$PrimaryEmail = "[your-email@company.com]"
-$AdditionalEmail = "[additional-email@company.com]"
-$ServiceNameGUID = "06bfd9d3-516b-d5c6-5802-169c800dec89" 
-$ProblemClassificationGUID = "599a339a-a959-d783-24fc-81a42d3fd5fb"
-
-Write-Output "$($Usage.Name.LocalizedValue): You've consumed $($Usage.PercentageUsed)% | $($Usage.CurrentValue) /$($Usage.Limit) of available quota"
-
-if ($($Usage.PercentageUsed) -gt $QuotaPercentageThreshold) {
-    Write-Output "Creating support case"
-    New-AzSupportTicket `
-        -Name "$TicketName" `
-        -Title "$TicketTitle" `
-        -Description "$TicketDescription" `
-        -Severity "$Severity" `
-        -ProblemClassificationId "/providers/Microsoft.Support/services/$ServiceNameGUID/problemClassifications/$ProblemClassificationGUID" `
-        -QuotaTicketDetail @{QuotaChangeRequestVersion = "1.0" ; QuotaChangeRequests = (@{Region = "$Location"; Payload = "{`"VMFamily`":`"$VMSize`",`"NewLimit`":$NewLimit}"})} -CustomerContactDetail @{FirstName = "$ContactFirstName" ; LastName = "$ContactLastName" ; PreferredTimeZone = "$TimeZone" ; PreferredSupportLanguage = "$Language" ; Country = "$Country" ; PreferredContactMethod = "Email" ; PrimaryEmailAddress = "$PrimaryEmail" ; AdditionalEmailAddress = "$AdditionalEmail"}
-}
-else {
-    Write-Output "Nothing to do here, exiting"
-    Exit
-}
 ```
 
 ---
