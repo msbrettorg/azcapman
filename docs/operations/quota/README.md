@@ -1,7 +1,7 @@
 ---
 title: Quota Operations
-parent: Operations Runbooks
-nav_order: 6
+parent: Capacity & Quotas
+nav_order: 4
 ---
 
 # Quota Operations Runbook

@@ -1,6 +1,6 @@
 ---
 title: Single-Tenant
-parent: Deployment Playbooks
+parent: Customer Isolation
 nav_order: 1
 ---
 

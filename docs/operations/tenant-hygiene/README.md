@@ -1,7 +1,7 @@
 ---
 title: Tenant & Subscription Hygiene
-parent: Operations Runbooks
-nav_order: 10
+parent: Support & Reference
+nav_order: 2
 ---
 
 # Tenant & Subscription Hygiene

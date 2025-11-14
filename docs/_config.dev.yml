@@ -1,0 +1,12 @@
+title: ISV Considerations for Quota and Capacity Management in Azure
+description: ISV playbooks for Azure quota, capacity, and billing operations
+theme: just-the-docs
+color_scheme: dark
+logo: "/assets/logo.svg"
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+relative_links:
+  enabled: true
+  collections: false

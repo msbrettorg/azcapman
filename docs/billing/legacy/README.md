@@ -1,6 +1,6 @@
 ---
 title: Enterprise Agreement
-parent: Billing Guidance
+parent: Enrollment Types
 nav_order: 2
 ---
 

@@ -1,10 +1,10 @@
 ---
-title: Deployment Playbooks
+title: Customer Isolation
 nav_order: 2
 has_children: true
 ---
 
-# Deployment Playbooks
+# Customer Isolation
 
 ISVs operating on Azure often support two primary delivery models described in Microsoft's landing zone guidance:[^isv-landing-zone]
 
@@ -13,7 +13,7 @@ ISVs operating on Azure often support two primary delivery models described in M
 
 Microsoft identifies three common ISV deployment models—pure SaaS, customer-deployed, and dual-deployment SaaS—each with different landing zone implications. The playbooks in this directory help you operationalize the model that fits your product roadmap.[^isv-landing-zone]
 
-Use this directory to choose the playbook that aligns with your product offering:
+Use this directory to choose the isolation model that aligns with your product offering:
 
 - [`single-tenant/`](single-tenant/README.md) – guidance for customer-isolated deployments, including subscription vending, landing zone setup, and availability zone alignment.
 - [`multi-tenant/`](multi-tenant/README.md) – guidance for centrally operated SaaS solutions that rely on shared infrastructure, deployment stamps, and multi-tenant governance.

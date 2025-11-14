@@ -27,3 +27,14 @@ All documentation is in pure Markdown format in the `docs/` directory. Browse lo
 - `.github/workflows/` — GitHub Pages deployment automation
 
 All documentation includes citations to official Microsoft Learn sources.
+
+
+az cognitiveservices account deployment create \
+  --name brett-meke4c54-eastus2 \
+  --resource-group strange-loop \
+  --deployment-name gpt-5.1-mini \
+  --model-name gpt-5.1-mini \
+  --model-version "2025-11-13" \
+  --model-format OpenAI \
+  --sku-name GlobalStandard \
+  --sku-capacity 1

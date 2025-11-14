@@ -1,7 +1,7 @@
 ---
 title: Capacity Reservations
-parent: Operations Runbooks
-nav_order: 4
+parent: Capacity & Quotas
+nav_order: 2
 ---
 
 # Capacity Reservation Operations

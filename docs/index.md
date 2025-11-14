@@ -12,7 +12,7 @@ This repository consolidates playbooks and runbooks that help independent softwa
 - [Purpose](#purpose)
 - [Deployment playbooks](#deployment-playbooks)
 - [Billing guidance](#billing-guidance)
-- [Operations runbooks](#operations-runbooks)
+- [Operational topics](#operational-topics)
 - [Glossary](#glossary)
 
 ## Purpose
@@ -30,21 +30,27 @@ Azure landing zones and SaaS architecture recommendations highlight the need for
 - [`billing/modern/`](billing/modern/README.md) – Microsoft Customer Agreement billing hierarchy, automation, and reservation scope boundaries.
 - [`billing/legacy/`](billing/legacy/README.md) – Enterprise Agreement subscription creation and billing operations.
 
-## Operations runbooks
+## Operational topics
 
-- Capacity and quota
+- Subscription operations
+  - [`operations/subscription-operations/`](operations/subscription-operations/README.md)
+  - [`operations/modern/`](operations/modern/README.md)
+  - [`operations/legacy/`](operations/legacy/README.md)
+  - [`operations/automation/`](operations/automation/README.md)
+- Capacity and quotas
+  - [`operations/capacity-and-quotas/`](operations/capacity-and-quotas/README.md)
   - [`operations/capacity-planning/`](operations/capacity-planning/README.md)
   - [`operations/capacity-reservations/`](operations/capacity-reservations/README.md)
   - [`operations/non-compute-quotas/`](operations/non-compute-quotas/README.md)
-  - [`operations/automation/`](operations/automation/README.md)
-- Monitoring and escalation
+  - [`operations/quota/`](operations/quota/README.md)
+  - [`operations/quota-groups/`](operations/quota-groups/README.md)
+  - [`operations/capacity-governance/`](operations/capacity-governance/README.md)
   - [`operations/monitoring-alerting/`](operations/monitoring-alerting/README.md)
+- Support and reference
+  - [`operations/support-and-reference/`](operations/support-and-reference/README.md)
   - [`operations/escalation/`](operations/escalation/README.md)
-- Tenant governance
   - [`operations/tenant-hygiene/`](operations/tenant-hygiene/README.md)
-- Agreement-specific operations
-  - [`operations/modern/`](operations/modern/README.md)
-  - [`operations/legacy/`](operations/legacy/README.md)
+  - [`operations/glossary.md`](operations/glossary.md)
 
 ## Glossary
 

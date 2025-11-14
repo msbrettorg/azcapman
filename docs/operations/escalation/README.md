@@ -1,7 +1,7 @@
 ---
 title: Support Escalation
-parent: Operations Runbooks
-nav_order: 9
+parent: Support & Reference
+nav_order: 1
 ---
 
 # Support Escalation Runbook

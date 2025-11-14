@@ -1,7 +1,7 @@
 ---
 title: Glossary & FAQ
-parent: Operations Runbooks
-nav_order: 11
+parent: Support & Reference
+nav_order: 3
 ---
 
 # Glossary & FAQ

@@ -1,7 +1,7 @@
 ---
 title: Monitoring & Alerting
-parent: Operations Runbooks
-nav_order: 8
+parent: Capacity & Quotas
+nav_order: 7
 ---
 
 # Monitoring & Alerting Runbook

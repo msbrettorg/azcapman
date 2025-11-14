@@ -1,6 +1,6 @@
 ---
 title: MCA Subscription Operations
-parent: Operations Runbooks
+parent: Subscription Operations
 nav_order: 1
 ---
 

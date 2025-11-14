@@ -1,7 +1,7 @@
 ---
 title: Non-Compute Quotas
-parent: Operations Runbooks
-nav_order: 5
+parent: Capacity & Quotas
+nav_order: 3
 ---
 
 # Non-Compute Quota Playbook

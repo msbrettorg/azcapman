@@ -1,7 +1,7 @@
 ---
 title: Capacity Planning
-parent: Operations Runbooks
-nav_order: 3
+parent: Capacity & Quotas
+nav_order: 1
 ---
 
 # Capacity Planning Framework

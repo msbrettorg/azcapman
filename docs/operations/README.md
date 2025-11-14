@@ -1,5 +1,5 @@
 ---
-title: Operations Runbooks
+title: Operational Topics
 nav_order: 4
 has_children: true
 ---
@@ -8,15 +8,9 @@ has_children: true
 
 Use this section to access billing-era runbooks (modern MCA and legacy EA) and supporting operational guides. Each child directory contains its own detailed README:
 
-- [`modern/`](modern/README.md) – Microsoft Customer Agreement subscription automation scenarios.
-- [`legacy/`](legacy/README.md) – Enterprise Agreement automation guidance.
-- [`capacity-planning/`](capacity-planning/README.md) – Forecasting and scaling framework.
-- [`capacity-reservations/`](capacity-reservations/README.md) – On-demand reservation governance.
-- [`non-compute-quotas/`](non-compute-quotas/README.md) – Storage, App Service, and Cosmos DB quota management.
-- [`automation/`](automation/README.md) – Programmatic patterns for vending and quota operations.
-- [`monitoring-alerting/`](monitoring-alerting/README.md) – Quota monitoring and alerting setup.
-- [`escalation/`](escalation/README.md) – When and how to engage Microsoft support.
-- [`tenant-hygiene/`](tenant-hygiene/README.md) – Cross-tenant subscription hygiene.
+- [`subscription-operations/`](subscription-operations/README.md) – MCA and EA subscription operations and automation.
+- [`capacity-and-quotas/`](capacity-and-quotas/README.md) – Capacity planning, reservations, quota groups, and quota monitoring.
+- [`support-and-reference/`](support-and-reference/README.md) – Support escalation, tenant hygiene, and glossary material.
 
 ## Subscription Vending Context
 

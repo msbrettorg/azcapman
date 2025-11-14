@@ -1,7 +1,7 @@
 ---
 title: Automation Patterns
-parent: Operations Runbooks
-nav_order: 7
+parent: Subscription Operations
+nav_order: 3
 ---
 
 # Automation Patterns
