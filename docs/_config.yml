@@ -1,5 +1,7 @@
 title: Azure Quota and Capacity Management
 description: ISV playbooks for Azure quota, capacity, and billing operations
+remote_theme: just-the-docs/just-the-docs
+color_scheme: auto
 markdown: kramdown
 kramdown:
   input: GFM
