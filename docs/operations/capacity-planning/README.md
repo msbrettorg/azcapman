@@ -6,7 +6,7 @@ nav_order: 1
 
 # Capacity planning framework
 
-Effective capacity planning combines historical usage analysis, forecasting, and scaling strategies so Azure workloads remain reliable without overspending. Use this framework to structure planning cycles and link outputs to quota and reservation decisions—you'll avoid surprises when demand spikes.
+Microsoft capacity planning guidance combines historical usage analysis, forecasting, and scaling strategies so Azure workloads remain reliable without overspending. Use this framework to structure planning cycles and link outputs to quota and reservation decisions—you'll avoid surprises when demand spikes.
 
 ## Gather utilization data
 

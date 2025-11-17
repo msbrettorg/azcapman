@@ -6,6 +6,8 @@ nav_order: 1
 
 # Single-tenant deployment guide
 
+Microsoft recommends this guidance when each customer requires a dedicated landing zone or deployment stamp and you need a consistent onboarding pattern.
+
 Use this guide when each customer gets a dedicated Azure subscription or deployment stamp. The ISV landing zone guidance defines this "customer-deployed" model as one of the core ISV patterns—customers run workloads inside subscriptions that you provision or manage on their behalf.[^isv-landing-zone] This approach maximizes isolation, aligns with per-customer regulatory requirements, and simplifies noisy-neighbor mitigation at the expense of higher infrastructure cost per tenant.[^deployment-stamps]
 
 ## Landing zone preparation

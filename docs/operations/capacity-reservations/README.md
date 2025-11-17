@@ -6,7 +6,7 @@ nav_order: 2
 
 # Capacity reservation operations
 
-On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This runbook explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) so platform teams can coordinate with quota and deployment workflows, and it reminds you where the platform enforces prerequisites.
+On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This Microsoft runbook explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) so platform teams can coordinate with quota and deployment workflows, and it reminds you where the platform enforces prerequisites.
 
 ## Prerequisites and access
 

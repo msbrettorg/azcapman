@@ -6,6 +6,8 @@ nav_order: 2
 
 # Enterprise Agreement billing model
 
+Use this Microsoft guidance when you need to understand how Enterprise Agreement (EA) billing constructs support automated subscription creation and governance.
+
 ## Contract and hierarchy
 
 - The Enterprise Agreement (EA) uses a hierarchical structure—enrollment > departments > accounts > subscriptions—managed in the Azure Cost Management portal.[^ea-roles]

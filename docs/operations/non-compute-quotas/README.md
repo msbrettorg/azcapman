@@ -8,7 +8,7 @@ nav_order: 3
 
 ## When to use this guide
 
-Azure capacity planning extends well beyond vCPU cores. Storage accounts, App Service plans, Azure Cosmos DB accounts, and emerging platform services all impose limits that can block customer onboarding if they are not tracked and increased ahead of demand. This runbook captures the baseline limits, monitoring patterns, and escalation paths for the most common non-compute services so operations teams can manage quota holistically without juggling separate notes.
+Azure capacity planning extends well beyond vCPU cores. Storage accounts, App Service plans, Azure Cosmos DB accounts, and emerging platform services all impose limits that can block customer onboarding if they are not tracked and increased ahead of demand. This Microsoft runbook captures the baseline limits, monitoring patterns, and escalation paths for the most common non-compute services so operations teams can manage quota holistically without juggling separate notes.
 
 ## Service quick reference
 

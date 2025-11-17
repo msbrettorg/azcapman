@@ -6,7 +6,7 @@ nav_order: 5
 
 # Azure quota groups reference
 
-Azure quota groups are Azure Resource Manager (ARM) objects that let you share and self-manage compute quota across a set of subscriptions.[^quota-groups-overview] This page aggregates key prerequisites, limitations, lifecycle behavior, and monitoring options from the official documentation so you can reason about quota groups alongside the other runbooks in this site, and you'll see where each Microsoft article fits.
+Azure quota groups are Azure Resource Manager (ARM) objects that let you share and self-manage compute quota across a set of subscriptions.[^quota-groups-overview] This Microsoft page aggregates key prerequisites, limitations, lifecycle behavior, and monitoring options from the official documentation so you can reason about quota groups alongside the other runbooks in this site, and you'll see where each Microsoft article fits.
 
 ## Feature overview
 

@@ -6,6 +6,8 @@ nav_order: 1
 
 # Microsoft Customer Agreement billing model
 
+This Microsoft guidance explains how Customer Agreement billing scopes, roles, and automation entry points keep your subscription tooling aligned with commerce requirements.
+
 ## Contract overview
 
 - The Microsoft Customer Agreement (MCA) is the modern Azure commerce platform that delivers the same enterprise-grade billing foundation as legacy Enterprise Agreements while simplifying contracting and ongoing administration.[^mca-overview]

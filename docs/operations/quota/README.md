@@ -6,7 +6,7 @@ nav_order: 4
 
 # Quota operations runbook
 
-Use this runbook when you're auditing or increasing Azure quotas so every request pulls from the same reference.
+Use this Microsoft runbook when you're auditing or increasing Azure quotas so every request pulls from the same reference.
 
 ## Understand default quotas and enforcement
 

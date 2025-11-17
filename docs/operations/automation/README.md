@@ -6,7 +6,7 @@ nav_order: 3
 
 # Automation patterns
 
-Automation ensures quota management, subscription vending, and capacity reservations remain repeatable and auditable. This guide highlights common automation entry points and suggested pipeline practices so you're not reinventing them per deployment.
+Automation ensures quota management, subscription vending, and capacity reservations remain repeatable and auditable. This Microsoft guide highlights common automation entry points and suggested pipeline practices so you're not reinventing them per deployment.
 
 ## Subscription automation
 

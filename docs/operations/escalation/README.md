@@ -6,7 +6,7 @@ nav_order: 1
 
 # Support escalation runbook
 
-Self-service quota tooling resolves most requests, but some capacity problems still require Microsoft intervention. Use this runbook to recognize when escalation is necessary and how to submit a support ticket with the required context so you don't lose time gathering details after the ticket opens.
+Self-service quota tooling resolves most requests, but some capacity problems still require Microsoft intervention. Use this Microsoft runbook to recognize when escalation is necessary and how to submit a support ticket with the required context so you don't lose time gathering details after the ticket opens.
 
 ## When to escalate
 

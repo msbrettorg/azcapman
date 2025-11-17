@@ -6,7 +6,7 @@ nav_order: 7
 
 # Monitoring & alerting runbook
 
-Proactive monitoring prevents quota exhaustion and cost overruns from surprising application teams. This runbook outlines how to turn on quota monitoring, author alert rules, and align quota telemetry with cost guardrails so you don't miss leading indicators.
+Proactive monitoring prevents quota exhaustion and cost overruns from surprising application teams. This Microsoft runbook outlines how to turn on quota monitoring, author alert rules, and align quota telemetry with cost guardrails so you don't miss leading indicators.
 
 ## Turn on quota monitoring
 

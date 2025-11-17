@@ -6,7 +6,7 @@ nav_order: 6
 
 # Capacity governance program
 
-Azure guidance connects capacity planning, scale-unit architecture, quota management, reservations, and monitoring into a cohesive capacity governance approach.[^capacity-planning][^reliability-scaling-units][^mission-critical-scale-units][^rate-optimization] This page aggregates those references so you can align the other runbooks in this site with the official documentation without guessing where guidance lives. You'll see how each link maps to the runbooks elsewhere in this repo.
+Azure guidance connects capacity planning, scale-unit architecture, quota management, reservations, and monitoring into a cohesive capacity governance approach.[^capacity-planning][^reliability-scaling-units][^mission-critical-scale-units][^rate-optimization] This Microsoft page aggregates those references so you can align the other runbooks in this site with the official documentation without guessing where guidance lives. You'll see how each link maps to the runbooks elsewhere in this repo.
 
 ## Forecasts and scale units
 
