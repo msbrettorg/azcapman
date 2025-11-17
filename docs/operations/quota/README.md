@@ -1,18 +1,20 @@
 ---
-title: Quota Operations
-parent: Capacity & Quotas
+title: Quota operations
+parent: Capacity & quotas
 nav_order: 4
 ---
 
-# Quota Operations Runbook
+# Quota operations runbook
 
-## Understand Default Quotas and Enforcement
+Use this runbook when you're auditing or increasing Azure quotas so every request pulls from the same reference.
+
+## Understand default quotas and enforcement
 
 - Azure enforces quotas per subscription and region, tracking both total regional vCPUs and per VM-family vCPUs; deployments must stay within both limits or the platform blocks the request.[^vm-quotas][^enforce]
 - Enterprise Agreement and Microsoft Customer Agreement subscriptions start with 350 total vCPU cores per region and 25,000 total VMs, while other offers default to lower thresholds like 20 cores per region.[^vm-limits]
 - Quota calculations include allocated and deallocated virtual machines, so idle cores still count against the quota until resources are deleted or quota is increased.[^vm-quotas]
 
-## Audit Regional Quota and Zone Access
+## Audit regional quota and zone access
 
 - Run the repository script `scripts/quota/Show-AzVMQuotaReport.ps1` to enumerate VM family usage versus limits per subscription and region; the script wraps the `Get-AzVMUsage` cmdlet that surfaces quota consumption for each location.[^get-azvmusage]
 - Include `-UsePhysicalZones` when you need cross-subscription mapping, because Azure maps physical datacenters to logical availability zones differently per subscription and the `checkZonePeers` API exposes the authoritative mapping.[^az-zones]
@@ -20,19 +22,19 @@ nav_order: 4
 - Flag regions where the report shows restricted or missing zones and initiate the zonal enablement workflow to request access for the required VM series and zones before attempting redeployments.[^zone-request]
 - If entire regions are unavailable for a subscription, raise a region access request so that quota transfers or scale-outs do not fail when you move capacity between subscriptions.[^region-access]
 
-## Regional and Zonal Access Workflows
+## Regional and zonal access workflows
 
 - Region enablement requests grant access to restricted geographies and ensure quotas and offer flags match planned deployments; submit through Azure support when the portal limits block deployments in new regions.[^region-access]
 - Zonal enablement requests authorize deployments into specific availability zones for restricted VM families; use the support workflow to select regions, logical zones, and VM series before scaling out.[^zone-request]
 - Each subscription receives a unique logical-to-physical zone mapping at creation time, so use `checkZonePeers` when planning multi-subscription resilience to align physical fault domains.[^az-zones]
 
-## Create and Govern Quota Groups
+## Create and govern quota groups
 
 - Establish quota groups under the management group that owns your shared capacity so you can pool vCPU limits across EA and MCA subscriptions without filing support requests for every transfer.[^quota-groups]
 - Create the group via the Microsoft.Quota REST API or Azure portal once the GroupQuota Request Operator role is assigned at the management group scope.[^create-quota-group]
 - Add newly provisioned or recycled subscriptions to the quota group so their existing limits are tracked centrally while retaining subscription-level enforcement at deployment time.[^add-subscription]
 
-## Reallocate and Increase Capacity
+## Reallocate and increase capacity
 
 - Increase compute capacity with capacity reservation groups when you need guaranteed VM availability, reserving specific VM sizes in targeted regions or zones with pay-as-you-go billing.[^cr-overview]
 - Share capacity reservation groups with up to 100 consumer subscriptions (preview) so platform teams own the reservation and consumer subscriptions consume capacity; unused reservations bill to the owner while VM usage accrues to consumers.[^cr-share]
@@ -40,16 +42,16 @@ nav_order: 4
 - Submit group-level limit increase requests when aggregate demand outpaces the pooled limit; approved increases stamp capacity on the quota group so you can redistribute it without additional tickets.[^quota-increase]
 - Continue to request VM-family quota increases for edge cases directly from **Quotas** when you need adjustments outside of the pooled families or regions.[^per-family]
 
-## Reclaim and Recycle Subscriptions
+## Reclaim and recycle subscriptions
 
 - Before decommissioning a workload, return its quota to the group and keep the subscription for future use so that existing zonal and regional access flags remain in place and you avoid repeating the support-ticket workflow.[^transfer-quota][^zone-request][^region-access]
 - When onboarding a new subscription, check the quota report and `az quota list` output to confirm the baseline allocations before moving workloads or transferring additional quota.[^az-quota]
 
-## Operational Tips
+## Operational tips
 
 - Schedule the quota report and CLI usage checks to run after major deployments so the platform team has an auditable history of usage, available capacity, and zone coverage.[^get-azvmusage][^az-quota]
 - If subscriptions span multiple tenants, pair the quota audits with the `checkZonePeers` API to ensure logical zone identifiers align before you redistribute workload placements.[^az-zones]
--
+---
 ---
 
 [^vm-quotas]: [Check vCPU quotas - Azure Virtual Machines](https://learn.microsoft.com/en-us/azure/virtual-machines/quotas)

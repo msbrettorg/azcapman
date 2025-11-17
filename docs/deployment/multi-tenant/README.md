@@ -1,12 +1,12 @@
 ---
-title: Multi-Tenant
-parent: Customer Isolation
+title: Multi-tenant
+parent: Customer isolation
 nav_order: 2
 ---
 
-# Multi-Tenant Deployment Playbook
+# Multi-tenant deployment guide
 
-This playbook supports SaaS offerings where multiple customers share a centralized platform. Microsoft labels these scenarios "pure SaaS" or "dual-deployment" models in the ISV landing zone guidance, depending on whether customers also receive dedicated environments.[^isv-landing-zone] Use this guide to plan tenant isolation, deployment stamps, and supporting services that maintain reliability at scale.
+Use this guide for SaaS offerings where multiple customers share a centralized platform. The ISV landing zone guidance describes these scenarios as "pure SaaS" or "dual-deployment" models, depending on whether customers also receive dedicated environments.[^isv-landing-zone] You'll use this guide to plan tenant isolation, deployment stamps, and supporting services that maintain reliability at scale.
 
 ## Architectural principles
 
@@ -44,3 +44,6 @@ This playbook supports SaaS offerings where multiple customers share a centraliz
 [^saas-compute]: [Compute for SaaS workloads on Azure – Tenancy model and isolation](https://learn.microsoft.com/en-us/azure/well-architected/saas/compute#tenancy-model-and-isolation)
 [^saas-data]: [Data for SaaS workloads on Azure](https://learn.microsoft.com/en-us/azure/well-architected/saas/data)
 [^isv-landing-zone]: [Independent software vendor (ISV) considerations for Azure landing zones](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone)
+
+**Source**: [Design principles of SaaS workloads on Azure](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles)
+**Source**: [Independent software vendor (ISV) considerations for Azure landing zones](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone)

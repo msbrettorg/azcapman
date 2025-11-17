@@ -1,18 +1,18 @@
 ---
-title: Automation Patterns
-parent: Subscription Operations
+title: Automation patterns
+parent: Subscription operations
 nav_order: 3
 ---
 
-# Automation Patterns
+# Automation patterns
 
-Automation ensures quota management, subscription vending, and capacity reservations remain repeatable and auditable. This guide highlights common automation entry points and suggested pipeline practices.
+Automation ensures quota management, subscription vending, and capacity reservations remain repeatable and auditable. This guide highlights common automation entry points and suggested pipeline practices so you're not reinventing them per deployment.
 
 ## Subscription automation
 
 - **Enterprise Agreement (EA):** Use the latest `Microsoft.Subscription/aliases` APIs to create subscriptions scoped to enrollment accounts. Ensure identities have the Enterprise Administrator or Enrollment Account Owner role before invoking automation.[^programmatic-ea]
 - **Microsoft Customer Agreement (MCA):** Programmatically create subscriptions by targeting billing accounts, profiles, or invoice sections. Service principals require Azure subscription creator, Owner, or Contributor roles at the billing scope.[^programmatic-mca]
-- **Cross-tenant provisioning:** When the subscription owner resides in a different tenant, leverage the subscription request workflow to send an approval link that the recipient accepts in their directory.[^subscription-request]
+- **Cross-tenant provisioning:** When the subscription owner resides in a different tenant, use the subscription request workflow to send an approval link that the recipient accepts in their directory.[^subscription-request]
 
 ## Quota and capacity automation
 
@@ -28,3 +28,6 @@ Automation ensures quota management, subscription vending, and capacity reservat
 [^az-quota]: [az quota CLI reference](https://learn.microsoft.com/en-us/cli/azure/quota?view=azure-cli-latest)
 [^quickstart-quota]: [Quickstart: Request a quota increase in the Azure portal](https://learn.microsoft.com/en-us/azure/quotas/quickstart-increase-quota-portal)
 [^cr-overview]: [On-demand capacity reservation](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview)
+
+**Source**: [Create Azure subscriptions programmatically](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/programmatically-create-subscription)
+**Source**: [Quickstart: Request a quota increase in the Azure portal](https://learn.microsoft.com/en-us/azure/quotas/quickstart-increase-quota-portal)

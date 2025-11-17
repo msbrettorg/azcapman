@@ -1,12 +1,12 @@
 ---
-title: Capacity Reservations
-parent: Capacity & Quotas
+title: Capacity reservations
+parent: Capacity & quotas
 nav_order: 2
 ---
 
-# Capacity Reservation Operations
+# Capacity reservation operations
 
-On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This runbook explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) so platform teams can coordinate with quota and deployment workflows.
+On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This runbook explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) so platform teams can coordinate with quota and deployment workflows, and it reminds you where the platform enforces prerequisites.
 
 ## Prerequisites and access
 
@@ -16,8 +16,8 @@ On-demand capacity reservations guarantee that compute capacity is available whe
 
 ## Create and manage reservations
 
-1. **Create a CRG:** In the Azure portal, select **Virtual machines e Capacity reservations e Add**. Provide the subscription, resource group, region, and optional availability zone.[^cr-overview]
-2. **Add member reservations:** Within the CRG, specify VM size (for example, `Standard_D2s_v3`) and quantity. Azure immediately attempts to reserve capacity; if unavailable the deployment fails and must be retried after adjusting parameters.[^cr-overview]
+1. **Create a CRG:** In the Azure portal, select **Virtual machines > Capacity reservations > Add**. Provide the subscription, resource group, region, and optional availability zone.[^cr-overview]
+2. **Add member reservations:** Within the CRG, specify VM size (for example, `Standard_D2s_v3`) and quantity. Azure immediately attempts to reserve capacity; if it's unavailable the deployment fails and must be retried after adjusting parameters.[^cr-overview]
 3. **Associate workloads:** When deploying a VM or scale set, set the `capacityReservationGroup.id` property so the workload consumes the reservation and receives the capacity SLA.[^cr-overview]
 4. **Adjust quantities:** Update the reservation to increase or reduce the quantity. Reducing to zero releases the capacity but retains metadata, which is useful when pausing workloads temporarily.[^cr-overview]
 5. **Delete reservations:** Remove all associated VMs and reduce the quantity to zero before deleting a member reservation or its CRG to avoid orphaned associations.[^cr-overview]

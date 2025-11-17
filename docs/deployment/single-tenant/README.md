@@ -1,12 +1,12 @@
 ---
-title: Single-Tenant
-parent: Customer Isolation
+title: Single-tenant
+parent: Customer isolation
 nav_order: 1
 ---
 
-# Single-Tenant Deployment Playbook
+# Single-tenant deployment guide
 
-Use this playbook when each customer receives a dedicated Azure subscription or deployment stamp. Microsoft describes this "customer-deployed" model as one of the core ISV patterns—customers run your workloads inside subscriptions that you provision or manage on their behalf.[^isv-landing-zone] This approach maximizes isolation, aligns with per-customer regulatory requirements, and simplifies noisy-neighbor mitigation at the expense of higher infrastructure cost per tenant.[^deployment-stamps]
+Use this guide when each customer gets a dedicated Azure subscription or deployment stamp. The ISV landing zone guidance defines this "customer-deployed" model as one of the core ISV patterns—customers run workloads inside subscriptions that you provision or manage on their behalf.[^isv-landing-zone] This approach maximizes isolation, aligns with per-customer regulatory requirements, and simplifies noisy-neighbor mitigation at the expense of higher infrastructure cost per tenant.[^deployment-stamps]
 
 ## Landing zone preparation
 
@@ -28,9 +28,9 @@ Use this playbook when each customer receives a dedicated Azure subscription or 
 
 ## Lifecycle management
 
-- **Onboarding:** Automate the sequence—create subscription, apply landing zone blueprint, deploy stamp, run validation tests, hand over to customer success.
-- **Expansion:** When customers require more capacity, scale the stamp vertically or horizontally, or deploy additional stamps for regional redundancy. Coordinate with quota and reservation runbooks to guarantee capacity.[^deployment-stamps]
-- **Recycle vs. retire:** When a customer churns, reclaim quotas and shared services but keep the subscription if region/zone enablement or regulatory approvals may be reused for future tenants.[^region-access]
+- **Onboarding:** Automate the sequence—create subscription, apply the landing zone blueprint, deploy the stamp, run validation tests, and hand over to customer success so teams aren't rebuilding steps manually.
+- **Expansion:** When customers need more capacity, scale the stamp vertically or horizontally, or deploy additional stamps for regional redundancy. Coordinate with quota and reservation runbooks to guarantee capacity.[^deployment-stamps]
+- **Recycle vs. retire:** When a customer churns, reclaim quotas and shared services but keep the subscription if region/zone enablement or regulatory approvals might be reused for future tenants.[^region-access]
 
 ---
 
@@ -39,3 +39,6 @@ Use this playbook when each customer receives a dedicated Azure subscription or 
 [^region-access]: [Azure region access request process](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process)
 [^saas-compute]: [Compute for SaaS workloads on Azure – Tenancy model and isolation](https://learn.microsoft.com/en-us/azure/well-architected/saas/compute#tenancy-model-and-isolation)
 [^saas-data]: [Data for SaaS workloads on Azure](https://learn.microsoft.com/en-us/azure/well-architected/saas/data)
+
+**Source**: [Independent software vendor (ISV) considerations for Azure landing zones](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone)
+**Source**: [Architectural approaches for a multitenant solution – Deployment Stamps pattern](https://learn.microsoft.com/en-us/azure/architecture/guide/multitenant/approaches/overview#deployment-stamps-pattern)

@@ -1,16 +1,16 @@
 ---
-title: Monitoring & Alerting
-parent: Capacity & Quotas
+title: Monitoring & alerting
+parent: Capacity & quotas
 nav_order: 7
 ---
 
-# Monitoring & Alerting Runbook
+# Monitoring & alerting runbook
 
-Proactive monitoring prevents quota exhaustion and cost overruns from surprising application teams. This runbook outlines how to enable quota monitoring, author alert rules, and align quota telemetry with cost guardrails.
+Proactive monitoring prevents quota exhaustion and cost overruns from surprising application teams. This runbook outlines how to turn on quota monitoring, author alert rules, and align quota telemetry with cost guardrails so you don't miss leading indicators.
 
-## Enable quota monitoring
+## Turn on quota monitoring
 
-- From the Azure portal, open **Quotas** and select **My quotas**. When monitoring is enabled for a provider, adjustable quotas become highlighted and clickable, exposing usage details and alert creation shortcuts.[^quota-monitoring]
+- From the Azure portal, open **Quotas** and select **My quotas**. When monitoring is turned on for a provider, adjustable quotas become highlighted and clickable, exposing usage details and alert creation shortcuts.[^quota-monitoring]
 - Ensure administrators hold the required Azure RBAC permissions—typically Owner, Contributor, or a custom role with alert authoring rights—before configuring monitoring and alert rules.[^quota-alerts]
 
 ## Create quota usage alerts

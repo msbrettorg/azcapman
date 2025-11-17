@@ -1,21 +1,21 @@
 ---
 title: Glossary & FAQ
-parent: Support & Reference
+parent: Support & reference
 nav_order: 3
 ---
 
 # Glossary & FAQ
 
-Common terminology used across the quota and capacity management runbooks. Each entry links to the authoritative Microsoft documentation.
+Common terminology used across the quota and capacity management runbooks. Each entry links to the authoritative Microsoft documentation so you're never guessing which article to cite.
 
 ## Glossary
 
-- **Capacity Reservation Group (CRG):** A logical container that holds one or more on-demand capacity reservations for specific VM sizes, regions, and zones. CRGs guarantee capacity and can be shared across subscriptions.[^cr-overview]
-- **Quota Group:** An Azure Resource Manager object created under a management group that aggregates compute quota across eligible subscriptions, enabling transfers and group-level increase requests.[^quota-groups]
-- **Logical Availability Zone:** Subscription-specific mapping to physical datacenter zones; mappings can differ across subscriptions and must be queried via Azure Resource Manager APIs.[^az-zones]
-- **Quota Alert:** An Azure Monitor alert triggered when quota usage crosses a configured threshold in the **My quotas** experience.[^quota-alerts]
-- **Budget Alert:** A Cost Management alert generated when actual or forecasted spend exceeds defined budget thresholds.[^cost-alerts]
-- **Subscription Request:** Workflow that allows an MCA billing owner to create a subscription for a user or service principal in another tenant, requiring the recipient to accept ownership.[^subscription-request]
+- **Capacity reservation group (CRG):** A logical container that holds one or more on-demand capacity reservations for specific VM sizes, regions, and zones. CRGs guarantee capacity and can be shared across subscriptions.[^cr-overview]
+- **Quota group:** An Azure Resource Manager object created under a management group that aggregates compute quota across eligible subscriptions, enabling transfers and group-level increase requests.[^quota-groups]
+- **Logical availability zone:** Subscription-specific mapping to physical datacenter zones; mappings can differ across subscriptions and must be queried via Azure Resource Manager APIs.[^az-zones]
+- **Quota alert:** An Azure Monitor alert triggered when quota usage crosses a configured threshold in the **My quotas** experience.[^quota-alerts]
+- **Budget alert:** A Cost Management alert generated when actual or forecasted spend exceeds defined budget thresholds.[^cost-alerts]
+- **Subscription request:** Workflow that allows an MCA billing owner to create a subscription for a user or service principal in another tenant, requiring the recipient to accept ownership.[^subscription-request]
 
 ## FAQ
 

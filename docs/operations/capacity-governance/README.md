@@ -1,12 +1,12 @@
 ---
-title: Capacity Governance Program
-parent: Capacity & Quotas
+title: Capacity governance program
+parent: Capacity & quotas
 nav_order: 6
 ---
 
-# Capacity Governance Program
+# Capacity governance program
 
-Azure guidance connects capacity planning, scale-unit architecture, quota management, reservations, and monitoring into a cohesive capacity governance approach.[^capacity-planning][^reliability-scaling-units][^mission-critical-scale-units][^rate-optimization] This page aggregates those references so you can align the other runbooks in this site with the official documentation.
+Azure guidance connects capacity planning, scale-unit architecture, quota management, reservations, and monitoring into a cohesive capacity governance approach.[^capacity-planning][^reliability-scaling-units][^mission-critical-scale-units][^rate-optimization] This page aggregates those references so you can align the other runbooks in this site with the official documentation without guessing where guidance lives. You'll see how each link maps to the runbooks elsewhere in this repo.
 
 ## Forecasts and scale units
 
@@ -15,11 +15,11 @@ Azure guidance connects capacity planning, scale-unit architecture, quota manage
 - In the mission-critical application design guidance, a scale unit is defined as a logical unit or function that can be scaled independently, potentially including code components, hosting platforms, deployment stamps, and even subscriptions when multitenant requirements are involved.[^mission-critical-scale-units]
 - The same guidance illustrates that scale units can range from microservice pods to cluster nodes and regional deployment stamps, and that using scale units helps standardize how capacity is added and validated before directing user traffic.[^mission-critical-scale-units]
 
-## Quota Groups and shared quota
+## Quota groups and shared quota
 
-- The Azure Quota Groups article explains that Quota Groups are ARM objects created at the management group scope that allow you to share procured quota between subscriptions, distribute or reallocate unused quota, and submit group-level quota increase requests.[^quota-groups-overview]
+- The Azure Quota Groups article explains that quota groups are ARM objects created at the management group scope that allow you to share procured quota between subscriptions, distribute or reallocate unused quota, and submit group-level quota increase requests.[^quota-groups-overview]
 - Supported scenarios include deallocating unused quota from subscriptions into the group, allocating quota from the group back to subscriptions, and using group-level limit increases to make quota available for future transfers.[^quota-groups-overview]
-- Documentation notes that Quota Groups are independent of subscription placement in the management group hierarchy and do not automatically synchronize subscription membership, which keeps quota management orthogonal to policy and role hierarchies.[^quota-groups-arm]
+- Documentation notes that quota groups are independent of subscription placement in the management group hierarchy and do not automatically synchronize subscription membership, which keeps quota management orthogonal to policy and role hierarchies.[^quota-groups-arm]
 - The transfer and quota allocation snapshot APIs provide a view of per-subscription limits and shareable quota for VM families and regions within a group, using the same quota constructs that apply to standard subscription quota checks.[^transfer-quota][^quota-allocation-snapshot]
 
 ## Capacity reservations and compute supply
@@ -41,7 +41,7 @@ Azure guidance connects capacity planning, scale-unit architecture, quota manage
 
 - The quota monitoring and alerting article describes how the Quotas experience in the Azure portal tracks resource usage against quota limits and supports configuring alerts when usage approaches those limits.[^quota-monitoring]
 - The “Create alerts for quotas” documentation details how to create alert rules from the **My quotas** blade by selecting a quota name, choosing severity, and setting a usage-percentage threshold for triggering alerts.[^quota-alerts]
-- Together with quota allocation snapshots for Quota Groups and instance view data for capacity reservations, these monitoring capabilities provide the platform-level signals referenced in Azure’s guidance on scaling and capacity planning.[^quota-allocation-snapshot][^cr-overallocate][^capacity-planning]
+- Together with quota allocation snapshots for quota groups and instance view data for capacity reservations, these monitoring capabilities provide the platform-level signals referenced in Azure’s guidance on scaling and capacity planning.[^quota-allocation-snapshot][^cr-overallocate][^capacity-planning]
 
 ---
 

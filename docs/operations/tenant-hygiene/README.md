@@ -1,12 +1,12 @@
 ---
-title: Tenant & Subscription Hygiene
-parent: Support & Reference
+title: Tenant & subscription hygiene
+parent: Support & reference
 nav_order: 2
 ---
 
-# Tenant & Subscription Hygiene
+# Tenant & subscription hygiene
 
-ISVs commonly manage subscriptions across multiple tenants while centralizing billing and governance. This guide documents best practices for maintaining clean tenant relationships, recycling subscriptions, and preserving zone mappings.
+ISVs commonly manage subscriptions across multiple tenants while centralizing billing and governance. This guide documents best practices for maintaining clean tenant relationships, recycling subscriptions, and preserving zone mappings so you aren't surprised by access gaps.
 
 ## Align tenant and billing structures
 
