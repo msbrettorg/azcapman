@@ -2,7 +2,7 @@ title: ISV considerations for quota and capacity management in Azure
 description: ISV guidance for Azure quota, capacity, and billing operations
 remote_theme: just-the-docs/just-the-docs
 color_scheme: dark
-logo: "/azcapman/assets/logo.svg"
+logo: "/assets/logo.svg"
 markdown: kramdown
 kramdown:
   input: GFM
