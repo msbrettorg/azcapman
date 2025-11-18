@@ -8,9 +8,7 @@ nav_order: 1
 
 Microsoft recommends this guidance when each customer requires a dedicated landing zone or deployment stamp and you need a consistent onboarding pattern.
 
-Use this guide when each customer gets a dedicated Azure subscription or deployment stamp. The ISV landing zone guidance defines this "customer-deployed" model as one of the core ISV patterns—customers run workloads inside subscriptions that you provision or manage on their behalf.[^isv-landing-zone] This approach maximizes isolation, aligns with per-customer regulatory requirements, and simplifies noisy-neighbor mitigation at the expense of higher infrastructure cost per tenant.[^deployment-stamps]
-
-![Diagram that shows a customer-deployed deployment model where a customer deploys resources provided by the ISV into their own Azure subscription.](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/media/isv-landing-zone/isv-customer-deployed-deployment.png)[^isv-landing-zone]
+Use this guide when each customer gets a dedicated Azure subscription or deployment stamp that is owned and operated by the ISV. In the ISV landing zone guidance, this aligns with pure SaaS scenarios where customer workloads run entirely inside subscriptions controlled by the ISV, with optional per-customer stamps or partitions.[^isv-landing-zone][^deployment-stamps] This approach maximizes isolation, aligns with per-customer regulatory requirements, and simplifies noisy-neighbor mitigation at the expense of higher infrastructure cost per tenant.[^deployment-stamps]
 
 > [!TIP]
 > Use this guide when a customer contract or regulatory requirement calls for dedicated subscriptions or deployment stamps instead of shared multitenant infrastructure.[^isv-landing-zone][^deployment-stamps]
