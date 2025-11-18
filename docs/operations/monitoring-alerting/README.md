@@ -18,6 +18,8 @@ This section describes how to confirm that quota monitoring is enabled and that 
 - From the Azure portal, open **Quotas** and select **My quotas**. When monitoring is turned on for a provider, adjustable quotas become highlighted and clickable, exposing usage details and alert creation shortcuts.[^quota-monitoring]
 - Ensure administrators hold the required Azure RBAC permissions—typically Owner, Contributor, or a custom role with alert authoring rights—before configuring monitoring and alert rules.[^quota-alerts]
 
+![Screenshot showing how to select Quotas to navigate to the create alert rule screen.](https://learn.microsoft.com/en-us/azure/quotas/media/monitoring-alerting/my-quotas-create-rule-navigation-inline.png)[^quota-alerts]
+
 ## Create quota usage alerts
 
 This section summarizes how to author quota usage alerts across subscriptions and providers.[^quota-alerts]
@@ -26,6 +28,8 @@ This section summarizes how to author quota usage alerts across subscriptions an
 2. **Launch alert wizard:** Click the quota name to open the **Create usage alert rule** experience. Quota-specific dimensions (subscription, region, quota name) are pre-populated.[^quota-alerts]
 3. **Configure thresholds:** Set the usage percentage trigger (for example, 70%, 85%, 95%) and choose the evaluation cadence (5–15 minutes) to balance responsiveness and noise.[^quota-alerts]
 4. **Notifications:** Define action groups (email, Teams, ITSM) to route alerts to responders. Confirm the managed identity or user configuring the alert has Reader access on the subscription.[^quota-alerts]
+
+![Screenshot showing the Create usage alert rule screen with required fields.](https://learn.microsoft.com/en-us/azure/quotas/media/monitoring-alerting/quota-details-create-rule-inline.png)[^quota-alerts]
 
 ## Quota dashboards
 
@@ -39,6 +43,20 @@ This section outlines how to connect quota alerts with budget and anomaly alerts
 
 - Configure budget alerts at the subscription, billing profile, or invoice section level to warn stakeholders when actual or forecasted spend approaches agreed thresholds. Budget alerts deliver notifications in tandem with quota alerts to reinforce accountability.[^cost-alerts]
 - Set cost anomaly alerts to detect unexpected spikes that may indirectly signal runaway deployments consuming quota faster than planned.[^cost-alerts]
+
+## Manage quota alerts
+
+The quota alert documentation also describes how existing alert rules and fired alerts are viewed and managed in the Azure portal.[^quota-alerts]
+
+![Screenshot showing the quota alert rule list in the Azure portal.](https://learn.microsoft.com/en-us/azure/quotas/media/monitoring-alerting/view-alert-rules-inline.png)[^quota-alerts]
+
+![Screenshot showing the Fired Alert screen in the Azure portal.](https://learn.microsoft.com/en-us/azure/quotas/media/monitoring-alerting/view-fired-alerts-inline.png)[^quota-alerts]
+
+![Screenshot showing options for editing, enabling, disabling, or deleting an alert rule in the Azure portal.](https://learn.microsoft.com/en-us/azure/quotas/media/monitoring-alerting/edit-enable-disable-delete-inline.png)[^quota-alerts]
+
+![Screenshot showing how to add dimensions while editing a quota rule in the Azure portal.](https://learn.microsoft.com/en-us/azure/quotas/media/monitoring-alerting/edit-dimension-inline.png)[^quota-alerts]
+
+![Screenshot showing how to edit rules from the Alert rule screen in the Azure portal.](https://learn.microsoft.com/en-us/azure/quotas/media/monitoring-alerting/alert-rule-edit-inline.png)[^quota-alerts]
 
 ---
 
