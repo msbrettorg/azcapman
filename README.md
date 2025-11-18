@@ -1,6 +1,6 @@
 # Azure Quota and Capacity Management Documentation
 
-This repository contains Azure quota and capacity management references for ISVs operating on Azure.
+This repository contains Azure quota and capacity management references for SaaS ISVs that operate workloads in subscriptions owned or controlled by the ISV (Enterprise Agreement or Microsoft Customer Agreement), not in customer-owned subscriptions.
 
 > [!NOTE]
 > This repository provides an addendum to the ISV landing zone guidance and complements the Azure Cloud Adoption Framework and Well-Architected guidance for ISVs operating on Azure.[^isv-landing-zone]

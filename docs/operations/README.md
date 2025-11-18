@@ -6,7 +6,7 @@ has_children: true
 
 # Operational topics overview
 
-This section lists billing-era references (modern MCA and legacy EA) and supporting operational guides with lightweight descriptions so readers can jump straight into the detailed README in each child directory:
+This section lists billing-era references (modern MCA and legacy EA) and supporting operational guides for SaaS ISVs that operate workloads in subscriptions owned or controlled by the ISV. The descriptions are lightweight so readers can jump straight into the detailed README in each child directory:
 
 - [Subscription operations overview](subscription-operations/README.md)—summarizes how MCA and EA subscription automation is handled.
 - [Capacity and quotas hub](capacity-and-quotas/README.md)—links to planning, reservation, quota, and monitoring guidance.
