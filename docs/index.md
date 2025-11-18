@@ -5,7 +5,7 @@ nav_order: 1
 
 # ISV considerations for quota and capacity management in Azure
 
-This repository curates estate-level Azure controls and references that help independent software vendors (ISVs) design Azure landing zones, govern quota and capacity, and operate SaaS deployments in line with Microsoft's cloud guidance.[^isv-landing-zone][^saas-principles] This overview routes you quickly to the references you need and serves as a companion to the ISV landing zone guidance, without prescribing how you operate your environment.[^isv-landing-zone]
+This repository curates estate-level Azure controls and references that help independent software vendors (ISVs) design [Azure landing zones](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone), govern quota and capacity, and operate [SaaS deployments](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles) in line with Microsoft's cloud guidance. This overview routes you quickly to the references you need and serves as a companion to the [ISV landing zone guidance](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone), without prescribing how you operate your environment.
 
 ## Table of contents
 
@@ -17,13 +17,13 @@ This repository curates estate-level Azure controls and references that help ind
 
 ## Purpose
 
-Azure landing zones and SaaS architecture recommendations highlight the need for consistent governance across subscriptions, quota management, and tenant isolation. The documents in this repository present those recommendations as ISV-focused references and checklists so your teams can align estate-level decisions with Microsoft's guidance.[^isv-landing-zone][^saas-principles]
+[Azure landing zones](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) and [SaaS architecture recommendations](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles) highlight the need for consistent governance across subscriptions, quota management, and tenant isolation. The documents in this repository present those recommendations as ISV-focused references and checklists so your teams can align estate-level decisions with Microsoft's guidance.
 
-![Diagram that shows an example Azure landing zone hierarchy for an ISV, including product platforms and environment-specific management groups.](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/media/isv-landing-zone/isv-landing-zone-example-2.png)[^isv-landing-zone]
+![Diagram that shows an example Azure landing zone hierarchy for an ISV, including product platforms and environment-specific management groups.](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/media/isv-landing-zone/isv-landing-zone-example-2.png)
 
 ## Customer isolation
 
-This section summarizes isolation options for customer workloads and the choice between single-tenant and multi-tenant deployment models before automation is implemented.[^isv-landing-zone][^saas-principles]
+This section summarizes [isolation options for customer workloads](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) and the choice between [single-tenant and multi-tenant deployment models](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles) before automation is implemented.
 
 - [Customer isolation overview](deployment/README.md)—outlines how to decide between dedicated and shared delivery models before you invest in automation.
   - [Single-tenant deployment guide](deployment/single-tenant/README.md)—describes subscription vending, landing zone blueprinting, and dedicated stamp practices when each customer needs isolated capacity.
@@ -31,7 +31,7 @@ This section summarizes isolation options for customer workloads and the choice 
 
 ## Enrollment types
 
-This section describes billing enrollment models so automation, reservation scopes, and quota workflows align with Microsoft Customer Agreement (MCA) and Enterprise Agreement (EA) constructs.[^isv-landing-zone][^saas-principles]
+This section describes [billing enrollment models](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) so automation, reservation scopes, and quota workflows align with [Microsoft Customer Agreement (MCA) and Enterprise Agreement (EA) constructs](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles).
 
 - [Billing enrollment overview](billing/README.md)—summarizes Microsoft Customer Agreement (modern) and Enterprise Agreement (legacy) constructs so you understand billing context before automating.
   - [Microsoft Customer Agreement billing model](billing/modern/README.md)—learn how billing accounts, profiles, and invoice sections shape automation and reservation scope boundaries.
@@ -39,7 +39,7 @@ This section describes billing enrollment models so automation, reservation scop
 
 ## Operational topics
 
-Use these topics to inspect or automate subscription lifecycle management, manage capacity and quotas, and understand how Azure’s estate-level controls map into your own operating model.[^isv-landing-zone][^saas-principles]
+Use these topics to inspect or automate subscription lifecycle management, manage capacity and quotas, and understand how [Azure's estate-level controls](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) map into your own [operating model](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles).
 
 ### Subscription operations
 
@@ -71,10 +71,3 @@ Use these topics to inspect or automate subscription lifecycle management, manag
 
 - [Glossary and FAQ](operations/glossary.md)—reference Microsoft-approved terms when you brief customers or teams.
 
----
-
-[^isv-landing-zone]: [Independent software vendor (ISV) considerations for Azure landing zones](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone)
-[^saas-principles]: [Design principles of SaaS workloads on Azure](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles)
-
-**Source**: [Independent software vendor (ISV) considerations for Azure landing zones](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone)
-**Source**: [Design principles of SaaS workloads on Azure](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles)
