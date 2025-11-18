@@ -6,6 +6,9 @@ title: Quota Management
 
 These scripts are intended to analyze quota usage across subscriptions and regions in scenarios where Quota Groups **have not** been implemented.
 
+> [!TIP]
+> Use these scripts alongside Azure quota and availability zone guidance so your analysis matches the way Azure enforces vCPU and zone limits.[^vm-quotas][^az-zones][^az-quota]
+
 ---
 
 ## What you'll need
@@ -208,3 +211,9 @@ For issues with these scripts:
 ## Script Versions
 
 These scripts are maintained in the [azcapman repository](https://github.com/MSBrett/azcapman). Check for updates regularly to get the latest features and bug fixes.
+
+---
+
+[^vm-quotas]: [Check vCPU quotas - Azure Virtual Machines](https://learn.microsoft.com/en-us/azure/virtual-machines/quotas)
+[^az-quota]: [az quota CLI reference](https://learn.microsoft.com/en-us/cli/azure/quota?view=azure-cli-latest)
+[^az-zones]: [Availability zones – physical and logical mapping](https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview#configuring-resources-for-availability-zone-support)

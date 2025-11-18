@@ -6,21 +6,27 @@ nav_order: 2
 
 # Enterprise Agreement subscription operations
 
-Use this runbook when you're scripting Enterprise Agreement (EA) subscription creation or maintenance and want the key API checkpoints captured in one place.
+Use this reference when you're scripting Enterprise Agreement (EA) subscription creation or maintenance and want the key API checkpoints captured in one place.[^ea-create]
+
+> [!TIP]
+> Use this reference together with your EA enrollment documentation so subscription automation aligns with the correct enrollment accounts and role assignments.[^ea-create]
 
 ## Roles and prerequisites
 
+Use this section to confirm that the right enrollment roles and account relationships are in place before you automate EA subscription creation.[^ea-create]
 - Only Enterprise Administrators or Enrollment Account owners (or their delegated owners) can programmatically create EA subscriptions; service principals must receive the same enrollment account role assignment before calling the APIs.[^ea-create]
 - The enrollment account relationship determines where usage is billed, so automation should authenticate in the account owner’s home directory before issuing API calls.[^ea-create]
 
 ## Provisioning flow
 
+Use this section for the standard EA subscription creation sequence using the latest alias APIs.[^ea-create]
 1. List accessible enrollment accounts through `Microsoft.Billing/billingAccounts` to capture the enrollment and account identifiers required for new subscriptions.[^ea-create]
 2. Create or reuse a subscription alias with the target account owner and desired display metadata using the `Microsoft.Subscription/aliases` API.[^ea-create]
 3. Assign Azure RBAC roles (owner, contributor, reader) to the subscription during creation to ensure landing zone automation can immediately configure policies, networking, and budget controls.[^ea-create]
 
 ## Automation considerations
 
+Use this section when you align EA enrollment roles with your internal approval workflows and migrate from legacy APIs.[^ea-create]
 - Keep enrollment-account ownership in sync with subscription vending approval workflows so the platform team can audit who can mint new EA subscriptions.[^ea-create]
 - When migrating from the legacy 2015-07-01 APIs, reissue enrollment role assignments with API version `2019-10-01-preview` to support the latest alias operations.[^ea-create]
 

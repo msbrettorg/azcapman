@@ -4,16 +4,23 @@ parent: Capacity & quotas
 nav_order: 7
 ---
 
-# Monitoring & alerting runbook
+# Monitoring & alerting reference
 
-Proactive monitoring prevents quota exhaustion and cost overruns from surprising application teams. This Microsoft runbook outlines how to turn on quota monitoring, author alert rules, and align quota telemetry with cost guardrails so you don't miss leading indicators.
+Proactive monitoring prevents quota exhaustion and cost overruns from surprising application teams. This Microsoft reference outlines how to turn on quota monitoring, author alert rules, and align quota telemetry with cost guardrails so you don't miss leading indicators.[^quota-monitoring][^quota-alerts][^cost-alerts]
+
+> [!TIP]
+> Use this reference when you first enable quota monitoring in a tenant and whenever you review alert coverage as part of your capacity governance cadence.[^quota-monitoring][^quota-alerts][^cost-alerts]
 
 ## Turn on quota monitoring
+
+Use this section to confirm that quota monitoring is enabled and that administrators have the right permissions to manage alerts.[^quota-monitoring][^quota-alerts]
 
 - From the Azure portal, open **Quotas** and select **My quotas**. When monitoring is turned on for a provider, adjustable quotas become highlighted and clickable, exposing usage details and alert creation shortcuts.[^quota-monitoring]
 - Ensure administrators hold the required Azure RBAC permissions—typically Owner, Contributor, or a custom role with alert authoring rights—before configuring monitoring and alert rules.[^quota-alerts]
 
 ## Create quota usage alerts
+
+Use this section to author and standardize quota usage alerts across subscriptions and providers.[^quota-alerts]
 
 1. **Select quota:** In **My quotas**, choose the resource provider (for example, `Microsoft.Compute`, `Microsoft.Storage`, or `Microsoft.Web`) and select the quota to monitor.[^quota-alerts]
 2. **Launch alert wizard:** Click the quota name to open the **Create usage alert rule** experience. Quota-specific dimensions (subscription, region, quota name) are pre-populated.[^quota-alerts]
@@ -22,9 +29,13 @@ Proactive monitoring prevents quota exhaustion and cost overruns from surprising
 
 ## Quota dashboards
 
+Use this section to build dashboards that expose quota usage trends to operations and product teams.[^az-quota]
+
 - Export quota usage via `az quota usage list` for each provider and ingest into Log Analytics or Power BI for trend dashboards. Consistent exports allow teams to visualize approaching limits and correlate with deployment events.[^az-quota]
 
 ## Cost management guardrails
+
+Use this section to connect quota alerts with budget and anomaly alerts so teams see both capacity and cost signals.[^cost-alerts]
 
 - Configure budget alerts at the subscription, billing profile, or invoice section level to warn stakeholders when actual or forecasted spend approaches agreed thresholds. Budget alerts deliver notifications in tandem with quota alerts to reinforce accountability.[^cost-alerts]
 - Set cost anomaly alerts to detect unexpected spikes that may indirectly signal runaway deployments consuming quota faster than planned.[^cost-alerts]

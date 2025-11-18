@@ -8,28 +8,36 @@ nav_order: 2
 
 Use this Microsoft guidance when you need to understand how Enterprise Agreement (EA) billing constructs support automated subscription creation and governance.
 
+> [!TIP]
+> Use this guide when a customer still uses an Enterprise Agreement and you need to align subscription automation and governance with EA roles and hierarchy.[^ea-roles][^ea-admin]
+
 ## Contract and hierarchy
 
+Use this section to review how EA enrollments, departments, accounts, and subscriptions relate.[^ea-roles]
 - The Enterprise Agreement (EA) uses a hierarchical structure—enrollment > departments > accounts > subscriptions—managed in the Azure Cost Management portal.[^ea-roles]
 - Enterprise Administrators control enrollment-level settings, assign Department Administrators and Account Owners, and can provision new subscriptions under any active account.[^ea-roles][^ea-admin]
 
 ## Billing administration tasks
 
+Use this section when you configure or audit EA enrollment settings and department/account structures.[^ea-admin][^ea-roles]
 - EA administrators manage their enrollment directly in the Azure portal: they select the billing scope, activate the enrollment, adjust policies (for example, dev/test enablement, AO/DA view charges), and configure authentication requirements for account owners.[^ea-admin]
 - Departments allow cost segmentation and quota/budget controls, while accounts own the subscriptions and surface usage/cost reports for their scope.[^ea-roles]
 
 ## Subscription provisioning and tenant placement
 
+Use this section when you create EA subscriptions, especially if you need to place them in specific tenants or delegate ownership.[^ea-subscription]
 - Enterprise Administrators or Account Owners can create EA subscriptions either for themselves or on behalf of another user, choosing the subscription directory (tenant) during creation and specifying additional subscription owners, including service principals via App IDs.[^ea-subscription]
 - Cross-tenant provisioning is supported: the owner in the target tenant receives an acceptance request before the subscription is finalized.[^ea-subscription]
 
 ## Automation and service principals
 
+Use this section when you onboard or review service principals that create EA subscriptions.[^assign-sp-roles]
 - EA exposes a dedicated **SubscriptionCreator** role for service principals so automation can create subscriptions at the account scope.[^assign-sp-roles]
 - Automating EA actions requires registering a Microsoft Entra application, capturing the service principal object ID, and assigning the desired EA role (for example, SubscriptionCreator or EnrollmentReader) via the EA REST API or PowerShell before calling subscription APIs.[^assign-sp-roles]
 
 ## Policy and governance
 
+Use this section when you tune enrollment policies and assignment practices to keep EA governance predictable.[^ea-admin-policy][^ea-roles]
 - Enrollment policies let administrators control who can create subscriptions (authorization levels: Microsoft Account only, Work/School only, cross-tenant) and whether dev/test offers are available to account owners.[^ea-admin-policy]
 - EA billing roles must be assigned to individual identities (not groups) to ensure compliance and traceability; each user should have a monitored email for notifications so requests don't go unnoticed.[^ea-roles]
 

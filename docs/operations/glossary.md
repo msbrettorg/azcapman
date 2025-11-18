@@ -6,7 +6,10 @@ nav_order: 3
 
 # Glossary & FAQ
 
-Common terminology used across the quota and capacity management runbooks. Each entry links to the authoritative Microsoft documentation so you're never guessing which article to cite.
+Common terminology used across the quota and capacity management references. Each entry links to the authoritative Microsoft documentation so you're never guessing which article to cite.
+
+> [!TIP]
+> Use this glossary as the shared vocabulary for operations, product, and finance teams so documents, tickets, and dashboards reference the same terms and Microsoft sources.[^cr-overview][^quota-groups][^az-zones][^quota-alerts][^cost-alerts]
 
 ## Glossary
 

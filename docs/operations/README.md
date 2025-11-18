@@ -4,13 +4,16 @@ nav_order: 4
 has_children: true
 ---
 
-# Subscription operations overview
+# Operational topics overview
 
-Use this section to access billing-era runbooks (modern MCA and legacy EA) and supporting operational guides. We're keeping the descriptions lightweight so you can jump straight into the detailed README in each child directory:
+Use this section to access billing-era references (modern MCA and legacy EA) and supporting operational guides. We're keeping the descriptions lightweight so you can jump straight into the detailed README in each child directory:
 
 - [Subscription operations overview](subscription-operations/README.md)—review how we handle MCA and EA subscription automation.
 - [Capacity and quotas hub](capacity-and-quotas/README.md)—jump to planning, reservation, quota, and monitoring guidance.
 - [Support and reference hub](support-and-reference/README.md)—find escalation paths, tenant hygiene, and glossary material.
+
+> [!TIP]
+> Start here when you want to route stakeholders to specific subscription, capacity, or support references without scanning the full folder structure.[^caf-vending][^programmatic-overview]
 
 ## Subscription vending context
 
@@ -20,7 +23,7 @@ Use this section to access billing-era runbooks (modern MCA and legacy EA) and s
 ## Programmatic subscription creation
 
 - Azure supports programmatic subscription creation for Enterprise Agreements, Microsoft Customer Agreements, and Microsoft Partner Agreements via modern REST APIs.[^programmatic-overview]
-- Legacy EA processes use enrollment accounts to scope billing, while modern MCA workflows rely on billing profiles and invoice sections. See the dedicated legacy and modern pages in this folder for detailed runbooks.
+- Legacy EA processes use enrollment accounts to scope billing, while modern MCA workflows rely on billing profiles and invoice sections. See the dedicated legacy and modern pages in this folder for detailed references.
 - When planning subscription vending product lines, align the automation entry points from the EA and MCA procedures with the placement guidance so workload subscriptions land in the correct management group and billing scope.[^caf-vending]
 
 ## Support workflows

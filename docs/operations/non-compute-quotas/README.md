@@ -8,7 +8,10 @@ nav_order: 3
 
 ## When to use this guide
 
-Azure capacity planning extends well beyond vCPU cores. Storage accounts, App Service plans, Azure Cosmos DB accounts, and emerging platform services all impose limits that can block customer onboarding if they are not tracked and increased ahead of demand. This Microsoft runbook captures the baseline limits, monitoring patterns, and escalation paths for the most common non-compute services so operations teams can manage quota holistically without juggling separate notes.
+Azure capacity planning extends well beyond vCPU cores. Storage accounts, App Service plans, Azure Cosmos DB accounts, and emerging platform services all impose limits that can block customer onboarding if they are not tracked and increased ahead of demand. This Microsoft guide captures the baseline limits, monitoring patterns, and escalation paths for the most common non-compute services so operations teams can manage quota holistically without juggling separate notes.[^storage-requests][^storage-overview][^appservice-limits][^cosmos-quotas]
+
+> [!TIP]
+> Use this guide alongside your compute quota references so capacity reviews cover storage, App Service, and database limits at the same time.[^storage-requests][^appservice-limits][^cosmos-quotas][^quota-monitoring]
 
 ## Service quick reference
 
@@ -21,6 +24,8 @@ Azure capacity planning extends well beyond vCPU cores. Storage accounts, App Se
 If your workloads depend on other services (for example, Azure OpenAI, Dev Box, Azure Deployment Environments), extend this guide by adding their limits, monitoring commands, and support workflows so everyone's using the same reference.
 
 ## Azure Storage quota operations
+
+Use this section when you manage storage account counts and per-region limits for Azure Storage.[^storage-requests][^storage-overview][^az-quota]
 
 ### Key limits and dependencies
 
@@ -43,6 +48,8 @@ If your workloads depend on other services (for example, Azure OpenAI, Dev Box, 
 
 ## Azure App Service quota operations
 
+Use this section when you review App Service plan limits, storage quotas, and scale-out ceilings.[^appservice-limits][^az-quota]
+
 ### Key limits and dependencies
 
 - Free and Shared plans are limited to 10 instances per region, while Basic, Standard, Premium, and Isolated tiers allow up to 100 plans per resource group.[^appservice-limits]
@@ -64,6 +71,8 @@ If your workloads depend on other services (for example, Azure OpenAI, Dev Box, 
 
 ## Azure Cosmos DB quota operations
 
+Use this section when you need to request higher limits or throughput for Azure Cosmos DB accounts.[^cosmos-quotas]
+
 ### Key limits and dependencies
 
 - Each account supports up to 500 databases and containers combined, and provisioned throughput changes are limited to 25 updates per five-minute interval.[^cosmos-quotas]
@@ -78,6 +87,8 @@ If your workloads depend on other services (for example, Azure OpenAI, Dev Box, 
 Because increases require manual approval, plan requests well ahead of large onboarding waves and track throughput usage via Azure Monitor to justify the ask.[^cosmos-quotas]
 
 ## Monitoring and alerting
+
+Use this section to align non-compute quota alerts with your existing quota and cost monitoring patterns.[^quota-monitoring][^quota-alerts][^cost-alerts]
 
 - Turn on quota monitoring in the Azure portal; adjustable quotas become clickable, allowing you to open the alert rule wizard directly from **My quotas**.[^quota-monitoring]
 - Create usage alert rules with thresholds (for example, 70/85/95 percent) and severity levels aligned to escalation procedures.[^quota-alerts]

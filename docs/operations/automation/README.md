@@ -8,13 +8,20 @@ nav_order: 3
 
 Automation ensures quota management, subscription vending, and capacity reservations remain repeatable and auditable. This Microsoft guide highlights common automation entry points and suggested pipeline practices so you're not reinventing them per deployment.
 
+> [!TIP]
+> Use these patterns as starting points for your own pipelines so subscription creation, quota changes, and capacity reservations follow the same traceable paths across environments.[^programmatic-ea][^programmatic-mca][^az-quota][^cr-overview]
+
 ## Subscription automation
+
+Use this section when you integrate subscription creation into CI/CD or central platform workflows.[^programmatic-ea][^programmatic-mca][^subscription-request]
 
 - **Enterprise Agreement (EA):** Use the latest `Microsoft.Subscription/aliases` APIs to create subscriptions scoped to enrollment accounts. Ensure identities have the Enterprise Administrator or Enrollment Account Owner role before invoking automation.[^programmatic-ea]
 - **Microsoft Customer Agreement (MCA):** Programmatically create subscriptions by targeting billing accounts, profiles, or invoice sections. Service principals require Azure subscription creator, Owner, or Contributor roles at the billing scope.[^programmatic-mca]
 - **Cross-tenant provisioning:** When the subscription owner resides in a different tenant, use the subscription request workflow to send an approval link that the recipient accepts in their directory.[^subscription-request]
 
 ## Quota and capacity automation
+
+Use this section to automate quota visibility, quota change requests, and capacity reservations.[^az-quota][^quickstart-quota][^cr-overview]
 
 - **Quota snapshots:** Schedule `az quota usage list` for key providers (`Microsoft.Compute`, `Microsoft.Storage`, `Microsoft.Web`) and persist results for dashboards and compliance audits.[^az-quota]
 - **Quota requests:** Use `az quota request create` or REST calls to submit increases from pipelines, capturing the request ID for tracking. Fall back to manual support tickets when the API indicates the quota is non-adjustable.[^az-quota][^quickstart-quota]

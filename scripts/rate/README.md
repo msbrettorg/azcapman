@@ -6,6 +6,9 @@ title: Benefits Analysis
 
 Azure Cost Management tools for analyzing savings plan purchase recommendations to optimize compute costs.
 
+> [!TIP]
+> Use these scripts when you want to turn Azure Cost Management savings plan purchase recommendations into repeatable analyses for finance and operations teams.[^benefit-api]
+
 ---
 
 ## Available Scripts
@@ -96,3 +99,7 @@ This script uses the Azure Cost Management [Benefit Recommendations API](https:/
 The API analyzes your actual compute usage patterns and calculates optimal hourly commitment amounts that minimize total costs compared to pay-as-you-go pricing. 
 
 Recommendations include detailed financial metrics: commitment amounts, projected savings percentages, coverage percentages, utilization rates, and potential overage/wastage costs. The raw JSON output provides full API response details, while formatted tables present actionable purchase recommendations.
+
+**Source**: [Benefit Recommendations API](https://learn.microsoft.com/en-us/rest/api/cost-management/benefit-recommendations)
+
+[^benefit-api]: [Benefit Recommendations API](https://learn.microsoft.com/en-us/rest/api/cost-management/benefit-recommendations)
