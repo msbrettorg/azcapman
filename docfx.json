@@ -31,7 +31,8 @@
     ],
     "output": "_site",
     "template": [
-      "default"
+      "default",
+      "modern"
     ],
     "globalMetadata": {
       "_appTitle": "ISV Quota & Capacity Management",
@@ -41,8 +42,6 @@
       "_enableSearch": true,
       "_enableNewTab": true,
       "_disableContribution": false,
-      "_disableDarkMode": true,
-      "_defaultTheme": "light",
       "_gitContribute": {
         "repo": "https://github.com/msbrett/azcapman",
         "branch": "main"
