@@ -15,6 +15,8 @@ Azure quota groups are Azure Resource Manager (ARM) objects that let you share a
 
 This section describes what quota groups add on top of per-subscription quota and which scenarios they support.[^quota-groups-overview]
 
+![Diagram of a management group hierarchy with multiple quota groups created under a management group.](https://learn.microsoft.com/en-us/azure/quotas/media/quota-groups/sample-recommended-quota-group-setup.png)[^quota-groups-overview]
+
 - Quota groups elevate quota from a per-subscription construct to a group-level ARM resource created under a management group, while quota enforcement at deployment time still occurs at the subscription level.[^quota-groups-overview]
 - The feature enables quota sharing across subscriptions, self-service reallocation of unused quota, and group-level quota increase requests that can later be allocated to individual subscriptions.[^quota-groups-overview]
 - Supported scenarios in the documentation include deallocating unused quota from subscriptions into the group, allocating quota from the group back to target subscriptions, and submitting quota group limit increase requests for specific regions and VM families.[^quota-groups-overview]

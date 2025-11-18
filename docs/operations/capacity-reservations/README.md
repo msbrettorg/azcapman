@@ -46,6 +46,14 @@ Sharing lets a central subscription guarantee capacity for dependent workloads:
 > [!NOTE]
 > Align reservation ownership, share assignments, and billing expectations so platform and product teams understand which subscription is charged for reserved capacity versus VM runtime.[^cr-share]
 
+![Screenshot showing provider and consumer subscriptions with different logical-to-physical zone mappings.](https://learn.microsoft.com/en-us/azure/virtual-machines/media/capacity-reservation-group-share/capacity-reservation-group-a-b-mapping.png)[^cr-share]
+
+![Screenshot showing a capacity reservation created by the provider subscription in a specific logical availability zone.](https://learn.microsoft.com/en-us/azure/virtual-machines/media/capacity-reservation-group-share/capacity-reservation-group-a-reservation.png)[^cr-share]
+
+![Screenshot showing a consumer subscription deployment failing because logical zones map to different physical zones.](https://learn.microsoft.com/en-us/azure/virtual-machines/media/capacity-reservation-group-share/capacity-reservation-group-a-b-not-aligned.png)[^cr-share]
+
+![Screenshot showing a consumer subscription deployment succeeding after aligning logical zones with the provider’s capacity reservation.](https://learn.microsoft.com/en-us/azure/virtual-machines/media/capacity-reservation-group-share/capacity-reservation-group-a-b-aligned.png)[^cr-share]
+
 ## Overallocating and utilization states
 
 This section summarizes the utilization states documented for capacity reservation groups and how overallocations are reported.[^cr-overallocate]
@@ -60,6 +68,18 @@ Use the CRG Instance View (`$expand=instanceview`) to track utilization and dete
 
 > [!CAUTION]
 > Do not rely on overallocated reservations for steady-state capacity; treat them as temporary buffers while you adjust reserved quantities to match actual demand.[^cr-overallocate]
+
+![Diagram showing capacity reservation lifecycle and how capacity and allocations change as VMs are added and removed.](https://learn.microsoft.com/en-us/azure/virtual-machines/media/capacity-reservation-overview/capacity-reservation-1.jpg)[^cr-overview]
+
+![Diagram showing one of the reserved capacity instances consumed.](https://learn.microsoft.com/en-us/azure/virtual-machines/media/capacity-reservation-overview/capacity-reservation-2.jpg)[^cr-overview]
+
+![Diagram showing capacity reservation with a third VM allocated and the reservation in an overallocated state.](https://learn.microsoft.com/en-us/azure/virtual-machines/media/capacity-reservation-overview/capacity-reservation-3.jpg)[^cr-overview]
+
+![Diagram showing capacity reservation scaled down to the minimum number of VMs, with deallocated VMs still associated.](https://learn.microsoft.com/en-us/azure/virtual-machines/media/capacity-reservation-overview/capacity-reservation-4.jpg)[^cr-overview]
+
+![Diagram showing capacity reservation after all VMs are disassociated.](https://learn.microsoft.com/en-us/azure/virtual-machines/media/capacity-reservation-overview/capacity-reservation-5.jpg)[^cr-overview]
+
+![Diagram showing capacity reservation deleted.](https://learn.microsoft.com/en-us/azure/virtual-machines/media/capacity-reservation-overview/capacity-reservation-6.jpg)[^cr-overview]
 
 ## Monitoring and reporting
 
