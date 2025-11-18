@@ -12,9 +12,6 @@ This section lists billing-era references (modern MCA and legacy EA) and support
 - [Capacity and quotas hub](capacity-and-quotas/README.md)—links to planning, reservation, quota, and monitoring guidance.
 - [Support and reference hub](support-and-reference/README.md)—lists escalation paths, tenant hygiene, and glossary material.
 
-> [!TIP]
-> Start here when you want to route stakeholders to specific subscription, capacity, or support references without scanning the full folder structure.[^caf-vending][^programmatic-overview]
-
 ## Subscription vending context
 
 - Subscription vending standardizes how platform teams capture requests, enforce approval logic, and automate placement of new landing zones so application teams can focus on workload delivery.[^caf-vending]

@@ -10,9 +10,6 @@ nav_order: 3
 
 Azure capacity planning extends well beyond vCPU cores. Storage accounts, App Service plans, Azure Cosmos DB accounts, and emerging platform services all impose limits that can block customer onboarding if they are not tracked and increased ahead of demand. This guide captures the baseline limits, monitoring patterns, and escalation paths for the most common non-compute services so operations teams can manage quota holistically without juggling separate notes.[^storage-requests][^storage-overview][^appservice-limits][^cosmos-quotas]
 
-> [!TIP]
-> Use this guide alongside your compute quota references so capacity reviews cover storage, App Service, and database limits at the same time.[^storage-requests][^appservice-limits][^cosmos-quotas][^quota-monitoring]
-
 ## Service quick reference
 
 | Service | Default scope & notable limits | How to check usage | How to request more |

@@ -6,10 +6,7 @@ nav_order: 2
 
 # Capacity reservation reference
 
-On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This reference explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) and highlights where the platform enforces prerequisites.[^cr-overview][^cr-overallocate]
-
-> [!NOTE]
-> The capacity reservation documentation describes how to reserve capacity for specific VM sizes, regions, and zones and how those reservations interact with quotas and deployments.[^cr-overview][^cr-overallocate]
+On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This reference explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) and highlights where the platform enforces prerequisites, including how reservations interact with quotas and deployments.[^cr-overview][^cr-overallocate]
 
 ## Prerequisites and access
 
@@ -42,9 +39,6 @@ Sharing lets a central subscription guarantee capacity for dependent workloads:
 2. **Grant access:** From the producer subscription, add consumer subscription IDs to the CRG share list. You can share individual CRGs or all CRGs in the provider subscription, and up to 100 consumer subscriptions can be granted access per group.[^cr-share]
 3. **Deploy from consumers:** Consumer subscriptions enumerate shared CRGs and specify the `capacityReservationGroup` field during VM deployment. Capacity usage is billed to the provider subscription, while VM runtime usage is billed to the consuming subscription.[^cr-share]
 4. **Revoke:** Remove the consumer subscription or associated identities from the share list to stop new deployments. Existing VMs must be disassociated or deallocated before revocation completes.[^cr-share]
-
-> [!NOTE]
-> Align reservation ownership, share assignments, and billing expectations so platform and product teams understand which subscription is charged for reserved capacity versus VM runtime.[^cr-share]
 
 ![Screenshot showing provider and consumer subscriptions with different logical-to-physical zone mappings.](https://learn.microsoft.com/en-us/azure/virtual-machines/media/capacity-reservation-group-share/capacity-reservation-group-a-b-mapping.png)[^cr-share]
 

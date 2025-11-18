@@ -6,10 +6,7 @@ nav_order: 3
 
 # Automation patterns
 
-Automation ensures quota management, subscription vending, and capacity reservations remain repeatable and auditable. This guide highlights common automation entry points and suggested pipeline practices so you're not reinventing them per deployment.
-
-> [!TIP]
-> Use these patterns as starting points for your own pipelines so subscription creation, quota changes, and capacity reservations follow the same traceable paths across environments.[^programmatic-ea][^programmatic-mca][^az-quota][^cr-overview]
+Automation ensures quota management, subscription vending, and capacity reservations remain repeatable and auditable. This guide highlights common automation entry points and suggested pipeline practices so subscription creation, quota changes, and capacity reservations follow the same traceable paths across environments.[^programmatic-ea][^programmatic-mca][^az-quota][^cr-overview]
 
 ## Subscription automation
 

@@ -10,9 +10,6 @@ This guidance applies when each customer requires a dedicated landing zone or de
 
 Use this guide when each customer gets a dedicated Azure subscription or deployment stamp that is owned and operated by the ISV. In the ISV landing zone guidance, this aligns with pure SaaS scenarios where customer workloads run entirely inside subscriptions controlled by the ISV, with optional per-customer stamps or partitions.[^isv-landing-zone][^deployment-stamps] This approach maximizes isolation, aligns with per-customer regulatory requirements, and simplifies noisy-neighbor mitigation at the expense of higher infrastructure cost per tenant.[^deployment-stamps]
 
-> [!TIP]
-> Use this guide when a customer contract or regulatory requirement calls for dedicated subscriptions or deployment stamps instead of shared multitenant infrastructure.[^isv-landing-zone][^deployment-stamps]
-
 ## Landing zone preparation
 
 This section summarizes ISV landing zone guidance for designing the control plane and subscription vending flows that support single-tenant onboarding.[^isv-landing-zone]

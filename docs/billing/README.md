@@ -9,10 +9,7 @@ has_children: true
 This section routes between Microsoft Customer Agreement (modern) and Enterprise Agreement (legacy) billing guidance:
 
 - [Microsoft Customer Agreement billing guidance](modern/README.md)—reviews MCA billing hierarchy, automation, and reservation scope guidelines.
-- [Enterprise Agreement billing guidance](legacy/README.md)—summarizes EA subscription creation and quota considerations.
-
-> [!NOTE]
-> The referenced articles describe which billing model applies to a given customer and how that model affects automation and capacity governance boundaries.[^1][^2]
+- [Enterprise Agreement billing guidance](legacy/README.md)—summarizes EA subscription creation and quota considerations.[^1][^2]
 
 ## Enterprise contract models
 

@@ -8,9 +8,6 @@ nav_order: 4
 
 Use this reference when auditing or increasing Azure quotas so every request pulls from the same authoritative sources.[^vm-quotas][^vm-limits][^enforce]
 
-> [!NOTE]
-> The quota documentation describes how Azure enforces quotas per subscription and region and how quota changes interact with regional access and quota groups.[^vm-quotas][^quota-groups]
-
 ## Understand default quotas and enforcement
 
 This section describes how Azure enforces regional and per-family quotas.[^vm-quotas][^vm-limits][^enforce]
@@ -40,9 +37,6 @@ This section summarizes the support workflows that unlock new regions and zones 
 - Zonal enablement requests authorize deployments into specific availability zones for restricted VM families; use the support workflow to select regions, logical zones, and VM series before scaling out.[^zone-request]
 - Each subscription receives a unique logical-to-physical zone mapping at creation time, so use `checkZonePeers` when planning multi-subscription resilience to align physical fault domains.[^az-zones]
 
-> [!NOTE]
-> Treat region and zonal enablement as prerequisites to your quota and deployment changes, especially when you design cross-subscription resilience or move workloads between tenants.[^region-access][^zone-request][^az-zones]
-
 ## Create and govern quota groups
 
 This section describes how quota groups centralize quota governance for a set of subscriptions while keeping deployment-time enforcement at the subscription level.[^quota-groups][^create-quota-group][^add-subscription]
@@ -50,9 +44,6 @@ This section describes how quota groups centralize quota governance for a set of
 - Establish quota groups under the management group that owns your shared capacity so you can pool vCPU limits across EA and MCA subscriptions without filing support requests for every transfer.[^quota-groups]
 - Create the group via the Microsoft.Quota REST API or Azure portal once the GroupQuota Request Operator role is assigned at the management group scope.[^create-quota-group]
 - Add newly provisioned or recycled subscriptions to the quota group so their existing limits are tracked centrally while retaining subscription-level enforcement at deployment time.[^add-subscription]
-
-> [!TIP]
-> Align quota group scope with the management group that reflects your shared capacity boundary so you can manage pooled limits without creating ad hoc exceptions.[^quota-groups][^create-quota-group]
 
 ## Reallocate and increase capacity
 

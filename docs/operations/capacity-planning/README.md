@@ -8,9 +8,6 @@ nav_order: 1
 
 Microsoft capacity planning guidance combines historical usage analysis, forecasting, and scaling strategies so Azure workloads remain reliable without overspending.[^capacity-planning] The referenced articles describe how to structure planning cycles and link outputs to quota and reservation decisions to minimize surprises when demand spikes.[^capacity-planning]
 
-> [!NOTE]
-> Azure Well-Architected guidance treats capacity planning as an ongoing practice rather than a one-time exercise during initial deployment.[^capacity-planning]
-
 ## Gather utilization data
 
 Start by collecting the right telemetry and business context before you attempt to model or forecast demand.[^capacity-gather-data]
@@ -48,9 +45,6 @@ This section summarizes how Azure guidance maps forecasts to scaling approaches 
 - Determine where horizontal scaling (additional instances) versus vertical scaling (larger SKUs) is appropriate, ensuring services remain stateless where possible to support scale-out.[^reliability-scaling]
 - Mix scheduling, autoscale, and manual interventions to match predictable and unpredictable load patterns. Configure autoscale rules for sudden spikes while scheduling known seasonal adjustments.[^reliability-scaling]
 - Tie capacity plans to quota group management, capacity reservations, or savings plans so infrastructure is ready when scaling triggers occur.[^capacity-planning]
-
-> [!NOTE]
-> Document scaling decisions alongside capacity plans so you can quickly explain how each workload will respond to both expected and unexpected load increases.[^reliability-scaling][^capacity-planning]
 
 ## Governance cadence
 

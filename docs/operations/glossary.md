@@ -8,9 +8,6 @@ nav_order: 3
 
 Common terminology used across the quota and capacity management references. Each entry links to the authoritative Microsoft documentation so teams always know which article to cite.
 
-> [!TIP]
-> Use this glossary as the shared vocabulary for operations, product, and finance teams so documents, tickets, and dashboards reference the same terms and Microsoft sources.[^cr-overview][^quota-groups][^az-zones][^quota-alerts][^cost-alerts]
-
 ## Glossary
 
 - **Capacity reservation group (CRG):** A logical container that holds one or more on-demand capacity reservations for specific VM sizes, regions, and zones. CRGs guarantee capacity and can be shared across subscriptions.[^cr-overview]

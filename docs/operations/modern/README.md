@@ -8,9 +8,6 @@ nav_order: 1
 
 Use this reference when you're automating Microsoft Customer Agreement (MCA) subscription creation and need quick reminders about which identifiers and scopes to capture from the billing APIs.[^mca-create]
 
-> [!TIP]
-> Use this reference alongside your billing enrollment documentation so subscription automation consistently targets the correct billing accounts, profiles, and invoice sections.[^mca-create]
-
 ## Roles and prerequisites
 
 This section describes the billing roles and identifiers that must be in place before automation is built.[^mca-create]

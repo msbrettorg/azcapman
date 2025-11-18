@@ -8,9 +8,6 @@ nav_order: 2
 
 ISVs commonly manage subscriptions across multiple tenants while centralizing billing and governance. This guide summarizes practices for maintaining tenant relationships, recycling subscriptions, and preserving zone mappings in line with documented Azure behavior.[^manage-tenants][^region-access][^az-zones]
 
-> [!NOTE]
-> The referenced articles describe how tenants, billing accounts, and subscriptions relate and how those relationships affect quota and region access workflows.[^manage-tenants][^region-access][^az-zones]
-
 ## Align tenant and billing structures
 
 This section describes how Microsoft Entra tenants attach to MCA billing accounts and which identities hold billing roles.[^manage-tenants]

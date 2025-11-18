@@ -8,9 +8,6 @@ nav_order: 2
 
 Use this reference when you're scripting Enterprise Agreement (EA) subscription creation or maintenance and want the key API checkpoints captured in one place.[^ea-create]
 
-> [!TIP]
-> Use this reference together with your EA enrollment documentation so subscription automation aligns with the correct enrollment accounts and role assignments.[^ea-create]
-
 ## Roles and prerequisites
 
 This section describes the enrollment roles and account relationships required before EA subscription creation is automated.[^ea-create]

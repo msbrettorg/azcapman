@@ -7,9 +7,6 @@ nav_order: 1
 
 This repository curates estate-level Azure controls and references that help independent software vendors (ISVs) design Azure landing zones, govern quota and capacity, and operate SaaS deployments in line with Microsoft's cloud guidance.[^isv-landing-zone][^saas-principles] This overview routes you quickly to the references you need and serves as a companion to the ISV landing zone guidance, without prescribing how you operate your environment.[^isv-landing-zone]
 
-> [!TIP]
-> Start with customer isolation and billing enrollment topics before you dive into subscription operations, quota workflows, and capacity governance.[^isv-landing-zone][^saas-principles]
-
 ## Table of contents
 
 - [Purpose](#purpose)
@@ -42,10 +39,7 @@ This section describes billing enrollment models so automation, reservation scop
 
 ## Operational topics
 
-Use these topics when you're ready to inspect or automate subscription lifecycle management, manage capacity and quotas, and understand how Azure’s estate-level controls map into your own operating model.[^isv-landing-zone][^saas-principles]
-
-> [!NOTE]
-> Treat these documents as a curated ISV reference to Azure controls that you adapt to your own control plane, CI/CD tooling, and support model while staying aligned with Azure landing zone and SaaS guidance.[^isv-landing-zone][^saas-principles]
+Use these topics to inspect or automate subscription lifecycle management, manage capacity and quotas, and understand how Azure’s estate-level controls map into your own operating model.[^isv-landing-zone][^saas-principles]
 
 ### Subscription operations
 

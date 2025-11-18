@@ -8,9 +8,6 @@ nav_order: 2
 
 Use this guide for SaaS offerings where multiple customers share a centralized platform. The ISV landing zone guidance describes these scenarios as "pure SaaS" or "dual-deployment" models, depending on whether customers also receive dedicated environments.[^isv-landing-zone] This reference focuses on tenant isolation, deployment stamps, and supporting services that maintain reliability at scale.[^saas-principles][^deployment-stamps]
 
-> [!TIP]
-> Use this guide when your primary product experience is multitenant and you need to design control planes, deployment stamps, and data isolation that scale across many customers.[^saas-principles][^deployment-stamps][^isv-landing-zone]
-
 ## Architectural principles
 
 This section summarizes core SaaS design principles that shape multitenant tenancy models.[^saas-principles]
