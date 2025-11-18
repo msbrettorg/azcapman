@@ -3,8 +3,6 @@ title: Overview
 nav_order: 1
 ---
 
-# ISV considerations for quota and capacity management in Azure
-
 <div style="background: linear-gradient(135deg, #0078d4 0%, #0066b8 100%); color: white; padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
   <h2 style="color: white; margin: 0 0 1rem 0; font-size: 1.5rem;">Estate-level Azure controls for ISVs</h2>
   <p style="margin: 0; font-size: 1.1rem; line-height: 1.6;">
