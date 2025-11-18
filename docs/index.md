@@ -30,7 +30,7 @@ This section summarizes isolation options for customer workloads and the choice 
 
 - [Customer isolation overview](deployment/README.md)—outlines how to decide between dedicated and shared delivery models before you invest in automation.
   - [Single-tenant deployment guide](deployment/single-tenant/README.md)—describes subscription vending, landing zone blueprinting, and dedicated stamp practices when each customer needs isolated capacity.
-  - [Multi-tenant deployment guide](deployment/multi-tenant/README.md)—follow Microsoft guidance for shared control planes, deployment stamps, and tenant isolation patterns.
+  - [Multi-tenant deployment guide](deployment/multi-tenant/README.md)—follow the documented guidance for shared control planes, deployment stamps, and tenant isolation patterns.
 
 ## Enrollment types
 

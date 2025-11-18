@@ -6,7 +6,7 @@ nav_order: 4
 
 # Quota operations reference
 
-Use this Microsoft reference when auditing or increasing Azure quotas so every request pulls from the same authoritative sources.[^vm-quotas][^vm-limits][^enforce]
+Use this reference when auditing or increasing Azure quotas so every request pulls from the same authoritative sources.[^vm-quotas][^vm-limits][^enforce]
 
 > [!NOTE]
 > The quota documentation describes how Azure enforces quotas per subscription and region and how quota changes interact with regional access and quota groups.[^vm-quotas][^quota-groups]

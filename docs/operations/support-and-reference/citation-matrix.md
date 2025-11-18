@@ -6,7 +6,7 @@ nav_order: 4
 
 # Citation traceability matrix
 
-This Microsoft matrix lists the documentation links used as citations across the quota and capacity references, along with the files and footnote identifiers that reference them, so you're never unsure about sourcing.
+This matrix lists the documentation links used as citations across the quota and capacity references, along with the files and footnote identifiers that reference them, so you're never unsure about sourcing.
 
 Use this matrix when you need to confirm where a Microsoft article is cited, trace a document back to its sources, or validate that new content reuses existing citations instead of introducing duplicates.
 

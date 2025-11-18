@@ -6,7 +6,7 @@ nav_order: 2
 
 # Tenant & subscription hygiene
 
-ISVs commonly manage subscriptions across multiple tenants while centralizing billing and governance. This Microsoft guide summarizes practices for maintaining tenant relationships, recycling subscriptions, and preserving zone mappings in line with documented Azure behavior.[^manage-tenants][^region-access][^az-zones]
+ISVs commonly manage subscriptions across multiple tenants while centralizing billing and governance. This guide summarizes practices for maintaining tenant relationships, recycling subscriptions, and preserving zone mappings in line with documented Azure behavior.[^manage-tenants][^region-access][^az-zones]
 
 > [!NOTE]
 > The referenced articles describe how tenants, billing accounts, and subscriptions relate and how those relationships affect quota and region access workflows.[^manage-tenants][^region-access][^az-zones]
@@ -21,7 +21,7 @@ This section describes how Microsoft Entra tenants attach to MCA billing account
 ## Subscription lifecycle hygiene
 
 This section outlines subscription onboarding and retirement patterns that preserve access and quota where possible.[^subscription-request][^region-access]
-- **Onboarding:** Use the subscription request workflow to provision subscriptions for other tenants while maintaining billing control. Capture required roles (Owner, Contributor, Azure subscription creator) and management group placement as part of the intake checklist.[^subscription-request]
+- **Onboarding:** Use the Azure subscription request workflow for Microsoft Customer Agreement subscriptions to provision subscriptions for other tenants while maintaining billing control. Capture required roles (Owner, Contributor, Azure subscription creator) and management group placement as part of the intake checklist.[^subscription-request]
 - **Recycling vs. deletion:** When workloads retire, reclaim quota and billing ownership but keep the subscription if zone enablement or region access was previously granted. Deleting the subscription can force new access requests, delaying future projects.[^region-access]
 
 ## Preserve zone consistency

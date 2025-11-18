@@ -6,7 +6,7 @@ nav_order: 7
 
 # Monitoring & alerting reference
 
-Proactive monitoring prevents quota exhaustion and cost overruns from surprising application teams. This Microsoft reference outlines how to turn on quota monitoring, author alert rules, and align quota telemetry with cost guardrails.[^quota-monitoring][^quota-alerts][^cost-alerts]
+Proactive monitoring prevents quota exhaustion and cost overruns from surprising application teams. This reference outlines how to turn on quota monitoring, author alert rules, and align quota telemetry with cost guardrails.[^quota-monitoring][^quota-alerts][^cost-alerts]
 
 > [!NOTE]
 > The quota monitoring and alerting documentation describes how to enable quota monitoring in a tenant and configure alert coverage for quotas and costs.[^quota-monitoring][^quota-alerts][^cost-alerts]

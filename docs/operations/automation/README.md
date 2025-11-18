@@ -6,7 +6,7 @@ nav_order: 3
 
 # Automation patterns
 
-Automation ensures quota management, subscription vending, and capacity reservations remain repeatable and auditable. This Microsoft guide highlights common automation entry points and suggested pipeline practices so you're not reinventing them per deployment.
+Automation ensures quota management, subscription vending, and capacity reservations remain repeatable and auditable. This guide highlights common automation entry points and suggested pipeline practices so you're not reinventing them per deployment.
 
 > [!TIP]
 > Use these patterns as starting points for your own pipelines so subscription creation, quota changes, and capacity reservations follow the same traceable paths across environments.[^programmatic-ea][^programmatic-mca][^az-quota][^cr-overview]
@@ -17,7 +17,7 @@ This section describes patterns for integrating subscription creation into CI/CD
 
 - **Enterprise Agreement (EA):** Use the latest `Microsoft.Subscription/aliases` APIs to create subscriptions scoped to enrollment accounts. Ensure identities have the Enterprise Administrator or Enrollment Account Owner role before invoking automation.[^programmatic-ea]
 - **Microsoft Customer Agreement (MCA):** Programmatically create subscriptions by targeting billing accounts, profiles, or invoice sections. Service principals require Azure subscription creator, Owner, or Contributor roles at the billing scope.[^programmatic-mca]
-- **Cross-tenant provisioning:** When the subscription owner resides in a different tenant, use the subscription request workflow to send an approval link that the recipient accepts in their directory.[^subscription-request]
+- **Cross-tenant provisioning:** When the subscription owner resides in a different tenant, use the Azure subscription request workflow for Microsoft Customer Agreement subscriptions to send an approval link that the recipient accepts in their directory.[^subscription-request]
 
 ## Quota and capacity automation
 

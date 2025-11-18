@@ -6,7 +6,7 @@ nav_order: 1
 
 # Microsoft Customer Agreement billing model
 
-This Microsoft guidance explains how Customer Agreement billing scopes, roles, and automation entry points keep your subscription tooling aligned with commerce requirements.
+This guidance explains how Microsoft Customer Agreement billing scopes, roles, and automation entry points keep your subscription tooling aligned with commerce requirements.
 
 > [!TIP]
 > Use this guide when a customer uses the Microsoft Customer Agreement and you need to understand how billing scopes, roles, and automation affect your subscription and capacity references.[^mca-overview][^mca-hierarchy]

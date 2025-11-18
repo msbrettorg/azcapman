@@ -6,7 +6,7 @@ nav_order: 2
 
 # Enterprise Agreement billing model
 
-Use this Microsoft guidance when you need to understand how Enterprise Agreement (EA) billing constructs support automated subscription creation and governance.
+Use this guidance when you need to understand how Enterprise Agreement (EA) billing constructs support automated subscription creation and governance.
 
 > [!TIP]
 > Use this guide when a customer still uses an Enterprise Agreement and you need to align subscription automation and governance with EA roles and hierarchy.[^ea-roles][^ea-admin]

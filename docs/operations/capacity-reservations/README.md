@@ -6,7 +6,7 @@ nav_order: 2
 
 # Capacity reservation reference
 
-On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This Microsoft reference explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) and highlights where the platform enforces prerequisites.[^cr-overview][^cr-overallocate]
+On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This reference explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) and highlights where the platform enforces prerequisites.[^cr-overview][^cr-overallocate]
 
 > [!NOTE]
 > The capacity reservation documentation describes how to reserve capacity for specific VM sizes, regions, and zones and how those reservations interact with quotas and deployments.[^cr-overview][^cr-overallocate]

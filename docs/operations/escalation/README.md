@@ -6,7 +6,7 @@ nav_order: 1
 
 # Support escalation guide
 
-Self-service quota tooling resolves most requests, but some capacity problems still require Microsoft intervention. This Microsoft guide describes when escalation is necessary and which context is expected when a support ticket is submitted.[^region-access][^quickstart-quota][^cr-overview]
+Self-service quota tooling resolves most requests, but some capacity problems still require interaction with Azure support. This guide describes when escalation is necessary and which context is expected when a support ticket is submitted.[^region-access][^quickstart-quota][^cr-overview]
 
 > [!TIP]
 > Use this guide after your self-service quota, region, or reservation workflows have been exhausted and you need Microsoft to adjust access or investigate capacity issues.[^region-access][^quickstart-quota][^cr-overview]

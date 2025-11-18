@@ -7,7 +7,7 @@ has_children: true
 
 # Subscription operations
 
-Azure documentation describes programmatic subscription creation for both Microsoft Customer Agreement (MCA) and Enterprise Agreement (EA), including support for cross-tenant scenarios and service principal automation.[^mca-create][^ea-create][^programmatic-overview] This Microsoft section groups the MCA and EA subscription operation guides and related automation patterns from this site in one place.
+Azure documentation describes programmatic subscription creation for both Microsoft Customer Agreement (MCA) and Enterprise Agreement (EA), including support for cross-tenant scenarios and service principal automation.[^mca-create][^ea-create][^programmatic-overview] This section groups the MCA and EA subscription operation guides and related automation patterns from this site in one place.
 
 Use this hub when you're planning or automating subscription creation and need to pick the correct guide:
 
