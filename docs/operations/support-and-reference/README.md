@@ -7,10 +7,4 @@ has_children: true
 
 # Support & reference
 
-Azure region access, zonal enablement, and quota support processes, together with glossary material, underpin the support and reference content in this section.[^region-access][^zone-request][^quota-support] Use this section to find escalation guidance, tenant hygiene practices, and glossary entries so you don't piece together your own runbook.
-
----
-
-[^region-access]: [Azure region access request process](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process)
-[^zone-request]: [Zonal enablement request for restricted virtual machine series](https://learn.microsoft.com/en-us/troubleshoot/azure/general/zonal-enablement-request-for-restricted-vm-series)
-[^quota-support]: [Quickstart: Request a quota increase in the Azure portal](https://learn.microsoft.com/en-us/azure/quotas/quickstart-increase-quota-portal)
+[Azure region access](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process), [zonal enablement](https://learn.microsoft.com/en-us/troubleshoot/azure/general/zonal-enablement-request-for-restricted-vm-series), and [quota support processes](https://learn.microsoft.com/en-us/azure/quotas/quickstart-increase-quota-portal), together with glossary material, underpin the support and reference content in this section. Use this section to find escalation guidance, tenant hygiene practices, and glossary entries so you don't piece together your own runbook.
