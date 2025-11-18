@@ -27,5 +27,22 @@
       href: operations/subscription-operations/README.md
     - name: Capacity & quotas
       href: operations/capacity-and-quotas/README.md
+    - name: Tools & scripts
+      href: operations/tools-scripts/README.md
+      items:
+        - name: Overview
+          href: operations/tools-scripts/README.md
+        - name: Get-AzVMQuotaUsage.ps1
+          href: operations/tools-scripts/get-azvmquotausage.md
+        - name: Get-AzAvailabilityZoneMapping.ps1
+          href: operations/tools-scripts/get-azavailabilityzonemapping.md
+        - name: Show-AzVMQuotaReport.ps1
+          href: operations/tools-scripts/show-azvmquotareport.md
+        - name: Get-BenefitRecommendations.ps1
+          href: operations/tools-scripts/get-benefitrecommendations.md
+        - name: Deploy-AnomalyAlert.ps1
+          href: operations/tools-scripts/deploy-anomalyalert.md
+        - name: Deploy-BulkALZ.ps1
+          href: operations/tools-scripts/deploy-bulkalz.md
     - name: Support & reference
       href: operations/support-and-reference/README.md

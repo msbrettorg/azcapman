@@ -8,9 +8,9 @@ has_children: true
 
 Use this section to access billing-era runbooks (modern MCA and legacy EA) and supporting operational guides. We're keeping the descriptions lightweight so you can jump straight into the detailed README in each child directory:
 
-- [`subscription-operations/`](subscription-operations/README.md)—MCA and EA subscription operations and automation.
-- [`capacity-and-quotas/`](capacity-and-quotas/README.md)—capacity planning, reservations, quota groups, and quota monitoring.
-- [`support-and-reference/`](support-and-reference/README.md)—support escalation, tenant hygiene, and glossary material.
+- [Subscription operations](subscription-operations/README.md)—MCA and EA subscription operations and automation.
+- [Capacity & quotas](capacity-and-quotas/README.md)—capacity planning, reservations, quota groups, and quota monitoring.
+- [Support & reference](support-and-reference/README.md)—support escalation, tenant hygiene, and glossary material.
 
 ## Subscription vending context
 
