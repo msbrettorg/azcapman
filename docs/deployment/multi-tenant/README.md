@@ -8,6 +8,8 @@ nav_order: 2
 
 Use this guide for SaaS offerings where multiple customers share a centralized platform. The [ISV landing zone guidance](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) describes these scenarios as "pure SaaS" or "dual-deployment" models, depending on whether customers also receive dedicated environments. You'll use this guide to plan tenant isolation, deployment stamps, and supporting services that maintain reliability at scale.
 
+![Multi-Tenant SaaS Architecture showing shared infrastructure with application-level isolation](../../images/multi-tenant-topology.svg)
+
 ## Architectural principles
 
 - **Balance all Well-Architected pillars.** SaaS providers must design for reliability, security, cost, operations, and performance simultaneously. Evaluate trade-offs for each release and document how they affect [tenant experience](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles).
