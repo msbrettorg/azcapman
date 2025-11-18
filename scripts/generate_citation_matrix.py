@@ -64,7 +64,7 @@ def main():
     lines.append("# Citation traceability matrix")
     lines.append("")
     lines.append(
-        "This matrix lists Microsoft documentation links used as citations across the quota and capacity runbooks, along with the files and footnote identifiers that reference them."
+        "This matrix lists Microsoft documentation links used as citations across the quota and capacity references, along with the files and footnote identifiers that reference them."
     )
     lines.append("")
     lines.append("| citation | used in |")

@@ -215,3 +215,5 @@ python3 calculator.py "1.5e10 + 2.3e9"   # 17300000000.0
 ## License
 
 This calculator is part of the azcapman project.
+
+**Source**: [SymPy documentation](https://docs.sympy.org/latest/index.html)
