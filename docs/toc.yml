@@ -1,0 +1,31 @@
+- name: Overview
+  href: index.md
+- name: Customer isolation
+  href: deployment/README.md
+  items:
+    - name: Overview
+      href: deployment/README.md
+    - name: Single-tenant
+      href: deployment/single-tenant/README.md
+    - name: Multi-tenant
+      href: deployment/multi-tenant/README.md
+- name: Enrollment types
+  href: billing/README.md
+  items:
+    - name: Overview
+      href: billing/README.md
+    - name: Microsoft Customer Agreement
+      href: billing/modern/README.md
+    - name: Enterprise Agreement
+      href: billing/legacy/README.md
+- name: Operational topics
+  href: operations/README.md
+  items:
+    - name: Overview
+      href: operations/README.md
+    - name: Subscription operations
+      href: operations/subscription-operations/README.md
+    - name: Capacity & quotas
+      href: operations/capacity-and-quotas/README.md
+    - name: Support & reference
+      href: operations/support-and-reference/README.md

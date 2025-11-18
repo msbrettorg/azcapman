@@ -1,0 +1,42 @@
+- name: Overview
+  href: README.md
+- name: Subscription operations
+  items:
+    - name: Overview
+      href: subscription-operations/README.md
+    - name: MCA operations
+      href: modern/README.md
+    - name: EA operations
+      href: legacy/README.md
+    - name: Automation patterns
+      href: automation/README.md
+- name: Capacity & quotas
+  items:
+    - name: Overview
+      href: capacity-and-quotas/README.md
+    - name: Capacity planning
+      href: capacity-planning/README.md
+    - name: Capacity reservations
+      href: capacity-reservations/README.md
+    - name: Non-compute quotas
+      href: non-compute-quotas/README.md
+    - name: Quota operations
+      href: quota/README.md
+    - name: Quota groups
+      href: quota-groups/README.md
+    - name: Capacity governance
+      href: capacity-governance/README.md
+    - name: Monitoring & alerting
+      href: monitoring-alerting/README.md
+- name: Support & reference
+  items:
+    - name: Overview
+      href: support-and-reference/README.md
+    - name: Citation matrix
+      href: support-and-reference/citation-matrix.md
+    - name: Support escalation
+      href: escalation/README.md
+    - name: Tenant hygiene
+      href: tenant-hygiene/README.md
+    - name: Glossary
+      href: glossary.md
