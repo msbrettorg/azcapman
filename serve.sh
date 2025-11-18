@@ -1,13 +1,7 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/bash
 
-repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$repo_root/docs"
+echo "Building documentation with DocFx..."
+docfx build
 
-port="${PORT:-4000}"
-
-bundle exec jekyll serve \
-  --config _config.dev.yml \
-  --host 127.0.0.1 \
-  --port "$port" \
-  --livereload
+echo "Starting DocFx server on http://localhost:8080..."
+docfx serve _site --port 8080
