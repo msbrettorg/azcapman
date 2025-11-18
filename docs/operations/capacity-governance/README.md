@@ -13,7 +13,7 @@ Azure guidance connects capacity planning, scale-unit architecture, quota manage
 
 ## Forecasts and scale units
 
-Use this section when you design or refine scale units and want to connect capacity plans to deployment stamps and multitenant architectures.[^capacity-planning][^reliability-scaling-units][^mission-critical-scale-units]
+This section summarizes Azure guidance on scale units and how capacity plans relate to deployment stamps and multitenant architectures.[^capacity-planning][^reliability-scaling-units][^mission-critical-scale-units]
 
 - The Well-Architected capacity planning article describes capacity planning as an iterative process that uses historical telemetry, business context, and forecasting to keep workloads reliable without overprovisioning.[^capacity-planning]
 - The reliable scaling guidance recommends designing around scale units—logical groupings of components that scale together—and notes that you can scale individual resources, full components, or entire solutions as deployment stamps.[^reliability-scaling-units]
@@ -22,7 +22,7 @@ Use this section when you design or refine scale units and want to connect capac
 
 ## Quota groups and shared quota
 
-Use this section when you define how shared quota is governed at the management group level and how transfers are tracked.[^quota-groups-overview][^quota-groups-arm][^transfer-quota][^quota-allocation-snapshot]
+This section describes how shared quota is governed at the management group level and how transfers are tracked.[^quota-groups-overview][^quota-groups-arm][^transfer-quota][^quota-allocation-snapshot]
 
 - The Azure Quota Groups article explains that quota groups are ARM objects created at the management group scope that allow you to share procured quota between subscriptions, distribute or reallocate unused quota, and submit group-level quota increase requests.[^quota-groups-overview]
 - Supported scenarios include deallocating unused quota from subscriptions into the group, allocating quota from the group back to subscriptions, and using group-level limit increases to make quota available for future transfers.[^quota-groups-overview]
@@ -31,7 +31,7 @@ Use this section when you define how shared quota is governed at the management 
 
 ## Capacity reservations and compute supply
 
-Use this section when you decide when to reserve compute capacity and how to operate capacity reservation groups alongside quotas.[^cr-overview][^cr-work-with][^cr-overallocate][^cr-benefits]
+This section summarizes guidance on when to reserve compute capacity and how to operate capacity reservation groups alongside quotas.[^cr-overview][^cr-work-with][^cr-overallocate][^cr-benefits]
 
 - The on-demand capacity reservation overview describes capacity reservations as a way to reserve compute capacity for a specific VM size in a region or availability zone, managed through capacity reservation groups.[^cr-overview]
 - Reservations are created for a VM size, location, and quantity, and they can be adjusted by changing the capacity property; changes such as VM size or location require creating a new reservation and migrating workloads if needed.[^cr-work-with]
@@ -41,7 +41,7 @@ Use this section when you decide when to reserve compute capacity and how to ope
 
 ## Reservations, savings plans, and utilization
 
-Use this section when you coordinate rate optimization decisions with your capacity plans and reservation strategies.[^rate-optimization][^cr-overview]
+This section outlines how rate optimization guidance coordinates reservations and savings plans with capacity plans.[^rate-optimization][^cr-overview]
 
 - FinOps rate optimization guidance highlights Azure Advisor recommendations, reservation purchase recommendations, and savings plan purchase recommendations as starting points for deciding when to buy reservations or savings plans based on historical usage and cost.[^rate-optimization]
 - After commitments are purchased, the same guidance points to portal experiences for viewing utilization for reservations and savings plans, with options to adjust scope or enable instance size flexibility to increase utilization.[^rate-optimization]
@@ -50,7 +50,7 @@ Use this section when you coordinate rate optimization decisions with your capac
 
 ## Monitoring quotas and capacity signals
 
-Use this section when you define the monitoring and alerting signals that feed your capacity governance reviews.[^quota-monitoring][^quota-alerts][^quota-allocation-snapshot][^cr-overallocate][^capacity-planning]
+This section describes monitoring and alerting signals that feed capacity governance reviews.[^quota-monitoring][^quota-alerts][^quota-allocation-snapshot][^cr-overallocate][^capacity-planning]
 
 - The quota monitoring and alerting article describes how the Quotas experience in the Azure portal tracks resource usage against quota limits and supports configuring alerts when usage approaches those limits.[^quota-monitoring]
 - The “Create alerts for quotas” documentation details how to create alert rules from the **My quotas** blade by selecting a quota name, choosing severity, and setting a usage-percentage threshold for triggering alerts.[^quota-alerts]

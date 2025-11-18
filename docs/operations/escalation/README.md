@@ -6,14 +6,14 @@ nav_order: 1
 
 # Support escalation guide
 
-Self-service quota tooling resolves most requests, but some capacity problems still require Microsoft intervention. Use this Microsoft guide to recognize when escalation is necessary and how to submit a support ticket with the required context so you don't lose time gathering details after the ticket opens.[^region-access][^quickstart-quota][^cr-overview]
+Self-service quota tooling resolves most requests, but some capacity problems still require Microsoft intervention. This Microsoft guide describes when escalation is necessary and which context is expected when a support ticket is submitted.[^region-access][^quickstart-quota][^cr-overview]
 
 > [!TIP]
 > Use this guide after your self-service quota, region, or reservation workflows have been exhausted and you need Microsoft to adjust access or investigate capacity issues.[^region-access][^quickstart-quota][^cr-overview]
 
 ## When to escalate
 
-Use this section to decide whether a capacity issue belongs in a support ticket rather than a self-service quota request.[^region-access][^quickstart-quota][^cosmos-quotas][^cr-overview]
+This section summarizes when capacity issues require a support ticket instead of a self-service quota request.[^region-access][^quickstart-quota][^cosmos-quotas][^cr-overview]
 - **Restricted regions or zones:** Subscriptions cannot deploy to a region or zone because of access restrictions that only Microsoft can lift.[^region-access]
 - **Non-adjustable quotas:** The **My quotas** blade flags the target quota as non-adjustable or the automated request is denied.[^quickstart-quota]
 - **Service-specific limits:** Services such as Azure Cosmos DB require engineering review to raise account/container limits or throughput ceilings.[^cosmos-quotas]
@@ -21,12 +21,12 @@ Use this section to decide whether a capacity issue belongs in a support ticket 
 
 ## Pre-submission checklist
 
-Use this section to confirm access and prerequisites before you start the support request flow.[^support-request]
+This section lists access and prerequisites to confirm before starting the support request flow.[^support-request]
 - Confirm you have Owner, Contributor, or Support Request Contributor rights on the subscription; without appropriate RBAC the portal blocks ticket creation.[^support-request]
 
 ## Creating the request
 
-Use this section to file a complete support request with the required fields and attachments.[^support-request][^region-access][^cosmos-quotas]
+This section describes how to file a complete support request with the required fields and attachments.[^support-request][^region-access][^cosmos-quotas]
 1. Open the Azure portal, select the **?** icon, and choose **Create a support request**.[^support-request]
 2. On the **Problem description** tab, select **Service and subscription limits (quotas)**, choose the subscription, and pick the relevant quota type (for example, `Compute-VM (cores-vCPUs)`, `Azure Cosmos DB`, or `Microsoft Fabric`).[^support-request][^cosmos-quotas]
 3. Provide detailed problem statements, including region, VM series, desired quota value, and deployment blockers.[^region-access][^cosmos-quotas]
@@ -35,7 +35,7 @@ Use this section to file a complete support request with the required fields and
 
 ## Region and zone access workflow
 
-Use this section when your escalation is specifically about region or zone enablement or restoring access for recycled subscriptions.[^region-access]
+This section summarizes additional steps when escalation is specifically about region or zone enablement or restoring access for recycled subscriptions.[^region-access]
 - When requesting region or zone enablement, list all regions, VM series, and logical zones required for upcoming deployments within the ticket.[^region-access]
 - Reference prior approvals if recycling subscriptions so Microsoft can reconnect previously granted access.[^region-access]
 

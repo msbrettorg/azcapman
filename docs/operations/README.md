@@ -6,11 +6,11 @@ has_children: true
 
 # Operational topics overview
 
-Use this section to access billing-era references (modern MCA and legacy EA) and supporting operational guides with lightweight descriptions so you can jump straight into the detailed README in each child directory:
+This section lists billing-era references (modern MCA and legacy EA) and supporting operational guides with lightweight descriptions so readers can jump straight into the detailed README in each child directory:
 
 - [Subscription operations overview](subscription-operations/README.md)—summarizes how MCA and EA subscription automation is handled.
-- [Capacity and quotas hub](capacity-and-quotas/README.md)—jumps to planning, reservation, quota, and monitoring guidance.
-- [Support and reference hub](support-and-reference/README.md)—surfaces escalation paths, tenant hygiene, and glossary material.
+- [Capacity and quotas hub](capacity-and-quotas/README.md)—links to planning, reservation, quota, and monitoring guidance.
+- [Support and reference hub](support-and-reference/README.md)—lists escalation paths, tenant hygiene, and glossary material.
 
 > [!TIP]
 > Start here when you want to route stakeholders to specific subscription, capacity, or support references without scanning the full folder structure.[^caf-vending][^programmatic-overview]
@@ -18,7 +18,7 @@ Use this section to access billing-era references (modern MCA and legacy EA) and
 ## Subscription vending context
 
 - Subscription vending standardizes how platform teams capture requests, enforce approval logic, and automate placement of new landing zones so application teams can focus on workload delivery.[^caf-vending]
-- The Cloud Center of Excellence defines intake requirements (budget, owner, network expectations, data classifications) and connects the approval flow to the subscription deployment pipeline to keep governance aligned with Azure landing zone design areas.[^caf-vending]
+- The Cloud Center of Excellence defines intake requirements (budget, owner, network expectations, data classifications) and connects the approval flow to the subscription deployment pipeline so governance remains aligned with Azure landing zone design areas as described in the referenced guidance.[^caf-vending]
 
 ## Programmatic subscription creation
 

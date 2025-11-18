@@ -6,10 +6,10 @@ has_children: true
 
 # Customer isolation
 
-We see ISVs operate on two primary delivery models highlighted in Microsoft's landing zone guidance.[^isv-landing-zone] Expect to switch between them as your product mix evolves.
+ISVs commonly operate on two primary delivery models highlighted in Microsoft's landing zone guidance.[^isv-landing-zone]
 
-> [!TIP]
-> Use this section first to decide whether a single-tenant or multi-tenant isolation model fits your current product and customer profile before you dive into the detailed references in this folder.[^isv-landing-zone]
+> [!NOTE]
+> The ISV landing zone documentation describes how single-tenant and multi-tenant isolation models are applied in ISV scenarios and how they relate to Azure landing zones.[^isv-landing-zone]
 
 - Dedicated (single-tenant) environments where each customer receives an isolated subscription and landing zone.
 - Shared (multi-tenant) SaaS platforms that centralize control planes while segmenting tenant workloads through application logic and deployment stamps.

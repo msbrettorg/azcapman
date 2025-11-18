@@ -7,7 +7,7 @@ has_children: true
 
 # Support & reference
 
-Azure region access, zonal enablement, and quota support processes, together with glossary material, underpin the support and reference content in this section.[^region-access][^zone-request][^quota-support] Use this section to find escalation guidance, tenant hygiene practices, and glossary entries so you don't piece together your own documentation.
+Azure region access, zonal enablement, and quota support processes, together with glossary material, underpin the support and reference content in this section.[^region-access][^zone-request][^quota-support] This section lists escalation guidance, tenant hygiene practices, and glossary entries in one place.
 
 Use this hub when you need to route operators to supporting material:
 

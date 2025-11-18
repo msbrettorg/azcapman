@@ -15,7 +15,7 @@ Use this guide when each customer gets a dedicated Azure subscription or deploym
 
 ## Landing zone preparation
 
-Use this section when you design the control plane and subscription vending flows that will support single-tenant onboarding.[^isv-landing-zone]
+This section summarizes ISV landing zone guidance for designing the control plane and subscription vending flows that support single-tenant onboarding.[^isv-landing-zone]
 
 1. **Design the control plane.** Follow the ISV landing zone guidance to organize management groups, policies, and shared services before onboarding customer subscriptions. Separate corporate IT assets from the SaaS product landing zone if your organization uses different operating models.[^isv-landing-zone]
 2. **Define subscription vending workflows.** Automate subscription creation (EA or MCA) and attach the new subscription to the correct management group, policy assignments, and billing profile. Capture owner/contributor assignments during provisioning so operations teams can manage the environment end to end.[^isv-landing-zone]
@@ -23,7 +23,7 @@ Use this section when you design the control plane and subscription vending flow
 
 ## Deployment stamps
 
-Use this section to define and automate the repeatable infrastructure footprint you deploy per customer.[^deployment-stamps][^isv-landing-zone][^region-access]
+This section describes how to define and automate the repeatable infrastructure footprint deployed per customer.[^deployment-stamps][^isv-landing-zone][^region-access]
 
 - **Stamp per customer.** Deploy a repeatable infrastructure footprint (virtual network, hub services, shared monitoring) per customer. Single-tenant stamps are easy to reason about and avoid the need for multitenant logic inside the workload.[^deployment-stamps]
 - **Automate stamp rollout.** Use infrastructure as code (Bicep, Terraform, ARM) or SDK automation to instantiate the stamp whenever a new customer onboards. Maintain versioning so upgrades can be rolled out safely across the stamp fleet.[^deployment-stamps]
@@ -32,14 +32,14 @@ Use this section to define and automate the repeatable infrastructure footprint 
 
 ## Workload configuration
 
-Use this section to shape compute and data isolation for each customer’s workload.[^saas-compute][^saas-data]
+This section outlines compute and data isolation considerations for each customer’s workload.[^saas-compute][^saas-data]
 
 - **Compute isolation.** Choose SKUs and scaling rules that reflect customer contract expectations. Single-tenant models justify higher per-customer spend, so align pricing with the required compute footprint and SLAs.[^saas-compute]
 - **Data isolation.** Provision dedicated data stores (for example, separate Azure SQL databases or Cosmos DB accounts) per customer. This simplifies compliance audits and supports customer-specific backup/restore operations.[^saas-data]
 
 ## Lifecycle management
 
-Use this section to standardize onboarding, expansion, and recycling for single-tenant customers.[^deployment-stamps][^region-access]
+This section reflects how Azure guidance discusses onboarding, expansion, and recycling for single-tenant customers.[^deployment-stamps][^region-access]
 
 - **Onboarding:** Automate the sequence—create subscription, apply the landing zone blueprint, deploy the stamp, run validation tests, and hand over to customer success so teams aren't rebuilding steps manually.
 - **Expansion:** When customers need more capacity, scale the stamp vertically or horizontally, or deploy additional stamps for regional redundancy. Coordinate with quota and reservation references to guarantee capacity.[^deployment-stamps]

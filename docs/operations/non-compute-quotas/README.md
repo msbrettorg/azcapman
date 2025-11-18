@@ -25,7 +25,7 @@ If your workloads depend on other services (for example, Azure OpenAI, Dev Box, 
 
 ## Azure Storage quota operations
 
-Use this section when you manage storage account counts and per-region limits for Azure Storage.[^storage-requests][^storage-overview][^az-quota]
+This section describes storage account counts and per-region limits for Azure Storage.[^storage-requests][^storage-overview][^az-quota]
 
 ### Key limits and dependencies
 
@@ -48,7 +48,7 @@ Use this section when you manage storage account counts and per-region limits fo
 
 ## Azure App Service quota operations
 
-Use this section when you review App Service plan limits, storage quotas, and scale-out ceilings.[^appservice-limits][^az-quota]
+This section summarizes App Service plan limits, storage quotas, and scale-out ceilings.[^appservice-limits][^az-quota]
 
 ### Key limits and dependencies
 
@@ -71,7 +71,7 @@ Use this section when you review App Service plan limits, storage quotas, and sc
 
 ## Azure Cosmos DB quota operations
 
-Use this section when you need to request higher limits or throughput for Azure Cosmos DB accounts.[^cosmos-quotas]
+This section describes how higher limits or throughput are requested for Azure Cosmos DB accounts.[^cosmos-quotas]
 
 ### Key limits and dependencies
 
@@ -88,7 +88,7 @@ Because increases require manual approval, plan requests well ahead of large onb
 
 ## Monitoring and alerting
 
-Use this section to align non-compute quota alerts with your existing quota and cost monitoring patterns.[^quota-monitoring][^quota-alerts][^cost-alerts]
+This section outlines how non-compute quota alerts align with quota and cost monitoring patterns.[^quota-monitoring][^quota-alerts][^cost-alerts]
 
 - Turn on quota monitoring in the Azure portal; adjustable quotas become clickable, allowing you to open the alert rule wizard directly from **My quotas**.[^quota-monitoring]
 - Create usage alert rules with thresholds (for example, 70/85/95 percent) and severity levels aligned to escalation procedures.[^quota-alerts]

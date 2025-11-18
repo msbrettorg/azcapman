@@ -6,10 +6,10 @@ nav_order: 1
 
 # Capacity planning framework
 
-Microsoft capacity planning guidance combines historical usage analysis, forecasting, and scaling strategies so Azure workloads remain reliable without overspending. Use this framework to structure planning cycles and link outputs to quota and reservation decisions—you'll avoid surprises when demand spikes.
+Microsoft capacity planning guidance combines historical usage analysis, forecasting, and scaling strategies so Azure workloads remain reliable without overspending.[^capacity-planning] The referenced articles describe how to structure planning cycles and link outputs to quota and reservation decisions to minimize surprises when demand spikes.[^capacity-planning]
 
-> [!TIP]
-> Use this framework as the common checklist for product, operations, and finance teams when you review capacity, not as a one-time exercise during initial deployment.[^capacity-planning]
+> [!NOTE]
+> Azure Well-Architected guidance treats capacity planning as an ongoing practice rather than a one-time exercise during initial deployment.[^capacity-planning]
 
 ## Gather utilization data
 
@@ -21,7 +21,7 @@ Start by collecting the right telemetry and business context before you attempt 
 
 ## Analyze existing workloads
 
-Use this section when you already have production workloads and need to understand where they are close to their limits.[^capacity-existing]
+This section summarizes Azure guidance for analyzing existing workloads that already run in production.[^capacity-existing]
 
 - Identify peak utilization windows, transaction rates, and concurrency to pinpoint components that approach their limits.[^capacity-existing]
 - Visualize metrics to highlight trends and anomalies; charts help stakeholders understand where bottlenecks have occurred or may emerge.[^capacity-existing]
@@ -29,21 +29,21 @@ Use this section when you already have production workloads and need to understa
 
 ## Plan for new workloads
 
-Use this section when you're planning new workloads that lack historical telemetry so you can still make structured estimates.[^capacity-new]
+This section summarizes Azure guidance for planning new workloads that lack historical telemetry.[^capacity-new]
 
 - When historical data is unavailable, estimate resource demand by modeling expected user journeys, transaction volumes, and dependency behavior.[^capacity-new]
 - Incorporate buffer capacity for uncertainty and explicitly track assumptions so forecasts can be revised once real usage arrives.[^capacity-new]
 
 ## Forecast demand
 
-Use this section to create time-bounded forecasts that capture both normal growth and surge scenarios.[^capacity-planning]
+This section outlines how the referenced guidance describes producing time-bounded forecasts that capture both normal growth and surge scenarios.[^capacity-planning]
 
 - Produce short-term (weekly/monthly) and long-term (quarterly/annual) projections using historical trends or scenario planning.[^capacity-planning]
 - Include confidence ranges and plan for both normal and surge conditions (for example, special events, regulatory deadlines).[^capacity-planning]
 
 ## Align scaling strategies
 
-Use this section to map your forecasts to concrete scaling approaches for each workload component.[^reliability-scaling][^capacity-planning]
+This section summarizes how Azure guidance maps forecasts to scaling approaches for each workload component.[^reliability-scaling][^capacity-planning]
 
 - Determine where horizontal scaling (additional instances) versus vertical scaling (larger SKUs) is appropriate, ensuring services remain stateless where possible to support scale-out.[^reliability-scaling]
 - Mix scheduling, autoscale, and manual interventions to match predictable and unpredictable load patterns. Configure autoscale rules for sudden spikes while scheduling known seasonal adjustments.[^reliability-scaling]
@@ -54,15 +54,15 @@ Use this section to map your forecasts to concrete scaling approaches for each w
 
 ## Governance cadence
 
-Use this section to define how often you revisit capacity plans and who participates.[^capacity-planning]
+This section reflects how Azure capacity planning guidance describes revisiting capacity plans over time.[^capacity-planning]
 
-- **Monthly:** Treat capacity planning as an iterative process—compare forecasts to actuals and adjust plans accordingly.[^capacity-planning]
-- **Quarterly:** Revisit assumptions, incorporate new business initiatives, and adjust strategic investments such as new regions or disaster recovery capacity.[^capacity-planning]
-- **Post-incident:** When capacity shortfalls occur, update models with new data and revise monitoring thresholds and escalation paths.[^capacity-planning]
+- **Monthly examples:** Guidance describes capacity planning as iterative, with reviews that compare forecasts to actuals and adjust plans accordingly.[^capacity-planning]
+- **Periodic strategy updates:** Documentation highlights periodic reviews of assumptions, business initiatives, and strategic investments such as new regions or disaster recovery capacity.[^capacity-planning]
+- **Post-incident reviews:** When capacity shortfalls occur, guidance calls for updating models with new data and revising monitoring thresholds and escalation paths.[^capacity-planning]
 
 ## Outputs and integration
 
-Use this section to keep capacity planning artifacts actionable and connected to budgeting and operations.[^capacity-planning]
+This section summarizes how Azure guidance describes capacity planning artifacts and their integration with budgeting and operations.[^capacity-planning]
 
 - Maintain a living capacity plan that documents forecasts, scaling tactics, and required quota changes so adjustments can be made as conditions evolve.[^capacity-planning]
 - Feed forecasted demand into budgeting and reservation purchasing cycles to balance cost and performance.[^capacity-planning]

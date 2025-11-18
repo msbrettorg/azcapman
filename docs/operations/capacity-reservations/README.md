@@ -6,10 +6,10 @@ nav_order: 2
 
 # Capacity reservation reference
 
-On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This Microsoft reference explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) so platform teams can coordinate with quota and deployment workflows, and it reminds you where the platform enforces prerequisites.[^cr-overview][^cr-overallocate]
+On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This Microsoft reference explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) and highlights where the platform enforces prerequisites.[^cr-overview][^cr-overallocate]
 
-> [!TIP]
-> Use this reference when you need guaranteed burst capacity for regional or zonal workloads and want to coordinate reservations with your quota, deployment, and governance rhythms.[^cr-overview][^cr-overallocate]
+> [!NOTE]
+> The capacity reservation documentation describes how to reserve capacity for specific VM sizes, regions, and zones and how those reservations interact with quotas and deployments.[^cr-overview][^cr-overallocate]
 
 ## Prerequisites and access
 
@@ -21,7 +21,7 @@ Before you automate capacity reservations, confirm the following platform depend
 
 ## Create and manage reservations
 
-Use these steps when you set up or adjust capacity reservations for a region or workload stamp.[^cr-overview]
+The following steps illustrate how capacity reservations are created and managed for a region or workload stamp.[^cr-overview]
 
 1. **Create a CRG:** In the Azure portal, select **Virtual machines > Capacity reservations > Add**. Provide the subscription, resource group, region, and optional availability zone.[^cr-overview]
 2. **Add member reservations:** Within the CRG, specify VM size (for example, `Standard_D2s_v3`) and quantity. Azure immediately attempts to reserve capacity; if it's unavailable the deployment fails and must be retried after adjusting parameters.[^cr-overview]
@@ -34,7 +34,7 @@ Use these steps when you set up or adjust capacity reservations for a region or 
 
 ## Sharing across subscriptions
 
-Use this section when a central platform subscription holds reservations and dependent workloads run from separate consumer subscriptions.[^cr-share]
+This section describes how a central subscription can hold reservations that are consumed from separate subscriptions.[^cr-share]
 
 Sharing lets a central subscription guarantee capacity for dependent workloads:
 
@@ -48,7 +48,7 @@ Sharing lets a central subscription guarantee capacity for dependent workloads:
 
 ## Overallocating and utilization states
 
-Use this section to interpret CRG utilization states and decide when to adjust reserved quantities or allow temporary overallocations.[^cr-overallocate]
+This section summarizes the utilization states documented for capacity reservation groups and how overallocations are reported.[^cr-overallocate]
 
 CRGs support temporary overallocations to absorb burst traffic:
 
@@ -63,14 +63,14 @@ Use the CRG Instance View (`$expand=instanceview`) to track utilization and dete
 
 ## Monitoring and reporting
 
-Use this section to connect reservation utilization with your existing quota audits and capacity reporting processes.[^cr-overallocate][^az-quota]
+This section describes how reservation utilization can be exported and correlated with quota audits.[^cr-overallocate][^az-quota]
 
 - Export Instance View data regularly to track allocated versus reserved quantities per member reservation.[^cr-overallocate]
 - Correlate reservation usage with quota audits (for example, `az quota usage list --resource-provider Microsoft.Compute`) to ensure reservation growth aligns with available regional quota.[^az-quota]
 
 ## Automation patterns
 
-Use these patterns when you integrate capacity reservations into CI/CD pipelines or platform automation.[^cr-overview][^cr-share]
+This section outlines common integration points between capacity reservations and CI/CD or platform automation.[^cr-overview][^cr-share]
 
 - **Create/update reservations:** Use the `Microsoft.Compute/capacityReservationGroups` REST API or `az resource` commands within CI/CD pipelines to create CRGs and member reservations with declarative templates.[^cr-overview]
 - **Associate workloads:** Embed the `capacityReservationGroup` property in ARM/Bicep templates or Terraform modules so deployments automatically consume the reservation when promoted to production.[^cr-overview]
@@ -78,7 +78,7 @@ Use these patterns when you integrate capacity reservations into CI/CD pipelines
 
 ## Operational checklist
 
-Use this checklist during recurring capacity reviews or before enabling new workload stamps in a region.[^cr-overview][^cr-overallocate]
+This checklist captures key checks referenced in capacity reservation guidance for new regions or workload stamps.[^cr-overview][^cr-overallocate]
 
 1. Validate required quota and inventory before reserving capacity for new regions or VM sizes.[^cr-overview]
 2. Review reservation utilization regularly; adjust quantities when buffers consistently remain unused or when overallocations persist.[^cr-overallocate]

@@ -13,27 +13,27 @@ This Microsoft guidance explains how Customer Agreement billing scopes, roles, a
 
 ## Contract overview
 
-Use this section to align stakeholders on what the MCA is and how it relates to tenants and legacy EA contracts.[^mca-overview][^manage-tenants]
+This section explains what the MCA is and how it relates to tenants and legacy EA contracts.[^mca-overview][^manage-tenants]
 - The Microsoft Customer Agreement (MCA) is the modern Azure commerce platform that delivers the same enterprise-grade billing foundation as legacy Enterprise Agreements while simplifying contracting and ongoing administration.[^mca-overview]
 - It's anchored to a single Microsoft Entra tenant, but billing owners can associate additional tenants and link subscriptions across directories without changing their resource tenancy.[^manage-tenants]
 
 ## Billing hierarchy
 
-Use this section to identify the billing scopes your automation needs to target for subscriptions, reservations, and savings plans.[^mca-hierarchy]
+This section identifies the billing scopes automation must target for subscriptions, reservations, and savings plans.[^mca-hierarchy]
 - The MCA billing hierarchy flows from the billing account to billing profiles, invoice sections, and down to subscriptions, as illustrated in the official diagram below.[^mca-hierarchy] You'll see the scopes you need to automate clearly labeled in that reference image.
 
 ![Microsoft Customer Agreement billing hierarchy diagram](https://learn.microsoft.com/en-us/azure/cost-management-billing/understand/media/mca-overview/mca-billing-hierarchy.png)[^mca-hierarchy]
 
 ## Structuring costs with billing profiles and invoice sections
 
-Use this section when you design how costs, reservations, and savings plans are grouped and reported for MCA customers.[^invoice-section][^reservation-scope][^savings-scope]
+This section describes how costs, reservations, and savings plans are grouped and reported for MCA customers.[^invoice-section][^reservation-scope][^savings-scope]
 - Billing profiles correspond to individual invoices and payment methods. Each invoice section under a billing profile groups the charges that appear on that invoice, giving fine-grained cost segmentation for departments, environments, or projects.[^invoice-section]
 - Billing profile owners or contributors can create additional invoice sections directly in **Cost Management + Billing** to mirror the organization’s cost centers or workload boundaries.[^invoice-section]
 - Billing profiles also define the shared scope boundary for Azure Reservations and Savings Plans in an MCA, so shared benefits only apply to eligible subscriptions that stay within the same billing profile context.[^reservation-scope][^savings-scope]
 
 ## Automation and service principals
 
-Use this section when you set up or review service principals and pipelines that create subscriptions under an MCA billing account.[^programmatic][^create-request]
+This section outlines how service principals and pipelines create subscriptions under an MCA billing account.[^programmatic][^create-request]
 - Any automation account or pipeline that needs to create subscriptions must hold the **Azure subscription creator** role (or owner/contributor) on the target invoice section, billing profile, or billing account—otherwise it can't submit alias requests successfully.[^programmatic]
 - Microsoft’s subscription-request workflow allows selecting a service principal as the subscription owner by pasting its App (client) ID, confirming that service principals are first-class identities for billing operations.[^create-request]
 - To onboard a service principal for subscription creation:
@@ -43,7 +43,7 @@ Use this section when you set up or review service principals and pipelines that
 
 ## Multi-tenant considerations
 
-Use this section when you plan how MCA billing accounts span multiple tenants and which teams hold billing roles.[^manage-tenants]
+This section summarizes how MCA billing accounts span multiple tenants and how billing roles are assigned.[^manage-tenants]
 - Billing owners can create subscriptions in any tenant they have associated with the MCA billing account, and they can transfer billing ownership of existing subscriptions without moving the underlying resources.[^manage-tenants]
 - Guest users or associated tenants can be granted billing roles so finance teams in other directories can manage invoice sections or run automation without duplicating subscriptions.[^manage-tenants]
 

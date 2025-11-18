@@ -24,7 +24,7 @@ Azure landing zones and SaaS architecture recommendations highlight the need for
 
 ## Customer isolation
 
-Use this section when you're deciding how to isolate customer workloads and choose between single-tenant and multi-tenant deployment models before you invest in automation.[^isv-landing-zone][^saas-principles]
+This section summarizes isolation options for customer workloads and the choice between single-tenant and multi-tenant deployment models before automation is implemented.[^isv-landing-zone][^saas-principles]
 
 - [Customer isolation overview](deployment/README.md)—outlines how to decide between dedicated and shared delivery models before you invest in automation.
   - [Single-tenant deployment guide](deployment/single-tenant/README.md)—describes subscription vending, landing zone blueprinting, and dedicated stamp practices when each customer needs isolated capacity.
@@ -32,7 +32,7 @@ Use this section when you're deciding how to isolate customer workloads and choo
 
 ## Enrollment types
 
-Use this section to understand your customer's billing enrollment model so your automation, reservation scopes, and quota workflows line up with Microsoft Customer Agreement (MCA) and Enterprise Agreement (EA) constructs.[^isv-landing-zone][^saas-principles]
+This section describes billing enrollment models so automation, reservation scopes, and quota workflows align with Microsoft Customer Agreement (MCA) and Enterprise Agreement (EA) constructs.[^isv-landing-zone][^saas-principles]
 
 - [Billing enrollment overview](billing/README.md)—summarizes Microsoft Customer Agreement (modern) and Enterprise Agreement (legacy) constructs so you understand billing context before automating.
   - [Microsoft Customer Agreement billing model](billing/modern/README.md)—learn how billing accounts, profiles, and invoice sections shape automation and reservation scope boundaries.

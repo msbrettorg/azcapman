@@ -7,7 +7,7 @@ has_children: true
 
 # Capacity & quotas
 
-Azure guidance for capacity planning, reliable scaling, quota management, capacity reservations, and quota groups provides the foundation for the capacity and quota-oriented material collected in this site.[^capacity-planning][^reliability-scaling][^quota-groups][^cr-overview][^quota-monitoring] Use this Microsoft-curated section to navigate capacity planning, reservation governance, quota operations, and quota monitoring references so you don't miss a relevant document.
+Azure guidance for capacity planning, reliable scaling, quota management, capacity reservations, and quota groups provides the foundation for the capacity and quota-oriented material collected in this site.[^capacity-planning][^reliability-scaling][^quota-groups][^cr-overview][^quota-monitoring] This section curates links to capacity planning, reservation governance, quota operations, and quota monitoring references in one place.
 
 Use this hub when you're planning or reviewing capacity and quotas and need to route stakeholders to the right reference:
 

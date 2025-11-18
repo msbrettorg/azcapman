@@ -6,14 +6,14 @@ nav_order: 4
 
 # Quota operations reference
 
-Use this Microsoft reference when you're auditing or increasing Azure quotas so every request pulls from the same authoritative sources.[^vm-quotas][^vm-limits][^enforce]
+Use this Microsoft reference when auditing or increasing Azure quotas so every request pulls from the same authoritative sources.[^vm-quotas][^vm-limits][^enforce]
 
-> [!TIP]
-> Use this reference as the shared view for platform, finance, and product teams whenever you change Azure quotas or move capacity between subscriptions.[^vm-quotas][^quota-groups]
+> [!NOTE]
+> The quota documentation describes how Azure enforces quotas per subscription and region and how quota changes interact with regional access and quota groups.[^vm-quotas][^quota-groups]
 
 ## Understand default quotas and enforcement
 
-Use this section to align everyone on how Azure enforces regional and per-family quotas before you request changes.[^vm-quotas][^vm-limits][^enforce]
+This section describes how Azure enforces regional and per-family quotas.[^vm-quotas][^vm-limits][^enforce]
 
 - Azure enforces quotas per subscription and region, tracking both total regional vCPUs and per VM-family vCPUs; deployments must stay within both limits or the platform blocks the request.[^vm-quotas][^enforce]
 - Enterprise Agreement and Microsoft Customer Agreement subscriptions start with 350 total vCPU cores per region and 25,000 total VMs, while other offers default to lower thresholds like 20 cores per region.[^vm-limits]
@@ -24,7 +24,7 @@ Use this section to align everyone on how Azure enforces regional and per-family
 
 ## Audit regional quota and zone access
 
-Use this section when you need a repeatable way to audit current quotas, usage, and zone coverage across subscriptions and regions.[^get-azvmusage][^az-zones][^az-quota]
+This section outlines a repeatable way to audit current quotas, usage, and zone coverage across subscriptions and regions.[^get-azvmusage][^az-zones][^az-quota]
 
 - Run the repository script `scripts/quota/Show-AzVMQuotaReport.ps1` to enumerate VM family usage versus limits per subscription and region; the script wraps the `Get-AzVMUsage` cmdlet that surfaces quota consumption for each location.[^get-azvmusage]
 - Include `-UsePhysicalZones` when you need cross-subscription mapping, because Azure maps physical datacenters to logical availability zones differently per subscription and the `checkZonePeers` API exposes the authoritative mapping.[^az-zones]
@@ -34,7 +34,7 @@ Use this section when you need a repeatable way to audit current quotas, usage, 
 
 ## Regional and zonal access workflows
 
-Use this section to file and track the support workflows that unlock new regions and zones before you attempt to deploy or move workloads.[^region-access][^zone-request][^az-zones]
+This section summarizes the support workflows that unlock new regions and zones before deployments or workload moves.[^region-access][^zone-request][^az-zones]
 
 - Region enablement requests grant access to restricted geographies and ensure quotas and offer flags match planned deployments; submit through Azure support when the portal limits block deployments in new regions.[^region-access]
 - Zonal enablement requests authorize deployments into specific availability zones for restricted VM families; use the support workflow to select regions, logical zones, and VM series before scaling out.[^zone-request]
@@ -45,7 +45,7 @@ Use this section to file and track the support workflows that unlock new regions
 
 ## Create and govern quota groups
 
-Use this section when you want to centralize quota governance for a set of subscriptions while keeping deployment-time enforcement at the subscription level.[^quota-groups][^create-quota-group][^add-subscription]
+This section describes how quota groups centralize quota governance for a set of subscriptions while keeping deployment-time enforcement at the subscription level.[^quota-groups][^create-quota-group][^add-subscription]
 
 - Establish quota groups under the management group that owns your shared capacity so you can pool vCPU limits across EA and MCA subscriptions without filing support requests for every transfer.[^quota-groups]
 - Create the group via the Microsoft.Quota REST API or Azure portal once the GroupQuota Request Operator role is assigned at the management group scope.[^create-quota-group]
@@ -56,7 +56,7 @@ Use this section when you want to centralize quota governance for a set of subsc
 
 ## Reallocate and increase capacity
 
-Use this section when you need to move capacity between subscriptions or increase the overall pool to support growth.[^quota-groups][^transfer-quota][^quota-increase][^cr-overview][^cr-share]
+This section outlines how to transfer quota between subscriptions and request increases for the overall pool.[^quota-groups][^transfer-quota][^quota-increase][^cr-overview][^cr-share]
 
 - Increase compute capacity with capacity reservation groups when you need guaranteed VM availability, reserving specific VM sizes in targeted regions or zones with pay-as-you-go billing.[^cr-overview]
 - Share capacity reservation groups with up to 100 consumer subscriptions (preview) so platform teams own the reservation and consumer subscriptions consume capacity; unused reservations bill to the owner while VM usage accrues to consumers.[^cr-share]
@@ -69,14 +69,14 @@ Use this section when you need to move capacity between subscriptions or increas
 
 ## Reclaim and recycle subscriptions
 
-Use this section when you retire workloads and want to preserve quota, region access, and zonal enablement for future tenants or products.[^transfer-quota][^zone-request][^region-access]
+This section summarizes patterns for retiring workloads while preserving quota, region access, and zonal enablement for future tenants or products.[^transfer-quota][^zone-request][^region-access]
 
 - Before decommissioning a workload, return its quota to the group and keep the subscription for future use so that existing zonal and regional access flags remain in place and you avoid repeating the support-ticket workflow.[^transfer-quota][^zone-request][^region-access]
 - When onboarding a new subscription, check the quota report and `az quota list` output to confirm the baseline allocations before moving workloads or transferring additional quota.[^az-quota]
 
 ## Operational tips
 
-Use this section to integrate quota checks into your regular operations cadence.[^get-azvmusage][^az-quota][^az-zones]
+This section highlights ways to integrate quota checks with existing operational telemetry.[^get-azvmusage][^az-quota][^az-zones]
 
 - Schedule the quota report and CLI usage checks to run after major deployments so the platform team has an auditable history of usage, available capacity, and zone coverage.[^get-azvmusage][^az-quota]
 - If subscriptions span multiple tenants, pair the quota audits with the `checkZonePeers` API to ensure logical zone identifiers align before you redistribute workload placements.[^az-zones]
