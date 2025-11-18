@@ -227,37 +227,44 @@
   </defs>
 
   <!-- Bottom comparison -->
-  <g transform="translate(50, 640)">
-    <!-- Isolation Level comparison -->
-    <text x="260" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#333" text-anchor="middle">
-      Isolation Level
+  <g transform="translate(0, 640)">
+    <!-- Single-Tenant side -->
+    <text x="310" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#0078d4" text-anchor="middle">
+      Single-Tenant SaaS
     </text>
-    <rect x="100" y="10" width="150" height="25" rx="3" fill="#e8f4fd" stroke="#0078d4" stroke-width="1"/>
-    <text x="175" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#003d6a">
+    <text x="200" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#333">
+      Isolation Level:
+    </text>
+    <text x="310" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#003d6a">
       Infrastructure
     </text>
-    <text x="260" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">
-      vs
+    <text x="200" y="45" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#333">
+      Resource Model:
     </text>
-    <rect x="270" y="10" width="150" height="25" rx="3" fill="#d4edda" stroke="#28a745" stroke-width="1"/>
-    <text x="345" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#155724">
-      Application
+    <text x="310" y="45" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#003d6a">
+      1:1 (Customer:Subscription)
     </text>
 
-    <!-- Resource Model comparison -->
-    <text x="760" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#333" text-anchor="middle">
-      Resource Model
+    <!-- Multi-Tenant side -->
+    <text x="890" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#28a745" text-anchor="middle">
+      Multi-Tenant SaaS
     </text>
-    <rect x="600" y="10" width="150" height="25" rx="3" fill="#e8f4fd" stroke="#0078d4" stroke-width="1"/>
-    <text x="675" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#003d6a">
-      1:1 Customer:Sub
+    <text x="780" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#333">
+      Isolation Level:
     </text>
-    <text x="760" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">
+    <text x="890" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#155724">
+      Application
+    </text>
+    <text x="780" y="45" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#333">
+      Resource Model:
+    </text>
+    <text x="890" y="45" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#155724">
+      N:1 (Customers:Platform)
+    </text>
+
+    <!-- VS separator in middle -->
+    <text x="600" y="35" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="500" fill="#666" text-anchor="middle">
       vs
-    </text>
-    <rect x="770" y="10" width="150" height="25" rx="3" fill="#d4edda" stroke="#28a745" stroke-width="1"/>
-    <text x="845" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#155724">
-      N:1 Customers:Platform
     </text>
   </g>
 </svg>
