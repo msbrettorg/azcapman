@@ -8,7 +8,7 @@ has_children: true
 
 ISVs commonly operate on two primary delivery models highlighted in [Microsoft's landing zone guidance](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone). The [ISV landing zone documentation](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) describes pure SaaS, customer-deployed, and dual-deployment SaaS models and how they relate to Azure landing zones. This folder focuses on pure SaaS scenarios where the ISV controls subscriptions and isolates customers through dedicated or shared deployment stamps.
 
-![Diagram that shows Microsoft Entra tenant options for ISVs with a single corporate tenant or separate corporate and SaaS operations tenants.](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/media/isv-landing-zone/isv-dual-deployment.png)
+![SaaS Deployment Topologies showing single-tenant subscription isolation vs multi-tenant shared infrastructure](../images/deployment-topologies.svg)
 
 - Dedicated (single-tenant) environments where each customer receives an isolated subscription and landing zone.
 - Shared (multi-tenant) SaaS platforms that centralize control planes while segmenting tenant workloads through application logic and deployment stamps.
