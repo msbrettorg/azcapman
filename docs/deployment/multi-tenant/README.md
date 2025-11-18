@@ -10,10 +10,39 @@ Use this guide for SaaS offerings where multiple customers share a centralized p
 
 ![Multi-Tenant SaaS Architecture showing shared infrastructure with application-level isolation](../../images/multi-tenant-topology.svg)
 
+## Critical subscription service limits
+
+**WARNING**: [Azure subscription service limits](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits) impose hard architectural constraints that affect multi-tenant designs far more than quota limits. These aren't negotiable—they're platform constraints that dictate your architecture:
+
+### Storage account limits
+- **250 storage accounts per region per subscription** (500 with support request)
+- If you isolate customer data in separate storage accounts, you hit a scaling wall at 250 tenants
+- Each storage account limited to 40,000 requests/second in primary regions
+- Maximum 200 private endpoints per storage account limits network isolation options
+
+### Resource group constraints
+- **980 resource groups per subscription maximum**
+- **800 resources per resource group, per resource type**
+- If you use resource groups for tenant isolation, you're capped at 980 tenants per subscription
+- Tagged resource groups further reduce this limit
+
+### Compute and app limits
+- **100 App Service plans per resource group**
+- **100 function apps per subscription** (Consumption tier)
+- **512 access restriction rules per app** constrains IP-based tenant isolation
+
+### Network isolation boundaries
+- **200 private endpoints per app service**
+- Virtual network limits vary by region and subscription type
+- Network security group rules have regional caps
+
+These [service limits](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits) force critical architectural decisions from day one. Unlike quotas that you can request increases for, these are immutable platform constraints that determine whether you need multiple subscriptions, how you isolate tenants, and when you must implement deployment stamps.
+
 ## Architectural principles
 
 - **Balance all Well-Architected pillars.** SaaS providers must design for reliability, security, cost, operations, and performance simultaneously. Evaluate trade-offs for each release and document how they affect [tenant experience](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles).
 - **Adopt Zero Trust and least privilege.** Isolate tenants through identity, networking, and data segmentation. Combine resource-level controls with application-layer enforcement to prevent [cross-tenant leakage](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles).
+- **Design within service limits.** Unlike quotas, [subscription service limits](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits) are fixed platform constraints. Architecture decisions must accommodate these non-negotiable boundaries.
 
 ## Deployment stamps and control planes
 
@@ -28,7 +57,8 @@ Use this guide for SaaS offerings where multiple customers share a centralized p
 ## Data architecture
 
 - **Data store selection.** Choose [transactional data stores](https://learn.microsoft.com/en-us/azure/well-architected/saas/data) that match workload needs (relational vs. nonrelational) and support tenant growth. Minimize the number of technologies to reduce operational complexity.
-- **Isolation strategies.** Implement [database-per-tenant, schema-per-tenant, or shared tables with tenant keys](https://learn.microsoft.com/en-us/azure/well-architected/saas/data) depending on compliance and scale requirements. Document how you enforce tenant-level backup, restore, and data residency guarantees.
+- **Isolation strategies.** Implement [database-per-tenant, schema-per-tenant, or shared tables with tenant keys](https://learn.microsoft.com/en-us/azure/well-architected/saas/data) depending on compliance and scale requirements. Remember that [storage account limits](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits) (250 per region) constrain per-tenant storage isolation—plan for multi-subscription architectures before you hit these walls.
+- **Scale planning.** Document how you enforce tenant-level backup, restore, and data residency guarantees within [service limits](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits). Storage-account-per-tenant architectures fail at 250 tenants without proactive subscription scaling strategies.
 
 ## Operational excellence
 
