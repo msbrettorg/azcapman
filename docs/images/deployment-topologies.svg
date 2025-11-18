@@ -227,32 +227,37 @@
   </defs>
 
   <!-- Bottom comparison -->
-  <g transform="translate(100, 640)">
-    <text x="0" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#333">
-      Isolation Level:
+  <g transform="translate(50, 640)">
+    <!-- Isolation Level comparison -->
+    <text x="260" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#333" text-anchor="middle">
+      Isolation Level
     </text>
-    <rect x="120" y="-15" width="120" height="20" rx="3" fill="#e8f4fd" stroke="#0078d4" stroke-width="1"/>
-    <text x="180" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#003d6a">
+    <rect x="100" y="10" width="150" height="25" rx="3" fill="#e8f4fd" stroke="#0078d4" stroke-width="1"/>
+    <text x="175" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#003d6a">
       Infrastructure
     </text>
-
-    <text x="350" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">
+    <text x="260" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">
       vs
     </text>
-
-    <rect x="410" y="-15" width="120" height="20" rx="3" fill="#d4edda" stroke="#28a745" stroke-width="1"/>
-    <text x="470" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#155724">
+    <rect x="270" y="10" width="150" height="25" rx="3" fill="#d4edda" stroke="#28a745" stroke-width="1"/>
+    <text x="345" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#155724">
       Application
     </text>
 
-    <text x="650" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#333">
-      Resource Model:
+    <!-- Resource Model comparison -->
+    <text x="760" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#333" text-anchor="middle">
+      Resource Model
     </text>
-    <text x="770" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#003d6a">
-      1:1 (Customer:Subscription)
+    <rect x="600" y="10" width="150" height="25" rx="3" fill="#e8f4fd" stroke="#0078d4" stroke-width="1"/>
+    <text x="675" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#003d6a">
+      1:1 Customer:Sub
     </text>
-    <text x="950" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#155724">
-      N:1 (Customers:Platform)
+    <text x="760" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">
+      vs
+    </text>
+    <rect x="770" y="10" width="150" height="25" rx="3" fill="#d4edda" stroke="#28a745" stroke-width="1"/>
+    <text x="845" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#155724">
+      N:1 Customers:Platform
     </text>
   </g>
 </svg>
