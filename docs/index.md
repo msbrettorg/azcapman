@@ -19,8 +19,6 @@ This repository curates estate-level Azure controls and references that help ind
 
 [Azure landing zones](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) and [SaaS architecture recommendations](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles) highlight the need for consistent governance across subscriptions, quota management, and tenant isolation. The documents in this repository present those recommendations as ISV-focused references and checklists so your teams can align estate-level decisions with Microsoft's guidance.
 
-![Diagram that shows an example Azure landing zone hierarchy for an ISV, including product platforms and environment-specific management groups.](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/media/isv-landing-zone/isv-landing-zone-example-2.png)
-
 ## Customer isolation
 
 This section summarizes [isolation options for customer workloads](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) and the choice between [single-tenant and multi-tenant deployment models](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles) before automation is implemented.
