@@ -6,7 +6,7 @@ nav_order: 3
 
 # Glossary & FAQ
 
-Common terminology used across the quota and capacity management references. Each entry links to the authoritative Microsoft documentation so you're never guessing which article to cite.
+Common terminology used across the quota and capacity management references. Each entry links to the authoritative Microsoft documentation so teams always know which article to cite.
 
 > [!TIP]
 > Use this glossary as the shared vocabulary for operations, product, and finance teams so documents, tickets, and dashboards reference the same terms and Microsoft sources.[^cr-overview][^quota-groups][^az-zones][^quota-alerts][^cost-alerts]
@@ -22,10 +22,10 @@ Common terminology used across the quota and capacity management references. Eac
 
 ## FAQ
 
-**When should we request a region access ticket instead of increasing quota?**  
+**When should a region access ticket be requested instead of increasing quota?**  
 Quota groups and standard increases manage capacity within already-enabled regions. If the subscription cannot deploy to a specific region because access is restricted, submit a region access support request.[^region-access]
 
-**How do we recycle a subscription without losing zone enablement?**  
+**How can a subscription be recycled without losing zone enablement?**  
 Reclaim quota and billing ownership but keep the subscription active. Zone access flags remain in place; deleting the subscription may require repeating the access request workflow for future projects.[^region-access]
 
 **What is the difference between capacity reservations, reserved instances, and savings plans?**  

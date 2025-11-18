@@ -26,15 +26,15 @@ Azure landing zones and SaaS architecture recommendations highlight the need for
 
 Use this section when you're deciding how to isolate customer workloads and choose between single-tenant and multi-tenant deployment models before you invest in automation.[^isv-landing-zone][^saas-principles]
 
-- [Customer isolation overview](deployment/README.md)—we describe how to decide between dedicated and shared delivery models before you invest in automation.
-  - [Single-tenant deployment guide](deployment/single-tenant/README.md)—use our subscription vending, landing zone blueprinting, and dedicated stamp practices when each customer needs isolated capacity.
+- [Customer isolation overview](deployment/README.md)—outlines how to decide between dedicated and shared delivery models before you invest in automation.
+  - [Single-tenant deployment guide](deployment/single-tenant/README.md)—describes subscription vending, landing zone blueprinting, and dedicated stamp practices when each customer needs isolated capacity.
   - [Multi-tenant deployment guide](deployment/multi-tenant/README.md)—follow Microsoft guidance for shared control planes, deployment stamps, and tenant isolation patterns.
 
 ## Enrollment types
 
 Use this section to understand your customer's billing enrollment model so your automation, reservation scopes, and quota workflows line up with Microsoft Customer Agreement (MCA) and Enterprise Agreement (EA) constructs.[^isv-landing-zone][^saas-principles]
 
-- [Billing enrollment overview](billing/README.md)—we summarize Microsoft Customer Agreement (modern) and Enterprise Agreement (legacy) constructs so you understand billing context before automating.
+- [Billing enrollment overview](billing/README.md)—summarizes Microsoft Customer Agreement (modern) and Enterprise Agreement (legacy) constructs so you understand billing context before automating.
   - [Microsoft Customer Agreement billing model](billing/modern/README.md)—learn how billing accounts, profiles, and invoice sections shape automation and reservation scope boundaries.
   - [Enterprise Agreement billing model](billing/legacy/README.md)—review subscription creation, quota considerations, and role design inside EA hierarchies.
 
@@ -47,7 +47,7 @@ Use these topics when you're ready to inspect or automate subscription lifecycle
 
 ### Subscription operations
 
-- [Subscription operations overview](operations/subscription-operations/README.md)—we explain how Microsoft’s latest APIs support automated subscription creation across agreement types.
+- [Subscription operations overview](operations/subscription-operations/README.md)—explains how Microsoft’s latest APIs support automated subscription creation across agreement types.
 - [MCA subscription operations](operations/modern/README.md)—follow the Microsoft Customer Agreement-specific flow for billing scopes, alias creation, and cross-tenant scenarios.
 - [EA subscription operations](operations/legacy/README.md)—review enrollment account requirements and automation checkpoints for Enterprise Agreements.
 - [Automation patterns](operations/automation/README.md)—use our recommended pipelines for subscription vending, quota snapshots, and capacity reservation workflows.

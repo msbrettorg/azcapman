@@ -6,11 +6,11 @@ has_children: true
 
 # Operational topics overview
 
-Use this section to access billing-era references (modern MCA and legacy EA) and supporting operational guides. We're keeping the descriptions lightweight so you can jump straight into the detailed README in each child directory:
+Use this section to access billing-era references (modern MCA and legacy EA) and supporting operational guides with lightweight descriptions so you can jump straight into the detailed README in each child directory:
 
-- [Subscription operations overview](subscription-operations/README.md)—review how we handle MCA and EA subscription automation.
-- [Capacity and quotas hub](capacity-and-quotas/README.md)—jump to planning, reservation, quota, and monitoring guidance.
-- [Support and reference hub](support-and-reference/README.md)—find escalation paths, tenant hygiene, and glossary material.
+- [Subscription operations overview](subscription-operations/README.md)—summarizes how MCA and EA subscription automation is handled.
+- [Capacity and quotas hub](capacity-and-quotas/README.md)—jumps to planning, reservation, quota, and monitoring guidance.
+- [Support and reference hub](support-and-reference/README.md)—surfaces escalation paths, tenant hygiene, and glossary material.
 
 > [!TIP]
 > Start here when you want to route stakeholders to specific subscription, capacity, or support references without scanning the full folder structure.[^caf-vending][^programmatic-overview]
