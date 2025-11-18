@@ -14,11 +14,54 @@ Use this runbook when you're auditing or increasing Azure quotas so every reques
 - [Enterprise Agreement and Microsoft Customer Agreement subscriptions](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-virtual-machines-limits) start with 350 total vCPU cores per region and 25,000 total VMs, while other offers default to lower thresholds like 20 cores per region.
 - [Quota calculations](https://learn.microsoft.com/en-us/azure/virtual-machines/quotas) include allocated and deallocated virtual machines, so idle cores still count against the quota until resources are deleted or quota is increased.
 
+## Quota analysis scripts
+
+> [!IMPORTANT]
+> This repository includes PowerShell scripts for quota analysis developed through ISV engagements. These tools address quota management scenarios for organizations not yet using Quota Groups.
+
+### Available scripts
+
+| Script | Purpose | Use Case |
+|--------|---------|----------|
+| **Get-AzVMQuotaUsage.ps1** | Multi-threaded quota analysis with zone restrictions | Large-scale enterprise analysis across 100+ subscriptions |
+| **Show-AzVMQuotaReport.ps1** | Single-threaded quota reporting | Smaller deployments or learning scenarios |
+| **Get-AzAvailabilityZoneMapping.ps1** | Logical-to-physical zone mapping | Critical for multi-subscription architectures |
+
+### Quick start
+
+Download and run the multi-threaded quota analyzer:
+
+```powershell
+# Download the script
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MSBrett/azcapman/main/scripts/quota/Get-AzVMQuotaUsage.ps1" -OutFile "Get-AzVMQuotaUsage.ps1"
+
+# Analyze specific SKUs and regions
+.\Get-AzVMQuotaUsage.ps1 -SKUs @('Standard_D2s_v5', 'Standard_E2s_v5') -Locations @('eastus', 'westus2') -Threads 4
+```
+
+### Script capabilities
+
+**Get-AzVMQuotaUsage.ps1** (Recommended for production):
+- Analyzes quota usage across multiple subscriptions in parallel
+- Reports zone restrictions for VM SKUs
+- Maps logical zones to physical datacenters
+- Outputs comprehensive CSV for further analysis
+- Supports 4+ concurrent threads for faster processing
+
+**Get-AzAvailabilityZoneMapping.ps1** (Essential for multi-subscription deployments):
+- Shows how logical zones (1,2,3) map to physical zones per subscription
+- Critical because Azure randomizes zone mappings per subscription
+- Required for ensuring true zone alignment across subscriptions
+- Outputs zone peering data for cross-subscription planning
+
+[View complete script documentation →](https://github.com/MSBrett/azcapman/tree/main/scripts/quota)
+
 ## Audit regional quota and zone access
 
-- Run the repository script `scripts/quota/Show-AzVMQuotaReport.ps1` to enumerate VM family usage versus limits per subscription and region; the script wraps the [`Get-AzVMUsage` cmdlet](https://learn.microsoft.com/en-us/azure/virtual-machines/quotas) that surfaces quota consumption for each location.
+- Run `scripts/quota/Get-AzVMQuotaUsage.ps1` for comprehensive multi-threaded analysis or `scripts/quota/Show-AzVMQuotaReport.ps1` for simpler single-threaded reporting to enumerate VM family usage versus limits per subscription and region.
 - Include `-UsePhysicalZones` when you need cross-subscription mapping, because [Azure maps physical datacenters to logical availability zones](https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview#configuring-resources-for-availability-zone-support) differently per subscription and the `checkZonePeers` API exposes the authoritative mapping.
-- Scope the script with `-SubscriptionIds` and `-Locations` to focus on business-critical subscriptions or surge regions, then export the CSV output and compare against [`az quota usage list`](https://learn.microsoft.com/en-us/cli/azure/quota?view=azure-cli-latest) to validate the data against the Microsoft.Quota service.
+- Use `scripts/quota/Get-AzAvailabilityZoneMapping.ps1` to generate a complete zone mapping matrix before planning multi-subscription deployments that require zone alignment.
+- Scope the scripts with `-SubscriptionIds` and `-Locations` to focus on business-critical subscriptions or surge regions, then export the CSV output and compare against [`az quota usage list`](https://learn.microsoft.com/en-us/cli/azure/quota?view=azure-cli-latest) to validate the data against the Microsoft.Quota service.
 - Flag regions where the report shows restricted or missing zones and initiate the [zonal enablement workflow](https://learn.microsoft.com/en-us/troubleshoot/azure/general/zonal-enablement-request-for-restricted-vm-series) to request access for the required VM series and zones before attempting redeployments.
 - If entire regions are unavailable for a subscription, raise a [region access request](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process) so that quota transfers or scale-outs do not fail when you move capacity between subscriptions.
 

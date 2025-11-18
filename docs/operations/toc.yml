@@ -28,12 +28,26 @@
       href: capacity-governance/README.md
     - name: Monitoring & alerting
       href: monitoring-alerting/README.md
+- name: Tools & scripts
+  items:
+    - name: Overview
+      href: tools-scripts/README.md
+    - name: Get-AzVMQuotaUsage.ps1
+      href: tools-scripts/get-azvmquotausage.md
+    - name: Get-AzAvailabilityZoneMapping.ps1
+      href: tools-scripts/get-azavailabilityzonemapping.md
+    - name: Show-AzVMQuotaReport.ps1
+      href: tools-scripts/show-azvmquotareport.md
+    - name: Get-BenefitRecommendations.ps1
+      href: tools-scripts/get-benefitrecommendations.md
+    - name: Deploy-AnomalyAlert.ps1
+      href: tools-scripts/deploy-anomalyalert.md
+    - name: Deploy-BulkALZ.ps1
+      href: tools-scripts/deploy-bulkalz.md
 - name: Support & reference
   items:
     - name: Overview
       href: support-and-reference/README.md
-    - name: Citation matrix
-      href: support-and-reference/citation-matrix.md
     - name: Support escalation
       href: escalation/README.md
     - name: Tenant hygiene

@@ -48,6 +48,7 @@ These [service limits](https://learn.microsoft.com/en-us/azure/azure-resource-ma
 
 - **Shared deployment stamps.** Use the [Deployment Stamps pattern](https://learn.microsoft.com/en-us/azure/architecture/guide/multitenant/approaches/overview#deployment-stamps-pattern) to scale out infrastructure units that each host multiple tenants. Stamps simplify safe deployment, progressive rollout, and regional expansion.
 - **Control plane design.** Separate centralized services (portal, onboarding pipeline, provisioning API) from tenant workloads. The [control plane](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles) coordinates stamp creation, tenant placement, and lifecycle operations.
+- **Zone alignment for stamps.** When stamps span multiple subscriptions, run `scripts/quota/Get-AzAvailabilityZoneMapping.ps1` to verify logical-to-physical zone mappings. Azure randomizes zone assignments per subscription, so logical zone 1 in subscription A may map to a different physical datacenter than zone 1 in subscription B. This script reveals actual mappings for proper fault domain alignment.
 
 ## Tenancy model decisions
 
