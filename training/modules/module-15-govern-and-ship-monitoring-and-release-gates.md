@@ -21,12 +21,12 @@ Navigate to **Quotas** in the Azure portal, then:
 | **80%** | Attention required | Submit quota increase request |
 | **90%** | Critical | Escalate, pause non-critical deployments |
 
-### Integrating with reservation utilization
+### Integrating with capacity reservations and pricing commitments
 
-Pair quota alerts with reservation monitoring:
+Pair quota alerts with capacity reservation and pricing-commitment monitoring:
 
-- Track `instanceView` for overallocation warnings
-- Set budget alerts for reservation costs
+- Track capacity reservation `instanceView` for overallocation warnings
+- Set budget alerts for Azure reservation and savings plan costs
 - Correlate utilization spikes with business events
 
 The [FinOps rate optimization framework](https://learn.microsoft.com/en-us/cloud-computing/finops/framework/optimize/rates#getting-started) provides guidance on aligning these signals.
@@ -61,8 +61,8 @@ The [workload supply chain](https://learn.microsoft.com/en-us/azure/well-archite
 graph TD
     subgraph "Monitoring"
         quota_alerts[Quota Alerts]
-        res_monitor[Reservation Utilization]
-        budget_alerts[Budget Alerts]
+        res_monitor[Capacity Reservation Utilization]
+        budget_alerts[Reservation and Savings Plan Budget Alerts]
     end
 
     subgraph "CI/CD Gates"

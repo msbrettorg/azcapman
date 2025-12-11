@@ -8,11 +8,11 @@ Welcome to this 20-minute briefing on Azure capacity governance. This session di
 
 | Persona | Stage | Role | Approach |
 |---------|-------|------|----------|
-| **Solution Engineers (SEs)** | Pre-sales | Technical architects educating customers on capacity governance | Teach customers to fish—enable self-sufficiency, avoid tickets |
+| **Solution Engineers (SEs)** | Pre-sales | Technical architects educating customers on capacity governance | Teach customers to fish—build self-sufficiency and avoid tickets |
 | **Customer Success Managers (CSMs)** | Post-sales (CSU) | Coordinators for customers with support contracts | Help customers fish—hands-on process coordination |
 | **Customer Success Architects (CSAs)** | Post-sales (CSU) | Technical architects for customers with support contracts | Help customers fish—engineering design reviews |
 
-**Key distinction:** SEs enable customers to avoid needing support. CSU (CSMs and CSAs) works with customers who have support contracts and can actively assist with the process.
+**Key distinction:** SEs help customers avoid needing support. CSU (CSMs and CSAs) works with customers who have support contracts and can actively assist with the process.
 
 ### What you'll learn
 

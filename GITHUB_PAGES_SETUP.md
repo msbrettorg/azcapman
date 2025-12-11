@@ -1,4 +1,4 @@
-# GitHub Pages Setup Instructions
+# GitHub Pages setup instructions
 
 This repository is configured to automatically deploy documentation to GitHub Pages using DocFX.
 

@@ -152,7 +152,7 @@ The script implements intelligent pagination to handle Azure Resource Graph's 1,
 
 ## Error handling
 
-The script includes robust error handling:
+The script includes explicit error handling:
 - Validates tenant ID format
 - Verifies management group exists
 - Handles pagination failures

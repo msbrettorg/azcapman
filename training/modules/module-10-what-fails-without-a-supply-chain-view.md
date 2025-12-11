@@ -7,7 +7,7 @@ When capacity governance is fragmented, ISV platforms encounter predictable fail
 | Persona | Value-add |
 |---------|-----------|
 | **Solution Engineers** | Educate customers on prevention during pre-sales; set expectations for governance investment |
-| **Customer Success Managers** | Diagnose issues quickly; coordinate remediation for supported customers |
+| **Customer Success Managers** | Diagnose issues in time to protect SLAs; coordinate remediation for supported customers |
 | **Customer Success Architects** | Design solutions to prevent recurrence; review architecture for gaps |
 
 ### Blocked onboardings

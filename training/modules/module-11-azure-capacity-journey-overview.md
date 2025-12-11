@@ -11,7 +11,7 @@ The capacity journey provides a structured approach to Azure capacity governance
 | **Forecast** | Business plans, utilization data | Scale unit projections | Platform engineers, Finance |
 | **Access & Quota** | Projections, target regions | Enabled regions, allocated quota | Platform engineers, Support |
 | **Reserve** | Quota, deployment schedule | Capacity reservation groups | Platform engineers |
-| **Govern & Ship** | Reservations, CI/CD pipelines | Monitored deployments | Platform engineers, DevOps |
+| **Govern & Ship** | Capacity reservation groups, CI/CD pipelines | Monitored deployments | Platform engineers, DevOps |
 
 ### Actor handoffs
 
@@ -19,7 +19,7 @@ The journey requires coordination across roles:
 
 1. **Business → Engineering:** Growth forecasts inform scale unit projections
 2. **Engineering → Support:** Quota and access requests flow through support workflows
-3. **Engineering → DevOps:** Reservation configurations integrate with deployment pipelines
+3. **Engineering → DevOps:** Capacity reservation configurations integrate with deployment pipelines
 4. **DevOps → Operations:** Monitoring and alerting close the feedback loop
 
 ### How each persona engages with the journey

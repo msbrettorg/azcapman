@@ -1,10 +1,12 @@
-# Azure Capacity Governance for ISV Customer Success – Speaker Notes
+# Azure capacity governance for ISV customer success – speaker notes
 
 This document provides concept maps and speaker guidance for each slide in the training deck. Use the Mermaid diagrams to guide discussion flow.
 
+This training is field-facing. The public azcapman site speaks directly to ISV platform teams about how to manage Azure capacity, quota, and deployment stamps inside their own landing zones, while this material prepares Microsoft CSU personas (SEs, CSAMs, and CSAs) to use the same vocabulary, understand the same Well-Architected and ISV landing zone controls, and know when to work with customers on quota requests and automation workflows based on [ISV landing zone](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) and [Well-Architected capacity planning](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning) guidance.
+
 ---
 
-## Slide 1 – Title: Azure Capacity Governance for ISV Success
+## Slide 1 – title: Azure capacity governance for ISV success
 
 **Duration:** ~30 seconds
 
@@ -45,7 +47,7 @@ flowchart LR
 
 ---
 
-## Slide 2 – Three Personas, One Framework
+## Slide 2 – three personas, one framework
 
 **Duration:** ~1.5 minutes
 
@@ -94,7 +96,7 @@ flowchart TB
 
 ---
 
-## Slide 3 – Why Capacity Governance Matters
+## Slide 3 – why capacity governance matters
 
 **Duration:** ~1.5 minutes
 
@@ -135,7 +137,7 @@ flowchart LR
 
 ---
 
-## Slide 4 – Capacity Supply Chain Framework Overview
+## Slide 4 – capacity supply chain framework overview
 
 **Duration:** ~2 minutes
 
@@ -188,7 +190,7 @@ flowchart LR
 
 ---
 
-## Slide 5 – Building Accurate Capacity Forecasts with Data
+## Slide 5 – building accurate capacity forecasts with data
 
 **Duration:** ~1.5 minutes
 
@@ -237,7 +239,7 @@ flowchart TB
 
 ---
 
-## Slide 6 – Phase 2: Access and Quota Controls
+## Slide 6 – phase 2: access and quota controls
 
 **Duration:** ~2 minutes
 
@@ -293,7 +295,7 @@ flowchart TB
 
 ---
 
-## Slide 7 – Phase 3: Capacity Reservations
+## Slide 7 – phase 3: capacity reservations
 
 **Duration:** ~2 minutes
 
@@ -342,7 +344,7 @@ flowchart TB
 
 ---
 
-## Slide 8 – Phase 4: Govern and Ship
+## Slide 8 – phase 4: govern and ship
 
 **Duration:** ~1.5 minutes
 
@@ -398,7 +400,7 @@ flowchart LR
 
 ---
 
-## Slide 9 – Common Failure Modes Without Governance
+## Slide 9 – common failure modes without governance
 
 **Duration:** ~1 minute
 
@@ -441,7 +443,7 @@ flowchart TB
 
 ---
 
-## Slide 10 – Spotting Capacity Journey Gaps by Persona
+## Slide 10 – spotting capacity journey gaps by persona
 
 **Duration:** ~1.5 minutes
 
@@ -498,7 +500,7 @@ flowchart TB
 
 ---
 
-## Slide 11 – Qualifying Risk with Targeted Questions
+## Slide 11 – qualifying risk with targeted questions
 
 **Duration:** ~2 minutes
 
@@ -545,7 +547,7 @@ flowchart TB
 
 ---
 
-## Slide 12 – Collaboration Model and Reference Materials
+## Slide 12 – collaboration model and reference materials
 
 **Duration:** ~1.5 minutes
 
@@ -595,7 +597,7 @@ flowchart LR
 
 ---
 
-## Slide 13 – Key Takeaways and Next Steps
+## Slide 13 – key takeaways and next steps
 
 **Duration:** ~1.5 minutes
 
@@ -651,7 +653,7 @@ flowchart TB
 
 ---
 
-## Quick Reference Links
+## Quick reference links
 
 | Resource | URL |
 |----------|-----|

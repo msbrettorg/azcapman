@@ -1,4 +1,4 @@
-# Azure Quota and Capacity Management Documentation
+# Azure quota and capacity management documentation
 
 This repository contains Azure quota and capacity management references for SaaS ISVs that operate workloads in subscriptions owned or controlled by the ISV (Enterprise Agreement or Microsoft Customer Agreement), not in customer-owned subscriptions.
 
@@ -24,7 +24,7 @@ All documentation is in pure Markdown format in the `docs/` directory. Browse lo
 
 - `docs/` — Markdown documentation with citations to Microsoft Learn
   - `docs/billing/` — Billing guidance (modern MCA and legacy EA)
-  - `docs/deployment/` — ISV deployment playbooks
+  - `docs/deployment/` — ISV deployment guides
   - `docs/operations/` — Operations references for quota and capacity management
 - `scripts/` — PowerShell and Python scripts for quota, capacity, and rate optimization
 - `.github/workflows/` — GitHub Pages deployment automation

@@ -63,7 +63,7 @@ These [service limits](https://learn.microsoft.com/en-us/azure/azure-resource-ma
 
 ## Operational excellence
 
-- **Safe deployments.** Use [progressive exposure](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles) (rings, feature flags) when rolling out new releases across stamps. Monitor health signals per tenant and stamp to trigger rollbacks quickly.
+- **Safe deployments.** Use [progressive exposure](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles) (rings, feature flags) when rolling out new releases across stamps. Monitor health signals per tenant and stamp to trigger rollbacks based on clear thresholds and policies.
 - **Cost governance.** Track [cost of goods sold (COGS)](https://learn.microsoft.com/en-us/azure/well-architected/saas/design-principles) per tenant and align pricing tiers with resource consumption. Automate reporting so finance teams can adjust pricing or optimize resource allocation.
 
 ## Landing zone integration

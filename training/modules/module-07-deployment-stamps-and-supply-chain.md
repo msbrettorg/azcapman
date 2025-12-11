@@ -18,7 +18,7 @@ A [deployment stamp](https://learn.microsoft.com/en-us/azure/architecture/guide/
 Each stamp deployment requires:
 
 - **Quota** – Sufficient vCPU allocation in the target region and zone via [quota groups](https://learn.microsoft.com/en-us/azure/quotas/quota-groups)
-- **Reservations** – Guaranteed compute availability through [capacity reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview)
+- **Capacity reservations** – Guaranteed compute availability through [capacity reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview)
 - **Monitoring** – Utilization tracking to forecast when the next stamp is needed
 
 Without coordination, each stamp deployment becomes an ad-hoc escalation.
@@ -27,7 +27,7 @@ Without coordination, each stamp deployment becomes an ad-hoc escalation.
 
 The [workload supply chain](https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/workload-supply-chain) guidance expects environment promotions to pass capacity gates before release:
 
-1. **Pre-deployment** – Verify quota headroom and reservation availability
+1. **Pre-deployment** – Verify quota headroom and capacity reservation availability
 2. **Deployment** – Associate VMs with capacity reservation groups
 3. **Post-deployment** – Confirm utilization alerts are configured
 
@@ -46,7 +46,7 @@ graph TD
 
     subgraph "Capacity Gates"
         quota_check[Quota Check]
-        reservation_check[Reservation Available]
+        reservation_check[Capacity Reservation Available]
         alert_config[Alerts Configured]
     end
 

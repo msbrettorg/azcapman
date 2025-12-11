@@ -1,10 +1,12 @@
-# Azure Capacity Governance for ISVs – Master Concept Map
+# Azure capacity governance for ISVs – master concept map
 
 This document provides a comprehensive concept map of the entire subject matter covered by the [aka.ms/azcapman](https://aka.ms/azcapman) site.
 
+This view supports both sides of the capacity conversation. The public azcapman site speaks directly to ISV platform teams about Azure estate-level controls and how to manage capacity, quota, and deployment stamps within an ISV landing zone, while this training view also supports Microsoft CSU teams so they can use the same vocabulary, understand the same controls, and know when to partner with customers on quota requests and automation workflows according to [ISV landing zone](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) and [Well-Architected capacity planning](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning) guidance.
+
 ---
 
-## The Complete Picture
+## The complete picture
 
 ```mermaid
 flowchart TB
@@ -65,7 +67,7 @@ flowchart TB
 
 ---
 
-## Domain 1: Billing and Commercial
+## Domain 1: billing and commercial
 
 The financial foundation that determines what capacity levers are available.
 
@@ -121,7 +123,7 @@ flowchart TB
 
 ---
 
-## Domain 2: Operations – Quota and Capacity
+## Domain 2: operations – quota and capacity
 
 The technical controls for managing compute supply.
 
@@ -195,7 +197,7 @@ flowchart TB
 
 ---
 
-## Domain 3: Deployment Patterns
+## Domain 3: deployment patterns
 
 How ISVs structure workloads for multi-tenant SaaS.
 
@@ -266,7 +268,7 @@ flowchart TB
 
 ---
 
-## Domain 4: Monitoring and Governance
+## Domain 4: monitoring and governance
 
 Observability and release gates for capacity management.
 
@@ -337,7 +339,7 @@ flowchart TB
 
 ---
 
-## Domain 5: Support and Escalation
+## Domain 5: support and escalation
 
 How capacity issues flow through Microsoft support.
 
@@ -384,7 +386,7 @@ flowchart LR
 
 ---
 
-## The Unified View: How It All Connects
+## The unified view: how it all connects
 
 ```mermaid
 flowchart TB
@@ -449,7 +451,7 @@ flowchart TB
 
 ---
 
-## Concept Relationship Summary
+## Concept relationship summary
 
 | Concept | Related Concepts | Primary Documentation |
 |---------|-----------------|----------------------|
@@ -464,7 +466,7 @@ flowchart TB
 
 ---
 
-## Site Structure Alignment
+## Site structure alignment
 
 | Site Section | Primary Concepts | Key Controls |
 |--------------|-----------------|--------------|
@@ -477,7 +479,7 @@ flowchart TB
 
 ---
 
-## Reference Links
+## Reference links
 
 - [aka.ms/azcapman](https://aka.ms/azcapman) – Complete runbooks
 - [Well-Architected capacity planning](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning)

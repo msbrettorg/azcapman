@@ -2,7 +2,7 @@
 
 ## The cost of fragmented capacity management
 
-Capacity failures don't just cause technical outages—they erode customer trust and create escalation loops that consume CSU bandwidth.
+Capacity failures don't only cause technical outages—they erode customer trust and create escalation loops that consume CSU bandwidth.
 
 ### Business impact of capacity gaps
 

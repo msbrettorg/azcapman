@@ -19,11 +19,11 @@ These talk tracks help all personas evaluate whether customers have mature capac
 **What you're probing:**
 - Have they identified which VMs are mission-critical?
 - Are [capacity reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) in place for those SKUs?
-- Is there a process for reviewing reservation coverage before launches?
+- Is there a process for reviewing capacity reservation coverage before launches?
 
 **Mature response:** "Yes, we have CRGs for our tier-1 workloads covering D-series and E-series VMs across our primary regions and zones."
 
-**Immature response:** "We haven't set up any reservations—we just deploy and hope capacity is available."
+**Immature response:** "We haven't set up any reservations—we deploy without confirmed capacity coverage."
 
 ### Advisor alignment
 
@@ -31,7 +31,7 @@ These talk tracks help all personas evaluate whether customers have mature capac
 
 **What you're probing:**
 - Do they review [Azure Advisor](https://learn.microsoft.com/en-us/azure/advisor/advisor-overview) recommendations regularly?
-- Are savings-plan and reservation recommendations aligned with capacity plans?
+- Are savings-plan and Azure reservation recommendations aligned with capacity plans?
 - Is there a process to filter signal from noise in Advisor?
 
 **Reference:** [FinOps rate optimization](https://learn.microsoft.com/en-us/cloud-computing/finops/framework/optimize/rates#getting-started)
@@ -42,7 +42,7 @@ These talk tracks help all personas evaluate whether customers have mature capac
 
 ### Supply chain integration
 
-> "How do you map quota, reservation, and budget data to your internal supply chain reviews?"
+> "How do you map quota, capacity reservation, and budget data to your internal supply chain reviews?"
 
 **What you're probing:**
 - Is capacity governance integrated with their operations model?
@@ -51,7 +51,7 @@ These talk tracks help all personas evaluate whether customers have mature capac
 
 **Mature response:** "Capacity data feeds into our monthly supply chain review alongside procurement and release planning."
 
-**Immature response:** "Those are managed by different teams—they don't really talk to each other."
+**Immature response:** "Those are managed by different teams and they do not coordinate their decisions."
 
 ---
 
@@ -60,7 +60,7 @@ These talk tracks help all personas evaluate whether customers have mature capac
 ```mermaid
 graph TD
     subgraph "Maturity Indicators"
-        res[Reservations for Critical SKUs]
+        res[Capacity Reservations for Critical SKUs]
         advisor[Advisor Aligned with Procurement]
         supply[Supply Chain Integration]
     end
