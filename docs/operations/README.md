@@ -1,12 +1,12 @@
 ---
-title: Operational topics
+title: Capacity management
 nav_order: 4
 has_children: true
 ---
 
-# Subscription operations overview
+# Capacity management overview
 
-Use this section to access billing-era runbooks (modern MCA and legacy EA) and supporting operational guides. We're keeping the descriptions lightweight so you can jump straight into the detailed README in each child directory:
+Use this section to access subscription lifecycle runbooks, capacity and quota guidance, and supporting operational references. The goal is to connect estate-level controls to Azure landing zone and Well-Architected guidance without prescribing your internal operating model. [Source](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) [Source](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning)
 
 - [Subscription operations](subscription-operations/README.md)—MCA and EA subscription operations and automation.
 - [Capacity & quotas](capacity-and-quotas/README.md)—capacity planning, reservations, quota groups, and quota monitoring.

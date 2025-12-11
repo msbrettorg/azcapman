@@ -8,6 +8,23 @@ nav_order: 6
 
 Azure guidance connects [capacity planning](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning), [scale-unit architecture](https://learn.microsoft.com/en-us/azure/well-architected/mission-critical/application-design#scale-unit-architecture), quota management, [reservations](https://learn.microsoft.com/en-us/cloud-computing/finops/framework/optimize/rates#getting-started), and [monitoring](https://learn.microsoft.com/en-us/azure/well-architected/reliability/scaling#choose-appropriate-scale-units) into a cohesive capacity governance approach. This page aggregates those references so you can align the other runbooks in this site with the official documentation without guessing where guidance lives. You'll see how each link maps to the runbooks elsewhere in this repo.
 
+> Start here: use the steps below as the control plane for onboarding and scaling stamps. Each lever cites Microsoft Learn and links to the supporting runbooks in this site.
+
+## How to read this program
+
+- Start with demand: Forecast scale units or deployment stamps from telemetry and business targets, then plan the quota and reservation envelope that will keep them reliable. [Source](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning) [Source](https://learn.microsoft.com/en-us/azure/architecture/guide/multitenant/approaches/overview#deployment-stamps-pattern)
+- Secure access and quota first: Validate region and zonal access, then use quota groups as shared inventory to stage VM-family headroom before onboarding. [Source](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process) [Source](https://learn.microsoft.com/en-us/troubleshoot/azure/general/zonal-enablement-request-for-restricted-vm-series) [Source](https://learn.microsoft.com/en-us/azure/quotas/quota-groups)
+- Lock supply for critical SKUs: Create capacity reservations for the specific sizes, regions, and zones your stamps need, and track over-allocations explicitly. [Source](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) [Source](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overallocate)
+- Monitor utilization and alerts: Set quota and reservation alerts so spikes don't block deployments, and review utilization through FinOps rate guidance. [Source](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) [Source](https://learn.microsoft.com/en-us/cloud-computing/finops/framework/optimize/rates#getting-started)
+- Ship through one supply chain: Map these controls into your CI/CD promotion path so every change passes quota, region access, and reservation gates per operational excellence guidance. [Source](https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/workload-supply-chain)
+
+### Quick links
+
+- Forecast: [Capacity planning](../capacity-planning/README.md)
+- Access and quota: [Quota operations](../quota/README.md), [Quota groups](../quota-groups/README.md)
+- Reserve: [Capacity reservations](../capacity-reservations/README.md)
+- Govern and ship: [Monitoring & alerting](../monitoring-alerting/README.md), [Capacity governance](../capacity-governance/README.md), [Supply chain guidance](https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/workload-supply-chain)
+
 ## Forecasts and scale units
 
 - The Well-Architected [capacity planning article](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning) describes capacity planning as an iterative process that uses historical telemetry, business context, and forecasting to keep workloads reliable without overprovisioning.

@@ -8,6 +8,8 @@ nav_order: 1
 
 Effective capacity planning combines historical usage analysis, forecasting, and scaling strategies so Azure workloads remain reliable without overspending. Use this framework to structure planning cycles and link outputs to quota and reservation decisions—you'll avoid surprises when demand spikes.
 
+[Where this fits](../capacity-and-quotas/README.md): step 1 of the capacity journey. Forecast scale units or deployment stamps, then feed quota, region access, and reservation needs into the next steps. [Source](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning)
+
 ## Gather utilization data
 
 - [Collect telemetry for CPU, memory, storage, network throughput, and request latency](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning#gather-capacity-data) from Azure Monitor logs or platform metrics.

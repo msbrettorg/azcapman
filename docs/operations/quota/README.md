@@ -8,6 +8,8 @@ nav_order: 4
 
 Use this runbook when you're auditing or increasing Azure quotas so every request pulls from the same reference.
 
+[Where this fits](../capacity-and-quotas/README.md): step 2 of the capacity journey. Use it to unblock regions and zones and confirm VM-family limits before moving quota into groups or reserving capacity. [Source](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process) [Source](https://learn.microsoft.com/en-us/troubleshoot/azure/general/zonal-enablement-request-for-restricted-vm-series)
+
 ## Understand default quotas and enforcement
 
 - Azure enforces [quotas per subscription and region](https://learn.microsoft.com/en-us/azure/virtual-machines/quotas), tracking both total regional vCPUs and per VM-family vCPUs; deployments must stay within both limits or the [platform blocks the request](https://learn.microsoft.com/en-us/azure/quotas/regional-quota-requests).

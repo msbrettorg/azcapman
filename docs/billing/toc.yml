@@ -1,14 +1,5 @@
 - name: Overview
   href: ../index.md
-- name: Customer isolation
-  href: ../deployment/README.md
-  items:
-    - name: Overview
-      href: ../deployment/README.md
-    - name: Single-tenant
-      href: ../deployment/single-tenant/README.md
-    - name: Multi-tenant
-      href: ../deployment/multi-tenant/README.md
 - name: Enrollment types
   href: README.md
   items:
@@ -18,6 +9,15 @@
       href: modern/README.md
     - name: Enterprise Agreement
       href: legacy/README.md
+- name: Customer isolation
+  href: ../deployment/README.md
+  items:
+    - name: Overview
+      href: ../deployment/README.md
+    - name: Single-tenant
+      href: ../deployment/single-tenant/README.md
+    - name: Multi-tenant
+      href: ../deployment/multi-tenant/README.md
 - name: Operational topics
   href: ../operations/README.md
   items:

@@ -6,6 +6,8 @@ nav_order: 5
 
 # Azure quota groups reference
 
+> Where this fits: step 2 of the capacity supply chain. Use quota groups after you unblock regions and zones so you can stage VM-family headroom for multiple subscriptions. [Source](https://learn.microsoft.com/en-us/azure/quotas/quota-groups)
+
 [Azure quota groups](https://learn.microsoft.com/en-us/azure/quotas/quota-groups) are Azure Resource Manager (ARM) objects that let you share and self-manage compute quota across a set of subscriptions. This page aggregates key prerequisites, limitations, lifecycle behavior, and monitoring options from the official documentation so you can reason about quota groups alongside the other runbooks in this site, and you'll see where each Microsoft article fits.
 
 ## Feature overview
@@ -36,6 +38,9 @@ nav_order: 5
 
 - [Quota groups are global ARM resources](https://learn.microsoft.com/en-us/azure/quotas/quota-groups#quota-group-is-an-arm-object) created at the management group scope and designed as an orthogonal grouping mechanism for quota management, separate from subscription placement in the management group hierarchy.
 - The documentation emphasizes that [subscription lists are not automatically synchronized](https://learn.microsoft.com/en-us/azure/quotas/quota-groups#quota-group-is-an-arm-object) from management groups; instead, you [explicitly add and remove subscriptions](https://learn.microsoft.com/en-us/azure/quotas/add-remove-subscriptions-quota-group#add-subscriptions-to-a-quota-group) to control which ones participate in group-level quota operations.
+
+![Diagram of Management Group hierarchy with sample Quota Groups created under Management Group.](https://learn.microsoft.com/en-us/azure/quotas/media/quota-groups/sample-management-group-quota-group-hierarchy.png)
+
 - [Creating or deleting a quota group](https://learn.microsoft.com/en-us/azure/quotas/create-quota-groups) requires the GroupQuota Request Operator role on the management group.
 - When you [add subscriptions to a quota group](https://learn.microsoft.com/en-us/azure/quotas/add-remove-subscriptions-quota-group#add-subscriptions-to-a-quota-group), they carry their existing quota and usage; adding them does not change their subscription limits or usage values.
 - When you [remove subscriptions from a quota group](https://learn.microsoft.com/en-us/azure/quotas/add-remove-subscriptions-quota-group#remove-subscriptions-from-a-quota-group), they retain their existing quota and usage. The group limit is not automatically changed by removal operations.

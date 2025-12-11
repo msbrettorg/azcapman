@@ -6,6 +6,8 @@ nav_order: 2
 
 # Capacity reservation operations
 
+> Where this fits: step 3 of the capacity supply chain. Use capacity reservations after access and quota are staged, so critical SKUs, regions, and zones are covered before you onboard or surge. [Source](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview)
+
 On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This runbook explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) so platform teams can coordinate with quota and deployment workflows, and it reminds you where the platform enforces prerequisites.
 
 ## Prerequisites and access
@@ -38,6 +40,8 @@ CRGs support temporary overallocations to absorb burst traffic:
 - **Reserved capacity available:** Allocated VM count is lower than reserved quantity. Consider [reducing quantity](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overallocate) if the buffer is no longer required.
 - **Reservation consumed:** Allocated VM count equals reserved quantity. [Additional workloads deploy without SLA](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overallocate) until capacity increases.
 - **Reservation overallocated:** Allocated VM count exceeds reserved quantity. [Excess VMs run without the capacity SLA](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overallocate) and will not regain it after deallocation unless capacity is increased.
+
+![Diagram that shows capacity reservation with the third VM allocated.](https://learn.microsoft.com/en-us/azure/virtual-machines/media/capacity-reservation-overview/capacity-reservation-3.jpg)
 
 Use the [CRG Instance View](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overallocate) (`$expand=instanceview`) to track utilization and determine whether to right-size or overprovision reservations.
 
