@@ -29,6 +29,6 @@ Scripts that extend Azure's native capabilities for ISV capacity management.
 
 | Script | Description |
 |--------|-------------|
-| [Suppress-AdvisorRecommendations.ps1](../advisor/README.md) | Suppress specified Azure Advisor recommendation types across a management group for up to 90 days; useful when FinOps teams manage spend centrally. [Source](https://learn.microsoft.com/en-us/azure/advisor/suppress-recommendations?tabs=rest) |
+| [Suppress-AdvisorRecommendations.ps1](https://github.com/MSBrett/azcapman/tree/main/scripts/advisor) | Suppress specified Azure Advisor recommendation types across a management group for up to 90 days; useful when FinOps teams manage spend centrally. [Source](https://learn.microsoft.com/en-us/azure/advisor/suppress-recommendations?tabs=rest) |
 
 **Source**: [GitHub repository](https://github.com/MSBrett/azcapman/tree/main/scripts)

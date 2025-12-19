@@ -1,6 +1,6 @@
 ---
 title: Microsoft Customer Agreement
-parent: Enrollment types
+parent: Billing models
 nav_order: 1
 ---
 

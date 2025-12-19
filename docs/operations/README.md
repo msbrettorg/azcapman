@@ -8,9 +8,10 @@ has_children: true
 
 Use this section to access subscription lifecycle runbooks, capacity and quota guidance, and supporting operational references. The goal is to connect estate-level controls to Azure landing zone and Well-Architected guidance without prescribing your internal operating model. [Source](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) [Source](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning)
 
-- [Subscription operations](subscription-operations/README.md)—MCA and EA subscription operations and automation.
-- [Capacity & quotas](capacity-and-quotas/README.md)—capacity planning, reservations, quota groups, and quota monitoring.
-- [Support & reference](support-and-reference/README.md)—support escalation, tenant hygiene, and glossary material.
+- [Forecast](capacity-planning/README.md)—capacity planning inputs, isolation decisions, and the demand signals you use before you source quota or commitments.
+- [Procure](quota/README.md)—billing scopes, region and zonal access, quota requests, and capacity reservations.
+- [Allocate](quota-groups/README.md)—pooled quota distribution through quota groups and management group controls.
+- [Monitor](monitoring-alerting/README.md)—quota and reservation monitoring, alerting, governance gates, and support references.
 
 ## Subscription vending context
 

@@ -1,12 +1,17 @@
 ---
-title: MCA subscription operations
+title: MCA subscription creation (billing scope)
 parent: Subscription operations
 nav_order: 1
 ---
 
-# Microsoft Customer Agreement subscription operations
+# Microsoft Customer Agreement subscription creation (billing scope)
 
-Use this runbook when you're automating Microsoft Customer Agreement (MCA) subscription creation and need quick reminders about which identifiers and scopes to capture from the billing APIs.
+Use this runbook when you're automating Microsoft Customer Agreement (MCA) subscription creation and need reminders about which billing identifiers and scopes feed the subscription alias APIs. In MCA, the control surface for creating a subscription lives at the billing account, billing profile, and invoice section scopes—not at the subscription scope itself. [Source](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/programmatically-create-subscription-microsoft-customer-agreement?tabs=rest)
+
+## Scope boundaries
+
+- Billing scopes: Billing account, billing profile, and invoice section determine where charges roll up and which identities can create subscriptions. [Source](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/azure-billing-microsoft-customer-agreement) [Source](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/programmatically-create-subscription-microsoft-customer-agreement?tabs=rest)
+- Subscription scope: The `Microsoft.Subscription/aliases` request returns a subscription ID, after which subscription-scoped automation applies landing zone policies, networking, and budgets. [Source](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/programmatically-create-subscription-microsoft-customer-agreement?tabs=rest)
 
 ## Roles and prerequisites
 
