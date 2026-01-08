@@ -50,3 +50,10 @@ Effective capacity planning combines historical usage analysis, forecasting, and
 - [Feed forecasted demand into budgeting and reservation purchasing cycles](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning) to balance cost and performance.
 - [Store charts, scripts, and assumptions in version control](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning) to support knowledge sharing and future recalibration.
 
+## Incorporate rate optimization into capacity forecasts
+
+- Capacity planning must account for regional pricing differences—sourcing the same SKU in different regions has different cost implications for your COGS.
+- The [FinOps Framework planning and estimating capability](https://learn.microsoft.com/en-us/cloud-computing/finops/framework/quantify/planning) provides guidance on integrating cost projections with capacity needs.
+- Use the [Cost Optimization workbook](https://learn.microsoft.com/en-us/azure/advisor/advisor-workbook-cost-optimization) in Azure Advisor to identify reservation purchase recommendations aligned with your capacity forecasts.
+- When forecasting capacity for new regions, query historical pricing via [FinOps Hubs](https://learn.microsoft.com/en-us/cloud-computing/finops/toolkit/hubs/finops-hubs-overview) to project accurate unit costs.
+

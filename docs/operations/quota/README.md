@@ -13,8 +13,53 @@ Use this runbook when you're auditing or increasing Azure quotas so every reques
 ## Understand default quotas and enforcement
 
 - Azure enforces [quotas per subscription and region](https://learn.microsoft.com/en-us/azure/virtual-machines/quotas), tracking both total regional vCPUs and per VM-family vCPUs; deployments must stay within both limits or the [platform blocks the request](https://learn.microsoft.com/en-us/azure/quotas/regional-quota-requests).
-- [Enterprise Agreement and Microsoft Customer Agreement subscriptions](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-virtual-machines-limits) start with 350 total vCPU cores per region and 25,000 total VMs, while other offers default to lower thresholds like 20 cores per region.
+- Default vCPU quotas vary by offer type. [Enterprise Agreement subscriptions default to 350 cores](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/ea-portal-agreements#resource-prepayment-and-requesting-quota-increases) for both the total regional quota and each VM family (D-series, E-series, etc.), while pay-as-you-go subscriptions default to 20 cores per region. Validate your actual limits in the [**Quotas**](https://learn.microsoft.com/en-us/azure/quotas/view-quotas) blade to confirm no offer restrictions are reducing your baseline.
+- All quotas can be increased through support requests, regardless of the initial default assigned to your offer type.
 - [Quota calculations](https://learn.microsoft.com/en-us/azure/virtual-machines/quotas) include allocated and deallocated virtual machines, so idle cores still count against the quota until resources are deleted or quota is increased.
+
+## Understand offer restrictions
+
+Azure applies [SKU restrictions based on your subscription's offer type](https://learn.microsoft.com/en-us/azure/azure-resource-manager/troubleshooting/error-sku-not-available), blocking deployment of certain VM families in specific regions or zones even when quota is available. These restrictions exist independently of quota limits and you'll need to request access before deploying to affected areas.
+
+### What offer restrictions are
+
+- SKU restrictions tie to the subscription's offer type (pay-as-you-go, trial, student, MSDN, EA, or MCA Enterprise) and determine which VM families can deploy in each region and zone.
+- Azure imposes two types of restrictions: [location restrictions](https://learn.microsoft.com/en-us/azure/azure-resource-manager/troubleshooting/error-sku-not-available) block the SKU from an entire region, while zone restrictions block specific availability zones within an otherwise accessible region.
+- When [`Get-AzComputeResourceSku`](https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azcomputeresourcesku) shows `NotAvailableForSubscription` in the `Restriction` column, the SKU isn't available for this subscription's offer type, regardless of quota availability.
+
+### Why restrictions exist
+
+- Azure uses restrictions to [control capacity distribution](https://learn.microsoft.com/en-us/azure/azure-resource-manager/troubleshooting/error-sku-not-available) across subscription tiers and manage datacenter resource allocation.
+- Trial, student, and MSDN subscriptions face more restrictions because they're designed for development and learning scenarios rather than production workloads.
+- Enterprise-tier subscriptions (EA and MCA Enterprise) have fewer restrictions, reflecting their use for production SaaS estates and mission-critical workloads.
+
+### Error messages you'll see
+
+When deployments fail because of offer restrictions, you'll encounter these error codes:
+
+- [`SkuNotAvailable`](https://learn.microsoft.com/en-us/azure/azure-resource-manager/troubleshooting/error-sku-not-available)—the primary error when the requested SKU isn't available in the target region or zone. When triggered via ARM templates, this surfaces as `InvalidTemplateDeployment` during validation, and [no deployment history is created](https://learn.microsoft.com/en-us/azure/azure-resource-manager/troubleshooting/find-error-code)—check the activity log instead.
+- `ZonalAllocationFailed`—Azure can't allocate resources in the specific zone you requested, often because of zone restrictions or transient capacity constraints.
+- `AllocationFailed`—a general allocation failure indicating capacity issues, restrictions, or other constraints preventing deployment.
+- [`OverconstrainedAllocationRequest`](https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/allocation-failure)—too many constraints (VM size, availability zone, accelerated networking, proximity placement group, ephemeral disk, Ultra disk) prevent Azure from finding available capacity. Remove constraints incrementally to identify the blocker.
+
+### Detect restrictions before deployment
+
+- Run [`Get-AzVMQuotaUsage.ps1`](https://github.com/MSBrett/azcapman/tree/main/scripts/quota) to check restrictions before deploying. The script outputs `RegionRestricted` (True/False indicating whether the SKU is blocked for the entire region) and `ZonesRestricted` (comma-separated list of logical zones where the SKU is unavailable) columns for each subscription and location.
+- Use [`Get-AzComputeResourceSku`](https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azcomputeresourcesku) directly to inspect the `Restrictions` property for specific SKUs, which exposes location and zone restrictions along with the reason code.
+- Always check restrictions before filing quota increase requests, because increased quota won't help if the offer type blocks access to the SKU in your target region or zone.
+
+### Remediate restrictions
+
+- Submit a [zonal enablement request](https://learn.microsoft.com/en-us/troubleshoot/azure/general/zonal-enablement-request-for-restricted-vm-series) when you need access to specific zones for restricted VM families; the support workflow lets you select regions, logical zones, and VM series.
+- File a [region access request](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process) when entire regions are blocked for your subscription, ensuring quotas and offer flags match your deployment plan before attempting scale-outs or quota transfers.
+- Plan ahead for these requests—there's no guaranteed SLA for approval times, so factor enablement lead time into your capacity planning and deployment schedules.
+
+### Special case: Spot VM capacity
+
+- [Azure Spot VMs](https://learn.microsoft.com/en-us/azure/virtual-machines/spot-vms) use a [separate capacity pool](https://learn.microsoft.com/en-us/azure/virtual-machines/spot-vms#frequently-asked-questions) from on-demand VMs, so a SKU can be available for regular deployments but have zero Spot capacity.
+- The `Get-AzComputeResourceSku` cmdlet doesn't show Spot-specific availability. Use the [Spot Placement Score API](https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/spot-placement-score) to evaluate deployment likelihood before committing to Spot-based architectures.
+- Spot VMs have [no availability guarantees or SLA](https://learn.microsoft.com/en-us/azure/architecture/guide/spot/spot-eviction)—Azure can evict them whenever on-demand capacity is needed, providing [30 seconds total for detection and graceful shutdown](https://learn.microsoft.com/en-us/azure/architecture/guide/spot/spot-eviction), not 30 seconds after notification.
+- Don't rely on Spot capacity for workloads where you've committed SLAs to your customers; use [on-demand capacity reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) instead for guaranteed availability.
 
 ## Quota analysis scripts
 
@@ -76,7 +121,7 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MSBrett/azcapman/main/
 
 ## Create and govern quota groups
 
-- Establish [quota groups](https://learn.microsoft.com/en-us/azure/quotas/quota-groups) under the management group that owns your shared capacity so you can pool vCPU limits across EA and MCA subscriptions without filing support requests for every transfer.
+- Establish [quota groups](https://learn.microsoft.com/en-us/azure/quotas/quota-groups) under the management group that owns your shared capacity so you can pool vCPU limits across EA and MCA subscriptions without filing support requests for every transfer. [Quota groups](https://learn.microsoft.com/en-us/azure/quotas/quota-groups) have Azure-enforced constraints: they support only EA and MCA Enterprise subscriptions, apply exclusively to compute quota (VM cores), and require registration of the `Microsoft.Quota` resource provider.
 - [Create the group](https://learn.microsoft.com/en-us/azure/quotas/create-quota-groups?tabs=rest-1%2Crest-2) via the Microsoft.Quota REST API or Azure portal once the GroupQuota Request Operator role is assigned at the management group scope.
 - [Add newly provisioned or recycled subscriptions](https://learn.microsoft.com/en-us/azure/quotas/add-remove-subscriptions-quota-group?tabs=rest-1%2Crest-2) to the quota group so their existing limits are tracked centrally while retaining subscription-level enforcement at deployment time.
 
@@ -90,6 +135,7 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MSBrett/azcapman/main/
 
 ## Reclaim and recycle subscriptions
 
+- Recycle subscriptions with zonal or regional access rather than deleting them. There's no documented SLA for [zonal](https://learn.microsoft.com/en-us/troubleshoot/azure/general/zonal-enablement-request-for-restricted-vm-series) or [regional enablement requests](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process)—the Azure engineering team manually reviews each request. If you offer SLAs to your customers, you can't guarantee infrastructure availability without pre-approved access flags in place.
 - Before decommissioning a workload, [return its quota to the group](https://learn.microsoft.com/en-us/azure/quotas/transfer-quota-groups?tabs=rest-1) and keep the subscription for future use so that existing [zonal](https://learn.microsoft.com/en-us/troubleshoot/azure/general/zonal-enablement-request-for-restricted-vm-series) and [regional access flags](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process) remain in place and you avoid repeating the support-ticket workflow.
 - When onboarding a new subscription, check the quota report and [`az quota list`](https://learn.microsoft.com/en-us/cli/azure/quota?view=azure-cli-latest) output to confirm the baseline allocations before moving workloads or transferring additional quota.
 

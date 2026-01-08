@@ -1,0 +1,145 @@
+/* MS Learn Design Alignment - Phase 1 Quick Wins */
+
+/* Color variables aligned with MS Learn */
+:root {
+  --primary: #0078d4;
+  --primary-hover: #106ebe;
+  --hero-blue: #005BA1;
+  --card-shadow: 0px 1.6px 3.6px rgba(0,0,0,0.13), 0px 0.3px 0.9px rgba(0,0,0,0.11);
+  --card-shadow-hover: 0 4px 8px rgba(0,0,0,0.12);
+  --border-radius: 2px;
+  --button-radius: 4px;
+  --text-primary: #161616;
+  --text-secondary: #475569;
+  --bg-card: #ffffff;
+  --border-light: #e5e7eb;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Tighter border-radius - MS Learn uses 2px for cards */
+.card,
+.alert,
+[class*="callout"],
+article > div[style*="border-radius"] {
+  border-radius: var(--border-radius) !important;
+}
+
+/* Hero Section - MS Learn Pattern */
+.hero {
+  background-color: var(--hero-blue);
+  padding: 2.5rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 45px;
+  margin: 0 0 0.75rem 0;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 25.6px;
+  margin: 0 0 1.25rem 0;
+}
+
+.hero .cta {
+  display: inline-block;
+  padding: 5px 12px;
+  background: white;
+  color: var(--hero-blue);
+  border-radius: var(--button-radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.hero .cta:hover {
+  background: #e0e0e0;
+  color: var(--hero-blue);
+}
+
+.hero .cta:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Card styling - shadows instead of borders - more robust selector */
+.card,
+article > div[style*="border: 1px"],
+article > div[style*="box-shadow"] {
+  border: none !important;
+  box-shadow: var(--card-shadow) !important;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover,
+article > div[style*="border: 1px"]:hover,
+article > div[style*="box-shadow"]:hover {
+  box-shadow: var(--card-shadow-hover) !important;
+  transform: translateY(-2px);
+}
+
+/* Link color alignment */
+a {
+  color: var(--primary);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* Navigation link hover effect - arrows are in markdown, no need to add via CSS */
+article a[href$=".html"],
+article a[href$=".md"] {
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+article a[href$=".html"]:hover,
+article a[href$=".md"]:hover {
+  transform: translateX(2px);
+}
+
+/* Hero banner refinements */
+article > div[style*="linear-gradient"] {
+  border-radius: var(--border-radius) !important;
+}
+
+/* Table hover states */
+table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Sidebar active item accent */
+.toc .active > a {
+  border-left: 2px solid var(--primary);
+  padding-left: calc(1rem - 2px);
+  font-weight: 600;
+}

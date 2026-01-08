@@ -32,7 +32,8 @@
     "output": "_site",
     "template": [
       "default",
-      "modern"
+      "modern",
+      "templates/custom"
     ],
     "globalMetadata": {
       "_appTitle": "ISV Quota & Capacity Management",

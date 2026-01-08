@@ -10,6 +10,14 @@ nav_order: 2
 
 On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This runbook explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) so platform teams can coordinate with quota and deployment workflows, and it reminds you where the platform enforces prerequisites.
 
+## Cost implications of capacity allocation
+
+- Capacity reservations are billed at pay-as-you-go rates for the reserved VM size whether or not VMs are deployed against them—unused reservations still incur cost.
+- Regional pricing varies: the same VM SKU costs different amounts in different regions. Check [Azure pricing by region](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/) before committing capacity to a specific location.
+- Use [FinOps Hubs](https://learn.microsoft.com/en-us/cloud-computing/finops/toolkit/hubs/finops-hubs-overview) to analyze historical pricing across regions before allocating; see the [FinOps Toolkit query index](https://github.com/microsoft/finops-toolkit/blob/main/src/queries/INDEX.md) for available queries.
+- Capacity reservations are eligible for [Reserved Instance discounts](https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/save-compute-costs-reservations)—layer rate commitments on top of capacity commitments to maximize savings.
+- Factor both capacity cost and rate optimization into unit economics before allocating; unused capacity reservations without RI coverage pay full PAYG rates.
+
 ## Prerequisites and access
 
 - **Quota:** Creating [reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) consumes the same regional quota used by standard VM deployments. If the requested VM size, region, or zone lacks quota or inventory, the reservation request fails and must be retried after adjusting the request or increasing quota.
@@ -29,7 +37,7 @@ On-demand capacity reservations guarantee that compute capacity is available whe
 Sharing lets a central subscription guarantee capacity for dependent workloads:
 
 1. **Designate roles:** Assign an [On-demand Capacity Reservation (ODCR) owner](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share?tabs=api-1%2Capi-2%2Capi-3%2Capi-4%2Capi-5%2Capi-6%2Cportal-7) in the consumer subscription with share permissions and VM owners with deploy permissions as required.
-2. **Grant access:** From the producer subscription, add consumer subscription IDs to the [CRG share list](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share?tabs=api-1%2Capi-2%2Capi-3%2Capi-4%2Capi-5%2Capi-6%2Cportal-7). You can share individual CRGs or all CRGs in the provider subscription, and up to 100 consumer subscriptions can be granted access per group.
+2. **Grant access:** From the producer subscription, add consumer subscription IDs to the [CRG share list](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share?tabs=api-1%2Capi-2%2Capi-3%2Capi-4%2Capi-5%2Capi-6%2Cportal-7). You can share individual CRGs or all CRGs in the provider subscription, and up to 100 consumer subscriptions can be granted access per group. If you're sharing zonal capacity reservations, [validate zone alignment between producer and consumer subscriptions](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share) because Azure assigns different logical-to-physical zone mappings per subscription and mismatched zones won't fail at deployment time but will result in workloads landing in the wrong physical zones.
 3. **Deploy from consumers:** Consumer subscriptions enumerate shared CRGs and specify the `capacityReservationGroup` field during VM deployment. [Capacity usage is billed](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share?tabs=api-1%2Capi-2%2Capi-3%2Capi-4%2Capi-5%2Capi-6%2Cportal-7) to the provider subscription, while VM runtime usage is billed to the consuming subscription.
 4. **Revoke:** Remove the consumer subscription or associated identities from the share list to stop new deployments. [Existing VMs must be disassociated](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share?tabs=api-1%2Capi-2%2Capi-3%2Capi-4%2Capi-5%2Capi-6%2Cportal-7) or deallocated before revocation completes.
 
