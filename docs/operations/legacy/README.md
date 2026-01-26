@@ -6,7 +6,7 @@ nav_order: 2
 
 # Enterprise Agreement subscription creation (billing scope)
 
-Use this runbook when you're scripting Enterprise Agreement (EA) subscription creation and need reminders about which enrollment scopes and roles drive the subscription alias APIs. In EA, the control surface for creating a subscription is the enrollment account, not the subscription itself. [Source](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/programmatically-create-subscription-enterprise-agreement?tabs=rest)
+Use this guide when you're scripting Enterprise Agreement (EA) subscription creation and need reminders about which enrollment scopes and roles drive the subscription alias APIs. In EA, the control surface for creating a subscription is the enrollment account, not the subscription itself. [Source](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/programmatically-create-subscription-enterprise-agreement?tabs=rest)
 
 ## Scope boundaries
 

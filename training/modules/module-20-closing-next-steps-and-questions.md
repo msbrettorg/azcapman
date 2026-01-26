@@ -38,17 +38,17 @@ Before your next customer engagement, complete these actions:
 
 Bookmark these resources for quick access during customer conversations:
 
-- [ ] [aka.ms/azcapman](https://aka.ms/azcapman) – Capacity governance runbooks
+- [ ] [aka.ms/azcapman](https://aka.ms/azcapman) – Capacity governance guides
 - [ ] [Capacity planning](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning) – Well-Architected guidance
 - [ ] [Quota groups](https://learn.microsoft.com/en-us/azure/quotas/quota-groups) – Pooled quota management
-- [ ] [Capacity reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) – Guaranteed compute
+- [ ] [Capacity reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) – Priority compute
 - [ ] [Monitoring and alerting](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) – Usage alerts
 
 ## Questions and feedback
 
 Thank you for attending. For questions or feedback:
 
-- Reference the [azcapman runbooks](https://aka.ms/azcapman) for self-serve answers
+- Reference the [azcapman guides](https://aka.ms/azcapman) for self-serve answers
 - Engage your CSA for architecture design reviews
 - Share feedback to improve this training for future sessions
 

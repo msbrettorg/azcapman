@@ -6,7 +6,7 @@ nav_order: 3
 
 # Glossary & FAQ
 
-Common terminology used across the quota and capacity management runbooks. Each entry links to the authoritative Microsoft documentation so you're never guessing which article to cite.
+Common terminology used across the quota and capacity management guides. Each entry links to the authoritative Microsoft documentation so you're never guessing which article to cite.
 
 ## Glossary
 
@@ -15,7 +15,8 @@ Common terminology used across the quota and capacity management runbooks. Each 
 - **Capacity reservation:** A compute object that reserves capacity for a specific VM size in a region or availability zone, managed through a capacity reservation group, as described in the [on-demand capacity reservations overview](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview). Capacity reservations protect supply but do not change pricing on their own.
 - **Azure Reservation:** A pricing construct that applies term-commitment discounts to eligible compute usage over one- or three-year terms, as described in the [FinOps rate optimization guidance](https://learn.microsoft.com/en-us/cloud-computing/finops/framework/optimize/rates#getting-started) and Azure Reservations documentation. Azure Reservations reduce cost but do not guarantee capacity.
 - **Azure savings plan:** A flexible pricing construct that applies discounts to eligible compute usage across services and regions over a fixed term, as described in [Azure savings plan for compute](https://learn.microsoft.com/en-us/azure/cost-management-billing/savings-plan/). Savings plans optimize rates but do not guarantee capacity.
-- **Quota group:** An Azure Resource Manager object created under a management group that [aggregates compute quota](https://learn.microsoft.com/en-us/azure/quotas/quota-groups) across eligible subscriptions, enabling transfers and group-level increase requests.
+- **FinOps Hubs:** Data pipeline infrastructure from the [FinOps Toolkit](https://learn.microsoft.com/en-us/cloud-computing/finops/toolkit/hubs/finops-hubs-overview) that ingests cost and usage data into Azure Data Explorer via Data Factory. Hubs support KQL queries against normalized cost data using the [FOCUS schema](https://focus.finops.org/).
+- **Quota group:** An Azure Resource Manager object created under a management group that [aggregates compute quota](https://learn.microsoft.com/en-us/azure/quotas/quota-groups) across eligible subscriptions, allowing transfers and group-level increase requests.
 - **Logical availability zone:** Subscription-specific mapping to [physical datacenter zones](https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview#configuring-resources-for-availability-zone-support); mappings can differ across subscriptions and must be queried via Azure Resource Manager APIs.
 - **Quota alert:** An Azure Monitor alert triggered when [quota usage crosses a configured threshold](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) in the **My quotas** experience.
 - **Budget alert:** A Cost Management alert generated when [actual or forecasted spend exceeds defined budget thresholds](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending).

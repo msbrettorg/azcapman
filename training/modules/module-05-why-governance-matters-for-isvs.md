@@ -18,9 +18,9 @@ ISV platforms face a unique tension: they must onboard customers rapidly while m
 
 ### How capacity reservations preserve customer experience
 
-[Capacity reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) guarantee compute availability for specific VM sizes, regions, and availability zones. During regional supply constraints:
+[Capacity reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) provide priority for compute availability for specific VM sizes, regions, and availability zones. During regional supply constraints:
 
-- Reserved capacity remains available to your workloads
+- Reserved capacity improves availability for your workloads
 - Critical SKUs can be locked in advance of major launches
 - Reservations can be shared with up to 100 consumer subscriptions
 
@@ -61,6 +61,6 @@ graph TD
     cost --> mon
 
     qg -->|"shared limits"| no_stranded
-    cr -->|"guaranteed capacity"| surge_ready
+    cr -->|"priority capacity"| surge_ready
     mon -->|"early warning"| proactive
 ```

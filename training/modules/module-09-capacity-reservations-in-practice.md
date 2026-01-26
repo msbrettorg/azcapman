@@ -2,7 +2,7 @@
 
 ## What are capacity reservations?
 
-[Capacity reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) guarantee compute availability for specific VM sizes in specific regions and availability zones. When you create a reservation, Azure sets aside the requested capacity exclusively for your use.
+[Capacity reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) provide priority for compute availability for specific VM sizes in specific regions and availability zones. When you create a reservation, Azure sets aside the requested capacity exclusively for your use.
 
 ### Capacity reservation groups
 
@@ -22,6 +22,16 @@ Reservations are organized into capacity reservation groups (CRGs), which:
 
 This centralizes procurement while distributing deployment authority.
 
+#### Scaling beyond 100 subscriptions
+
+[Capacity reservation groups support up to 100 consumer subscriptions](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share#limitations-of-sharing-a-capacity-reservation-group). For larger ISV estates:
+
+- **Multiple CRGs**: Create separate CRGs for different subscription cohorts (by region, customer tier, or workload type)
+- **Hub-and-spoke**: Central platform subscription owns CRGs; workload subscriptions consume via sharing
+- **Regional distribution**: Each region gets its own CRG, naturally partitioning the subscription count
+
+Plan your CRG architecture early—retrofitting after hitting the 100-subscription limit requires careful migration.
+
 ### Understanding overallocations
 
 When more VMs are associated with a reservation than its quantity supports, you have an [overallocation](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overallocate):
@@ -29,7 +39,7 @@ When more VMs are associated with a reservation than its quantity supports, you 
 | State | SLA coverage | Action required |
 |-------|-------------|-----------------|
 | **Within reservation** | Full SLA | None |
-| **Overallocated** | No SLA guarantee | Increase reservation or reduce VMs |
+| **Overallocated** | No SLA protection | Increase reservation or reduce VMs |
 
 Check the `instanceView` property of the reservation to detect overallocations before they cause deployment failures.
 

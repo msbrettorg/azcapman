@@ -8,7 +8,7 @@ nav_order: 2
 
 > Where this fits: step 3 of the capacity supply chain. Use capacity reservations after access and quota are staged, so critical SKUs, regions, and zones are covered before you onboard or surge. [Source](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview)
 
-On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This runbook explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) so platform teams can coordinate with quota and deployment workflows, and it reminds you where the platform enforces prerequisites.
+On-demand capacity reservations guarantee that compute capacity is available when critical workloads scale out. This guide explains how to provision, share, monitor, and automate capacity reservation groups (CRGs) so platform teams can coordinate with quota and deployment workflows, and it reminds you where the platform enforces prerequisites.
 
 ## Cost implications of capacity allocation
 
@@ -17,6 +17,9 @@ On-demand capacity reservations guarantee that compute capacity is available whe
 - Use [FinOps Hubs](https://learn.microsoft.com/en-us/cloud-computing/finops/toolkit/hubs/finops-hubs-overview) to analyze historical pricing across regions before allocating; see the [FinOps Toolkit query index](https://github.com/microsoft/finops-toolkit/blob/main/src/queries/INDEX.md) for available queries.
 - Capacity reservations are eligible for [Reserved Instance discounts](https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/save-compute-costs-reservations)—layer rate commitments on top of capacity commitments to maximize savings.
 - Factor both capacity cost and rate optimization into unit economics before allocating; unused capacity reservations without RI coverage pay full PAYG rates.
+- Run [reservation-recommendation-breakdown](https://github.com/microsoft/finops-toolkit/blob/main/src/queries/INDEX.md) to evaluate whether reserved instances reduce costs for capacity you've already reserved.
+- Use [commitment-discount-utilization](https://github.com/microsoft/finops-toolkit/blob/main/src/queries/INDEX.md) to track whether capacity reservation costs are offset by reservation discounts.
+- Use [savings-summary-report](https://github.com/microsoft/finops-toolkit/blob/main/src/queries/INDEX.md) to calculate your effective savings rate across both capacity and rate commitments.
 
 ## Prerequisites and access
 

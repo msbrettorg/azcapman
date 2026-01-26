@@ -162,7 +162,7 @@ flowchart TB
         
         subgraph "States"
             within[Within Reservation<br/>✓ Full SLA]
-            over[Overallocated<br/>✗ No SLA Guarantee]
+            over[Overallocated<br/>✗ No SLA Protection]
         end
         
         subgraph "Instance View"
@@ -440,7 +440,7 @@ flowchart TB
     forecast -.->|informs| qg
     forecast -.->|informs| crg
     qg -.->|enables| vm
-    crg -.->|guarantees| vm
+    crg -.->|provides priority for| vm
     stamps -.->|consumes| crg
     scale_units -.->|sized by| forecast
     tenants -.->|drives| customer
@@ -481,7 +481,7 @@ flowchart TB
 
 ## Reference links
 
-- [aka.ms/azcapman](https://aka.ms/azcapman) – Complete runbooks
+- [aka.ms/azcapman](https://aka.ms/azcapman) – Complete guides
 - [Well-Architected capacity planning](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning)
 - [Workload supply chain](https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/workload-supply-chain)
 - [Quota groups](https://learn.microsoft.com/en-us/azure/quotas/quota-groups)

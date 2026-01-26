@@ -32,6 +32,14 @@ When capacity governance is fragmented, ISV platforms encounter predictable fail
 - Correlate Advisor recommendations with quota group utilization data
 - Establish a cadence for reviewing recommendations against known capacity plans
 
+> **Critical: Advisor is subscription-scoped—use Cost Management + Billing for enterprise recommendations**
+>
+> [Azure Advisor rightsizing and shutdown recommendations use retail (pay-as-you-go) prices](https://learn.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations), not your negotiated rates. Advisor's reservation recommendations do use negotiated pricing, but Advisor scopes to single subscriptions, missing cross-subscription usage patterns.
+>
+> For accurate reservation recommendations at enterprise scale:
+> - Use **Cost Management + Billing** > **Reservations** > **Add**, which uses your [negotiated price sheet](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/ea-pricing) and sees all VMs across your billing account
+> - Review the 60-day usage breakdown before purchasing—recommendations don't account for seasonal patterns or planned changes
+
 ### Surprise capacity failures
 
 **Symptom:** Deployments that worked yesterday fail today with capacity errors.
@@ -74,10 +82,10 @@ graph TD
     misaligned --> noisy
     no_gates --> surprise
 
-    region -->|"prevents"| blocked
-    zonal -->|"prevents"| blocked
-    qg -->|"prevents"| blocked
-    finops -->|"prevents"| noisy
-    crg -->|"prevents"| surprise
-    cicd -->|"prevents"| surprise
+    region -->|"reduces risk of"| blocked
+    zonal -->|"reduces risk of"| blocked
+    qg -->|"reduces risk of"| blocked
+    finops -->|"reduces risk of"| noisy
+    crg -->|"reduces risk of"| surprise
+    cicd -->|"reduces risk of"| surprise
 ```

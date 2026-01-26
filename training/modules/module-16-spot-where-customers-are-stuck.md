@@ -41,6 +41,17 @@ All personas can identify where customers are stuck by probing each phase of the
 
 **Escalation path:** Assist with support ticket escalation; ensure requests include complete business justification.
 
+#### Quota ≠ capacity: the SkuNotAvailable problem
+
+Customers often conflate quota (subscription limit) with capacity (physical availability). You can have 1,000 vCPU quota and still fail deployments with `SkuNotAvailable` if datacenter racks are full.
+
+- **Quota**: Your subscription's permission to deploy up to N vCPUs
+- **Capacity**: Azure's physical ability to fulfill that deployment in a specific region and zone
+
+[Capacity reservations address availability](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) but require the quota to exist first. Capacity constraints are more common in popular regions during high-demand periods (AI/ML launches, seasonal workloads).
+
+When customers report "quota increased but still can't deploy," check for `SkuNotAvailable` errors—this indicates capacity constraint, not quota limit.
+
 ### Reservation gaps
 
 **Symptoms:**

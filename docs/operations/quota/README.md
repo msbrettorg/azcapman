@@ -4,9 +4,9 @@ parent: Capacity & quotas
 nav_order: 4
 ---
 
-# Quota operations runbook
+# Quota operations guide
 
-Use this runbook when you're auditing or increasing Azure quotas so every request pulls from the same reference.
+Use this guide when you're auditing or increasing Azure quotas so every request pulls from the same reference.
 
 [Where this fits](../capacity-and-quotas/README.md): step 2 of the capacity journey. Use it to unblock regions and zones and confirm VM-family limits before moving quota into groups or reserving capacity. [Source](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process) [Source](https://learn.microsoft.com/en-us/troubleshoot/azure/general/zonal-enablement-request-for-restricted-vm-series)
 

@@ -14,7 +14,8 @@ This training is field-facing. The public azcapman site speaks directly to ISV p
 
 - Position this as a framework for three personas working together
 - Reference [aka.ms/azcapman](https://aka.ms/azcapman) as the self-serve resource
-- Set expectation: 13 slides, 20 minutes, actionable takeaways
+- Set expectation: 13 slides, 60-75 minutes depending on discussion depth
+- For a 20-minute overview, focus on slides 1-4 and 12-13
 
 ### Concept map: training scope
 
@@ -245,14 +246,16 @@ flowchart TB
 
 ### Key points
 
-- **Region access**: Explicit enablement via support requests (1-3 business days)
+- **Region access**: Explicit enablement via support requests—timing varies; Microsoft CSU recommends planning 1-2 weeks minimum for critical launches
 - **Zonal enablement**: Restricted VM series (ND, NC, HB) require separate requests
 - **Quota groups**: ARM resources at management group scope for shared vCPU limits
 - Prerequisites: `Microsoft.Quota` registration, `GroupQuota Request Operator` role
 
+> **Note**: Timing estimates reflect CSU operational experience, not documented Azure SLAs. Reference: [Region access request process](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process)
+
 ### Talk track
 
-> "Before deploying, validate region access through support workflows. Zonal enablement for restricted SKUs like ND-series needs separate requests. Then pool quota using quota groups at management group scope. Prerequisites: register Microsoft.Quota and assign GroupQuota Request Operator role."
+> "Before deploying, validate region access through support workflows. Timing varies—Microsoft CSU recommends planning at least 1-2 weeks for critical launches based on historical patterns, though this isn't a documented SLA. Zonal enablement for restricted SKUs like ND-series needs separate requests. Then pool quota using quota groups at management group scope. Prerequisites: register Microsoft.Quota and assign GroupQuota Request Operator role."
 
 ### Concept map: quota groups architecture
 
@@ -301,14 +304,16 @@ flowchart TB
 
 ### Key points
 
-- **Capacity reservation groups**: Guarantee compute for specific VM sizes, regions, zones
-- **Sharing**: Up to 100 consumer subscriptions can access centrally managed reservations
-- **Overallocations**: When demand exceeds reservation quantity, no SLA for excess
-- **Timing**: Create 2-4 weeks before major launches
+- **Capacity reservation groups**: Provide priority for compute for specific VM sizes, regions, zones
+- **Sharing**: Up to 100 consumer subscriptions can access centrally managed reservations (CRG limit, not quota group limit)
+- **Overallocations**: When demand exceeds reservation quantity, no SLA protection for excess
+- **Timing**: Microsoft CSU recommends creating 2-4 weeks before major launches based on historical operational patterns
+
+> **Note**: The 100-subscription sharing limit applies to capacity reservation groups, not quota groups. Reference: [Capacity reservation group sharing limitations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share#limitations-of-sharing-a-capacity-reservation-group)
 
 ### Talk track
 
-> "Capacity reservations are your insurance policy—they guarantee compute availability. Create groups 2-4 weeks before launches. Share with up to 100 consumer subscriptions so central teams manage procurement while workload teams deploy. Watch for overallocations via instanceView—excess VMs have no SLA guarantee."
+> "Capacity reservations are a risk mitigation mechanism—they provide priority for compute availability. Microsoft CSU recommends creating groups 2-4 weeks before launches based on operational experience—this reflects historical patterns, not a documented Azure SLA. Share with up to 100 consumer subscriptions so central teams manage procurement while workload teams deploy. This 100-subscription limit is specific to capacity reservation groups, not quota groups. Watch for overallocations via instanceView—excess VMs have no SLA protection."
 
 ### Concept map: capacity reservation sharing
 
@@ -350,14 +355,16 @@ flowchart TB
 
 ### Key points
 
-- **Tiered alerts**: 60% early warning, 80% attention, 90% critical
+- **Tiered alerts**: 60% early warning, 80% attention, 90% critical—these are recommended tiers, not Azure platform requirements
 - **Reservation monitoring**: Track instanceView for overallocation warnings
 - **CI/CD gates**: Pre-deployment checks query usage vs limits
 - **Feedback loops**: Connect alerts to FinOps dashboards and forecast updates
 
+> **Note**: The 60/80/90% alert thresholds are recommended practice, not Azure platform defaults. The [monitoring and alerting guide](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) shows 80% as an example only.
+
 ### Talk track
 
-> "Configure tiered alerts at 60%, 80%, and 90% thresholds in the Azure portal Quotas section. Monitor reservation instanceView for overallocations. Add CI/CD gates that check capacity before deployment. Create feedback loops connecting alerts back to forecasts and FinOps dashboards."
+> "Configure tiered alerts at 60%, 80%, and 90% thresholds in the Azure portal Quotas section—these are recommended tiers based on operational experience, not platform defaults. The Azure docs show 80% as an example, but you choose what fits your risk tolerance. Monitor reservation instanceView for overallocations. Add CI/CD gates that check capacity before deployment. Create feedback loops connecting alerts back to forecasts and FinOps dashboards."
 
 ### Concept map: monitoring and gates
 
@@ -555,13 +562,22 @@ flowchart TB
 
 **Handoff triggers:**
 - **SE → CSU**: Customer has support contract and needs hands-on assistance
-- **CSAM → CSA**: Technical complexity requires engineering design review
+- **CSAM → CSA**: Use objective complexity rubric (subscription count, region count, SKU count, vCPU thresholds)
+
+**Lifecycle matrix:**
+- Pre-sales + support contract = SE education PLUS CSU planning
+- Post-sales + support contract = CSAM coordinates, CSA executes complex designs
+
+**Role clarity:**
+- CSAM coordinates (schedules, tracks, directs), doesn't execute technical configuration
+- SE educates (explains, demonstrates), doesn't access customer environments
+- CSA executes (hands-on design, architecture reviews) for supported customers
 
 **Self-serve resources at [aka.ms/azcapman](https://aka.ms/azcapman)**
 
 ### Talk track
 
-> "Know when to hand off. SEs hand to CSU when the customer has a support contract and needs more than education. CSAMs escalate to CSAs when technical complexity requires design reviews. Everyone shares the azcapman runbooks, quota groups docs, and capacity reservations guides as the single source of truth."
+> "Know when to hand off. SEs hand to CSU when the customer has a support contract and needs more than education. CSAMs escalate to CSAs based on measurable complexity—like multi-region deployments, over 500 vCPU quota groups, or GPU SKU planning. The lifecycle matrix clarifies that support contracts unlock CSU access but don't replace SE education—pre-sales customers with contracts get both SE education now and CSU planning for later. Remember role boundaries: CSAMs coordinate the process, SEs educate without environment access, and CSAs execute hands-on design work for supported customers."
 
 ### Concept map: handoff model
 
@@ -657,7 +673,7 @@ flowchart TB
 
 | Resource | URL |
 |----------|-----|
-| azcapman runbooks | [aka.ms/azcapman](https://aka.ms/azcapman) |
+| azcapman guides | [aka.ms/azcapman](https://aka.ms/azcapman) |
 | Capacity planning (WAF) | [learn.microsoft.com/.../capacity-planning](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning) |
 | Workload supply chain | [learn.microsoft.com/.../workload-supply-chain](https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/workload-supply-chain) |
 | Quota groups | [learn.microsoft.com/.../quota-groups](https://learn.microsoft.com/en-us/azure/quotas/quota-groups) |

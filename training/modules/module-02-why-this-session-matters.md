@@ -26,7 +26,7 @@ Without coordinated governance through [quota groups](https://learn.microsoft.co
 
 ### Why this training matters for each persona
 
-**Solution Engineers (pre-sales):** Capacity failures during proof-of-concept or early adoption create negative impressions that are hard to overcome. Educating customers on governance before they go live prevents these issues.
+**Solution Engineers (pre-sales):** Capacity failures during proof-of-concept or early adoption create negative impressions that are hard to overcome. Educating customers on governance before they go live reduces the risk of these issues.
 
 **CSMs (CSU):** Customer success teams often triage capacity escalations before engineering gets involved. A shared framework shortens time-to-resolution and enables proactive identification of at-risk accounts.
 
@@ -61,7 +61,7 @@ graph TD
     no_quota --> advisor
     no_reservations --> sla
 
-    quota_groups -->|"prevents"| blocked
-    capacity_res -->|"prevents"| sla
+    quota_groups -->|"reduces risk of"| blocked
+    capacity_res -->|"reduces risk of"| sla
     monitoring -->|"reduces"| advisor
 ```

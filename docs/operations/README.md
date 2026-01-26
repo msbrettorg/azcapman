@@ -6,7 +6,7 @@ has_children: true
 
 # Capacity management overview
 
-Use this section to access subscription lifecycle runbooks, capacity and quota guidance, and supporting operational references. The goal is to connect estate-level controls to Azure landing zone and Well-Architected guidance without prescribing your internal operating model. [Source](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) [Source](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning)
+Use this section to access subscription lifecycle guides, capacity and quota guidance, and supporting operational references. The goal is to connect estate-level controls to Azure landing zone and Well-Architected guidance without prescribing your internal operating model. [Source](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/isv-landing-zone) [Source](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning)
 
 - [Forecast](capacity-planning/README.md)—capacity planning inputs, isolation decisions, and the demand signals you use before you source quota or commitments.
 - [Procure](quota/README.md)—billing scopes, region and zonal access, quota requests, and capacity reservations.
@@ -21,7 +21,7 @@ Use this section to access subscription lifecycle runbooks, capacity and quota g
 ## Programmatic subscription creation
 
 - Azure supports [programmatic subscription creation](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/programmatically-create-subscription) for Enterprise Agreements, Microsoft Customer Agreements, and Microsoft Partner Agreements via modern REST APIs.
-- Legacy EA processes use enrollment accounts to scope billing, while modern MCA workflows rely on billing profiles and invoice sections. See the dedicated legacy and modern pages in this folder for detailed runbooks.
+- Legacy EA processes use enrollment accounts to scope billing, while modern MCA workflows rely on billing profiles and invoice sections. See the dedicated legacy and modern pages in this folder for detailed guides.
 - When planning subscription vending product lines, align the automation entry points from the EA and MCA procedures with the [placement guidance](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/subscription-vending#determine-subscription-placement) so workload subscriptions land in the correct management group and billing scope.
 
 ## Support workflows

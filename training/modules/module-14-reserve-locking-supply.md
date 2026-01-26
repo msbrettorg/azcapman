@@ -2,15 +2,17 @@
 
 ## Creating capacity reservation groups
 
-Once quota is staged, create [capacity reservation groups](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) to guarantee compute supply. This locks capacity for your exclusive use, ensuring availability during onboarding ramps and demand surges.
+Once quota is staged, create [capacity reservation groups](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) to provide priority for compute supply. This locks capacity for your exclusive use, improving availability during onboarding ramps and demand surges.
 
 ### When to create reservations
 
 | Scenario | Timing | Quantity guidance |
 |----------|--------|-------------------|
-| **Major launch** | 2-4 weeks before go-live | Cover peak expected demand |
+| **Major launch** | Microsoft CSU recommends 2-4 weeks before go-live based on historical patterns | Cover peak expected demand |
 | **Steady growth** | As quota is allocated | Match quarterly projections |
 | **Regional expansion** | Before first deployment | Minimum viable stamp size |
+
+> **Note**: These timelines reflect Microsoft CSU operational experience, not documented Azure SLAs.
 
 ### Sharing reservations across subscriptions
 
@@ -41,7 +43,7 @@ The `instanceView` property on each reservation shows current consumption. [Over
 **Remediation options:**
 - Increase the reservation quantity
 - Reduce the number of associated VMs
-- Accept the overallocation (no SLA guarantee for excess)
+- Accept the overallocation (no SLA protection for excess)
 
 ### Proactive reservation management
 

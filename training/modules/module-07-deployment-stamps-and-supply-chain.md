@@ -18,7 +18,7 @@ A [deployment stamp](https://learn.microsoft.com/en-us/azure/architecture/guide/
 Each stamp deployment requires:
 
 - **Quota** – Sufficient vCPU allocation in the target region and zone via [quota groups](https://learn.microsoft.com/en-us/azure/quotas/quota-groups)
-- **Capacity reservations** – Guaranteed compute availability through [capacity reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview)
+- **Capacity reservations** – Priority compute availability through [capacity reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview)
 - **Monitoring** – Utilization tracking to forecast when the next stamp is needed
 
 Without coordination, each stamp deployment becomes an ad-hoc escalation.

@@ -12,6 +12,17 @@ The [Well-Architected capacity planning guidance](https://learn.microsoft.com/en
 | **Business context** | Sales pipeline, customer contracts | Growth expectations and timing |
 | **Historical trends** | Cost Management, Resource Graph | Seasonal patterns and growth rates |
 
+> **Purchase 80% of recommendations, not 100%**
+>
+> Reservation recommendations maximize theoretical savings assuming your usage continues exactly as measured. Reality: usage varies.
+>
+> Practitioner heuristic from FinOps Toolkit ($3B/year Azure experience):
+> - Review the usage breakdown chart via **See details** on any recommendation
+> - Consider purchasing 80% of the recommended quantity rather than 100%
+> - Monitor utilization monthly; reservations break even at ~60% utilization vs PAYG
+>
+> [Reservation recommendations are calculated](https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/reserved-instance-purchase-recommendations) from 7, 30, and 60-day trailing usage. They don't know about customer churn, planned migrations, or architecture changes.
+
 ### Modeling with scale units
 
 Even for greenfield workloads, model capacity in terms of scale units or [deployment stamps](https://learn.microsoft.com/en-us/azure/architecture/guide/multitenant/approaches/overview#deployment-stamps-pattern):

@@ -2,7 +2,11 @@
 
 ## Azure capacity governance for ISV customer success
 
-Welcome to this 20-minute briefing on Azure capacity governance. This session distills the [azcapman runbooks](https://aka.ms/azcapman) into a consistent framework for three key personas who engage with ISV partners on capacity topics.
+Welcome to Azure capacity governance training. This session distills the [azcapman guides](https://aka.ms/azcapman) into a consistent framework for three key personas who engage with ISV partners on capacity topics.
+
+**Duration note**: This training covers complex material. Allow 60-75 minutes for full comprehension and discussion. For a 20-minute overview, focus on slides 1-4 (framework introduction) and slides 12-13 (handoffs and next steps).
+
+> **Before you begin**: Review [Module 0: Glossary](module-00-glossary.md) to familiarize yourself with key terms like quota group, capacity reservation group, and scale unit.
 
 ### Target audience
 
@@ -28,9 +32,13 @@ This deck provides:
 
 1. **Talk tracks** – Questions and conversation anchors for customer engagements
 2. **Handoff triggers** – Clear criteria for when CSMs should engage CSAs
-3. **Reference links** – Direct access to runbooks and documentation for self-serve follow-up
+3. **Reference links** – Direct access to guides and documentation for self-serve follow-up
 
 The goal is to give everyone a shared vocabulary and clear role boundaries.
+
+> **Important context**
+>
+> Capacity governance reduces but doesn't eliminate capacity risk. Azure platform constraints, regional availability, and datacenter maintenance can affect even properly configured workloads. This training describes controls and best practices—not guarantees of capacity availability.
 
 ---
 
@@ -39,7 +47,7 @@ The goal is to give everyone a shared vocabulary and clear role boundaries.
 ```mermaid
 graph TD
     subgraph "This session"
-        azcapman[azcapman Runbooks]
+        azcapman[azcapman Guides]
         talk_tracks[Talk Tracks]
         handoffs[Handoff Triggers]
     end

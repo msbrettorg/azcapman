@@ -4,11 +4,11 @@ parent: Capacity & quotas
 nav_order: 7
 ---
 
-# Monitoring & alerting runbook
+# Monitoring & alerting guide
 
 > Where this fits: step 4 of the capacity supply chain. Alert on quota and reservation utilization before saturation so releases and onboarding do not stall. [Source](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) [Source](https://learn.microsoft.com/en-us/cloud-computing/finops/framework/optimize/rates#getting-started)
 
-Proactive monitoring prevents quota exhaustion and cost overruns from surprising application teams. This runbook outlines how to turn on quota monitoring, author alert rules, and align quota telemetry with cost guardrails so you don't miss leading indicators.
+Proactive monitoring prevents quota exhaustion and cost overruns from surprising application teams. This guide outlines how to turn on quota monitoring, author alert rules, and align quota telemetry with cost guardrails so you don't miss leading indicators.
 
 ## Turn on quota monitoring
 

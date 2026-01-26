@@ -2,9 +2,9 @@
 
 ## The five-step capacity supply chain
 
-The capacity governance program defines five steps that map directly to Azure controls and [azcapman runbooks](https://aka.ms/azcapman):
+The capacity governance program defines five steps that map directly to Azure controls and [azcapman guides](https://aka.ms/azcapman):
 
-| Step | Control | Runbook reference |
+| Step | Control | Guide reference |
 |------|---------|------------------|
 | 1. **Forecast** | Utilization telemetry + business context | [Capacity planning](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning) |
 | 2. **Secure access** | Region and zone enablement | Region access workflows |
@@ -17,7 +17,7 @@ The capacity governance program defines five steps that map directly to Azure co
 Every lever in the capacity governance program has corresponding Microsoft documentation:
 
 - **Quota groups** – ARM resources for sharing vCPU limits across subscriptions
-- **Capacity reservations** – Guaranteed compute availability for specific VM sizes
+- **Capacity reservations** – Priority compute availability for specific VM sizes
 - **Monitoring** – Native Azure Monitor integration for quota and reservation utilization
 
 This means you can reference official docs during ISV conversations rather than relying solely on internal guidance.
@@ -26,7 +26,7 @@ This means you can reference official docs during ISV conversations rather than 
 
 The [azcapman site](https://aka.ms/azcapman) consolidates:
 
-- Step-by-step runbooks for each phase
+- Step-by-step guides for each phase
 - Scripts and CLI commands for automation
 - Architecture patterns for ISV capacity governance
 
