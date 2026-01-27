@@ -7,32 +7,18 @@ from collections import defaultdict
 ROOT = Path(__file__).resolve().parents[1]
 DOCS_DIR = ROOT / "docs"
 
-FOOTNOTE_RE = re.compile(r"^\[\^([^\]]+)\]:\s*(.*)")
+# Match inline Markdown links: [label](url)
 LINK_RE = re.compile(r"\[([^\]]+)\]\((https?://[^)]+)\)")
 
 
-def extract_citations(md_path: Path):
-    citations = []  # list of (id, url, label)
-    for line in md_path.read_text(encoding="utf-8", errors="ignore").splitlines():
-        m = FOOTNOTE_RE.match(line.strip())
-        if not m:
-            continue
-        fid, rest = m.groups()
-        url = None
-        label = None
-        m_link = LINK_RE.search(rest)
-        if m_link:
-            label, url = m_link.groups()
-        else:
-            # bare URL
-            parts = rest.split()
-            for p in parts:
-                if p.startswith("http://") or p.startswith("https://"):
-                    url = p
-                    break
-        if url:
-            citations.append((fid, url, label or fid))
-    return citations
+def extract_links(md_path: Path):
+    """Extract all inline Markdown links from a file."""
+    links = []  # list of (label, url)
+    content = md_path.read_text(encoding="utf-8", errors="ignore")
+    for match in LINK_RE.finditer(content):
+        label, url = match.groups()
+        links.append((label, url))
+    return links
 
 
 def main():
@@ -44,12 +30,12 @@ def main():
         ]
     )
 
-    url_map = defaultdict(list)  # url -> list of (file_rel, footnote_id, label)
+    url_map = defaultdict(list)  # url -> list of (file_rel, label)
 
     for md in md_files:
         rel = md.relative_to(ROOT).as_posix()
-        for fid, url, label in extract_citations(md):
-            url_map[url].append((rel, fid, label))
+        for label, url in extract_links(md):
+            url_map[url].append((rel, label))
 
     matrix_path = DOCS_DIR / "operations" / "support-and-reference" / "citation-matrix.md"
     matrix_path.parent.mkdir(parents=True, exist_ok=True)
@@ -64,25 +50,29 @@ def main():
     lines.append("# Citation traceability matrix")
     lines.append("")
     lines.append(
-        "This matrix lists Microsoft documentation links used as citations across the quota and capacity references, along with the files and footnote identifiers that reference them."
+        "This matrix lists external links used across the documentation, along with the files that reference them."
     )
     lines.append("")
-    lines.append("| citation | used in |")
-    lines.append("| --- | --- |")
+    lines.append(f"**Total unique URLs:** {len(url_map)}")
+    lines.append("")
+    lines.append("| URL | Label | Used in |")
+    lines.append("| --- | --- | --- |")
 
     for url in sorted(url_map.keys()):
         uses = url_map[url]
-        # Pick first non-empty label as the citation label
-        label = next((lbl for _, _, lbl in uses if lbl), url)
-        files_desc = "; ".join(f"{rel} (^{fid})" for rel, fid, _ in uses)
-        lines.append(f"| [{label}]({url}) | {files_desc} |")
+        # Pick first label as the display label
+        label = uses[0][1]
+        # Deduplicate files
+        files = sorted(set(rel for rel, _ in uses))
+        files_desc = ", ".join(files)
+        # Escape pipes in label
+        label_escaped = label.replace("|", "\\|")
+        lines.append(f"| <{url}> | {label_escaped} | {files_desc} |")
 
     lines.append("")
-    lines.append(
-        "**Source**: [Microsoft style guide](https://learn.microsoft.com/en-us/style-guide/)"
-    )
 
     matrix_path.write_text("\n".join(lines), encoding="utf-8")
+    print(f"Generated {matrix_path} with {len(url_map)} unique URLs")
 
 
 if __name__ == "__main__":
