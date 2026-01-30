@@ -47,6 +47,8 @@
           href: operations/quota/README.md
         - name: Capacity reservations
           href: operations/capacity-reservations/README.md
+        - name: AKS capacity governance
+          href: operations/aks-capacity/README.md
         - name: Non-compute quotas
           href: operations/non-compute-quotas/README.md
     - name: Allocate
