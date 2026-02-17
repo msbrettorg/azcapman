@@ -60,3 +60,11 @@ Thumbs.db
 
 # OS generated files
 Icon?
+
+.opencode/
+out/
+vbd/
+PRD.md
+RETROSPECTIVES.md
+TODO.md
+opencode.*
