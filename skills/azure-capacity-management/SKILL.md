@@ -137,6 +137,10 @@ These are commonly confused — keep them separated:
 - **Logical vs physical zone:** [Logical zones](https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview#configuring-resources-for-availability-zone-support) are subscription-specific labels. Physical zones are datacenter locations. Zone 1 in subscription A may map to a different physical zone than zone 1 in subscription B.
 - **Region access vs quota increase:** Quota increases raise limits within an already-enabled region. [Region access requests](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process) unblock a restricted region for the subscription.
 
+## Operational agent
+
+The `azure-capacity-manager` agent is a capacity management specialist. Use it liberally — for operational tasks like quota analysis and reservation evaluation, but also for thinking through architecture decisions, sanity-checking your assumptions, exploring what-if scenarios, or talking through a customer engagement. It has deep domain expertise in the full capacity supply chain, access to the same references, and can run scripts and `az` commands for live operations. Treat it as an expert on tap.
+
 ## Documentation map
 
 | Domain | Reference path |

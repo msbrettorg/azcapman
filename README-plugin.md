@@ -34,8 +34,8 @@ This keeps the skill in sync with the source documentation — no condensed dupl
 
 ## Integration
 
-### Azure MCP Server
-The agent references Azure MCP Server tools (`compute`, `aks`, `quota`, `monitor`, `pricing`, etc.) for live operations when the server is configured. No additional MCP registration needed — the Azure MCP Server is configured globally.
+### Azure CLI
+The agent uses `az` commands for live Azure operations — quota queries, CRG management, AKS operations, billing, and estate enumeration. No additional tooling required beyond an authenticated Azure CLI session.
 
 ### maenifold
 When available, the agent uses maenifold skills for knowledge graph operations and context engineering across conversations.
