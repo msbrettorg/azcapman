@@ -26,7 +26,6 @@ The skill uses symlinks to reference the full repository documentation without d
 ```
 skills/azure-capacity-management/references/
   docs -> ../../../docs           # All operational docs, billing, deployment patterns
-  training -> ../../../training   # 21 training modules
   scripts -> ../../../scripts     # PowerShell/Python tools with READMEs
 ```
 
@@ -49,5 +48,5 @@ The agent can pull the latest Microsoft Learn content via `microsoft_docs_search
 .claude-plugin/plugin.json                        # Plugin manifest
 agents/azure-capacity-manager.md                  # Agent definition
 skills/azure-capacity-management/SKILL.md         # Skill definition
-skills/azure-capacity-management/references/      # Symlinks to docs, training, scripts
+skills/azure-capacity-management/references/      # Symlinks to docs and scripts
 ```

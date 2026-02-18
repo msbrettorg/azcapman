@@ -73,7 +73,7 @@ Read `references/docs/operations/quota-groups/README.md` for the complete refere
 
 [Capacity reservation groups (CRGs)](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) guarantee compute capacity for specific VM sizes in a region or availability zone. CRGs are capacity guarantees, not pricing commitments — unused reserved capacity is billed at the pay-as-you-go rate for the VM size.
 
-**Cost implications:** You pay for reserved capacity whether or not VMs are running against it. Pair CRGs with Azure Reservations or savings plans to get both capacity guarantee and pricing discount.
+**Cost implications:** Reserved capacity is billed whether or not VMs run against it. Pair CRGs with Azure Reservations or savings plans to get both capacity guarantee and pricing discount.
 
 **Sharing:** CRGs can be [shared across subscriptions](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share) within the same tenant. The sharing subscription needs `Microsoft.Compute/capacityReservationGroups/read` and `Microsoft.Compute/capacityReservationGroups/write` permissions.
 
@@ -139,7 +139,7 @@ These are commonly confused — keep them separated:
 
 ## Operational agent
 
-The `azure-capacity-manager` agent is a capacity management specialist. Use it liberally — for operational tasks like quota analysis and reservation evaluation, but also for thinking through architecture decisions, sanity-checking your assumptions, exploring what-if scenarios, or talking through a customer engagement. It has deep domain expertise in the full capacity supply chain, access to the same references, and can run scripts and `az` commands for live operations. Treat it as an expert on tap.
+The `azure-capacity-manager` agent is a capacity management specialist. It handles operational tasks like quota analysis and reservation evaluation, but it's also effective for thinking through architecture decisions, sanity-checking assumptions, exploring what-if scenarios, or talking through a customer engagement. It has deep domain expertise in the full capacity supply chain, access to the same references, and can run scripts and `az` commands for live operations. An expert on tap — use it liberally.
 
 ## Documentation map
 
@@ -159,7 +159,6 @@ The `azure-capacity-manager` agent is a capacity management specialist. Use it l
 | Billing (MCA) | `references/docs/billing/modern/README.md` |
 | Deployment patterns | `references/docs/deployment/README.md` |
 | Tools and scripts | `references/docs/operations/tools-scripts/README.md` |
-| Training modules | `references/training/modules/` |
 | Quota scripts | `references/scripts/quota/README.md` |
 | Anomaly alerts | `references/scripts/anomaly-alerts/README.md` |
 | Budgets | `references/scripts/budgets/README.md` |
