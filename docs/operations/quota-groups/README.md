@@ -13,7 +13,7 @@ nav_order: 5
 ## Feature overview
 
 - [Quota groups elevate quota](https://learn.microsoft.com/en-us/azure/quotas/quota-groups) from a per-subscription construct to a group-level ARM resource created under a management group, while quota enforcement at deployment time still occurs at the subscription level.
-- The feature enables [quota sharing across subscriptions](https://learn.microsoft.com/en-us/azure/quotas/quota-groups), self-service reallocation of unused quota, and group-level quota increase requests that can later be allocated to individual subscriptions.
+- The feature supports [quota sharing across subscriptions](https://learn.microsoft.com/en-us/azure/quotas/quota-groups), self-service reallocation of unused quota, and group-level quota increase requests that can later be allocated to individual subscriptions.
 - [Supported scenarios](https://learn.microsoft.com/en-us/azure/quotas/quota-groups) in the documentation include deallocating unused quota from subscriptions into the group, allocating quota from the group back to target subscriptions, and submitting quota group limit increase requests for specific regions and VM families.
 
 ## Prerequisites

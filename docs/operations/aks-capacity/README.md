@@ -41,7 +41,7 @@ az aks nodepool add \
   --crg-id /subscriptions/{sub-id}/resourceGroups/{rg}/providers/Microsoft.Compute/capacityReservationGroups/{crg-name}
 ```
 
-**Implication for stamp automation:** If you provision stamps through infrastructure-as-code pipelines, ensure CRG associations are embedded in the initial node pool definition. Don't expect to retrofit existing pools with CRG references after deployment.
+**Implication for stamp automation:** If you create stamps through infrastructure-as-code pipelines, ensure CRG associations are embedded in the initial node pool definition. Don't expect to retrofit existing pools with CRG references after deployment.
 
 ### Identity and permission requirements
 

@@ -118,7 +118,6 @@ Three alert types cover the capacity governance space:
 | Show-AzVMQuotaReport.ps1 | `references/scripts/quota/` | Single-threaded quota reporting |
 | Get-AzAvailabilityZoneMapping.ps1 | `references/scripts/quota/` | Logical-to-physical zone mapping |
 | Get-BenefitRecommendations.ps1 | `references/scripts/rate/` | Reservation and savings plan recommendations |
-| Get-EAStorageReport.ps1 | `references/scripts/rate/` | Storage cost and usage report for EA |
 | Deploy-AnomalyAlert.ps1 | `references/scripts/anomaly-alerts/` | Deploy cost anomaly alerts |
 | Deploy-BulkALZ.ps1 | `references/scripts/anomaly-alerts/` | Bulk deploy anomaly alerts |
 | Deploy-Budget.ps1 | `references/scripts/budgets/` | Deploy individual budgets |

@@ -6,7 +6,7 @@ nav_order: 7
 
 # Monitoring & alerting guide
 
-> Where this fits: step 4 of the capacity supply chain. Alert on quota and reservation utilization before saturation so releases and onboarding do not stall. [Source](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) [Source](https://learn.microsoft.com/en-us/cloud-computing/finops/framework/optimize/rates#getting-started)
+> Where this fits: step 4 of the capacity supply chain. Alert on quota and reservation utilization before saturation so releases and onboarding don't stall. [Source](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) [Source](https://learn.microsoft.com/en-us/cloud-computing/finops/framework/optimize/rates#getting-started)
 
 Proactive monitoring prevents quota exhaustion and cost overruns from surprising application teams. This guide outlines how to turn on quota monitoring, author alert rules, and align quota telemetry with cost guardrails so you don't miss leading indicators.
 
@@ -18,7 +18,7 @@ Proactive monitoring prevents quota exhaustion and cost overruns from surprising
 ## Create quota usage alerts
 
 1. **Select quota:** In **My quotas**, choose the [resource provider](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) (for example, `Microsoft.Compute`, `Microsoft.Storage`, or `Microsoft.Web`) and select the quota to monitor.
-2. **Launch alert wizard:** Click the quota name to open the [**Create usage alert rule**](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) experience. Quota-specific dimensions (subscription, region, quota name) are pre-populated.
+2. **Launch alert wizard:** Select the quota name to open the [**Create usage alert rule**](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) experience. Quota-specific dimensions (subscription, region, quota name) are pre-populated.
 3. **Configure thresholds:** Set the [usage percentage trigger](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) (for example, 70%, 85%, 95%) and choose the evaluation cadence (5–15 minutes) to balance responsiveness and noise.
 4. **Notifications:** Define [action groups](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) (email, Teams, ITSM) to route alerts to responders. Confirm the managed identity or user configuring the alert has Reader access on the subscription.
 
