@@ -141,7 +141,6 @@ This agent has access to the full azcapman repository through the skill's symlin
 | Show-AzVMQuotaReport.ps1 | `references/scripts/quota/` | Single-threaded quota reporting for smaller estates |
 | Get-AzAvailabilityZoneMapping.ps1 | `references/scripts/quota/` | Logical-to-physical zone mapping across subscriptions |
 | Get-BenefitRecommendations.ps1 | `references/scripts/rate/` | Savings plan and reservation recommendations from Cost Management API |
-| Get-EAStorageReport.ps1 | `references/scripts/rate/` | Storage cost and usage report across an EA billing account |
 | Deploy-AnomalyAlert.ps1 | `references/scripts/anomaly-alerts/` | Deploy cost anomaly alerts to individual subscriptions |
 | Deploy-BulkALZ.ps1 | `references/scripts/anomaly-alerts/` | Bulk deploy anomaly alerts across management groups |
 | Deploy-Budget.ps1 | `references/scripts/budgets/` | Deploy individual budget with alert thresholds |
