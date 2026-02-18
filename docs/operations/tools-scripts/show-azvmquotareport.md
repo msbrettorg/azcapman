@@ -136,7 +136,7 @@ TenantId,SubscriptionId,SubscriptionName,Location,Family,Size,RegionRestricted,Z
 
 ### Understanding the output
 
-- **TenantId**: Azure AD tenant identifier
+- **TenantId**: Microsoft Entra tenant identifier
 - **SubscriptionId**: Unique subscription identifier
 - **SubscriptionName**: Friendly subscription name
 - **Location**: Azure region

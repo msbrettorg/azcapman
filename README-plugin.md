@@ -17,7 +17,7 @@ Autonomous agent for operational analysis, planning, and engagement preparation.
 
 ### Skill: azure-capacity-management
 
-Domain knowledge skill that activates when capacity-related topics arise in any conversation. Covers the full capacity supply chain: forecasting, access and quota, reservations, and governance.
+Domain knowledge skill that activates when capacity-related topics arise in any conversation. Covers the full capacity supply chain: forecast, procure, allocate, and monitor.
 
 ## How references work
 

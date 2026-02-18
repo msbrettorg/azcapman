@@ -1,4 +1,4 @@
-# Azure Subscription Budget Deployment
+# Azure subscription budget deployment
 
 Deploy cost budgets to Azure subscriptions with automatic tag-based amount configuration.
 
@@ -6,7 +6,7 @@ Deploy cost budgets to Azure subscriptions with automatic tag-based amount confi
 
 These scripts deploy `Microsoft.Consumption/budgets` resources to Azure subscriptions with configurable notification thresholds. Budget amounts can be set per-subscription using the `BudgetAmount` tag, allowing different spending limits across your environment.
 
-## Budget Amount Priority
+## Budget amount priority
 
 1. **Explicit parameter** - If `-Amount` is provided, that value is used
 2. **Subscription tag** - If the subscription has a `BudgetAmount` tag, that value is used
@@ -128,7 +128,7 @@ By default, notifications are sent when:
 
 ## Examples
 
-### Enterprise Deployment
+### Enterprise deployment
 
 ```powershell
 # Connect to Azure
@@ -141,7 +141,7 @@ Connect-AzAccount
 ./Deploy-BulkBudgets.ps1 -ManagementGroup "Production" -ContactEmails "finops@company.com","alerts@company.com" -Force
 ```
 
-### Development Environment with Low Budget
+### Development environment with low budget
 
 ```powershell
 # Tag dev subscriptions with low budget

@@ -24,7 +24,7 @@ On-demand capacity reservations guarantee that compute capacity is available whe
 ## Prerequisites and access
 
 - **Quota:** Creating [reservations](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) consumes the same regional quota used by standard VM deployments. If the requested VM size, region, or zone lacks quota or inventory, the reservation request fails and must be retried after adjusting the request or increasing quota.
-- **Permission scope:** The subscription that owns the CRG manages reservation creation, resizing, deletion, and [sharing](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share?tabs=api-1%2Capi-2%2Capi-3%2Capi-4%2Capi-5%2Capi-6%2Cportal-7). Sharing requires granting `Microsoft.Compute/capacityReservationGroups/share/action`, `.../read`, and `.../deploy` rights to consumer subscriptions or identities.
+- **Permission scope:** The subscription that owns the CRG manages reservation creation, resizing, deletion, and [sharing](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share) (preview). Sharing requires two sets of rights: the ODCR owner in the consumer subscription needs `Microsoft.Compute/capacityReservationGroups/share/action`; the VM owner in the consumer subscription needs `Microsoft.Compute/capacityReservationGroups/read`, `Microsoft.Compute/capacityReservationGroups/deploy`, `Microsoft.Compute/capacityReservationGroups/capacityReservations/read`, and `Microsoft.Compute/capacityReservationGroups/capacityReservations/deploy`.
 - **Supported SKUs:** Only specific [VM series](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) are eligible for capacity reservations; confirm support through the `ResourceSkus` API before planning rollouts.
 
 ## Create and manage reservations
@@ -35,7 +35,9 @@ On-demand capacity reservations guarantee that compute capacity is available whe
 4. **Adjust quantities:** Update the reservation to increase or reduce the quantity. [Reducing to zero](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) releases the capacity but retains metadata, which is useful when pausing workloads temporarily.
 5. **Delete reservations:** Remove all associated VMs and reduce the quantity to zero before [deleting a member reservation](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) or its CRG to avoid orphaned associations.
 
-## Sharing across subscriptions
+## Sharing across subscriptions (preview)
+
+> This feature is in public preview. Portal support isn't available; use CLI, PowerShell, or REST API. See [preview terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). **Source**: [Share a capacity reservation group](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share)
 
 Sharing lets a central subscription guarantee capacity for dependent workloads:
 

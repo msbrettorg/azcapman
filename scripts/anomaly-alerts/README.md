@@ -99,39 +99,39 @@ Choose the right script for your deployment scenario:
 
 ### Single subscription deployment
 
-#### Option 1: Interactive subscription selection
+#### Option 1: interactive subscription selection
 ```powershell
 ./Deploy-AnomalyAlert.ps1 -EmailRecipients @("admin@company.com", "finance@company.com") -NotificationEmail "alerts@company.com"
 ```
 
-#### Option 2: Specify target subscription
+#### Option 2: specify target subscription
 ```powershell
 ./Deploy-AnomalyAlert.ps1 -SubscriptionId "12345678-1234-1234-1234-123456789012" -EmailRecipients @("admin@company.com") -NotificationEmail "alerts@company.com"
 ```
 
-#### Option 3: What-if preview
+#### Option 3: what-if preview
 ```powershell
 ./Deploy-AnomalyAlert.ps1 -EmailRecipients @("admin@company.com") -NotificationEmail "alerts@company.com" -WhatIf
 ```
 
-#### Option 4: Automated/silent deployment
+#### Option 4: automated/silent deployment
 ```powershell
 ./Deploy-AnomalyAlert.ps1 -SubscriptionId "12345678-1234-1234-1234-123456789012" -EmailRecipients @("admin@company.com") -NotificationEmail "alerts@company.com" -Force -Quiet
 ```
 
 ### Enterprise bulk deployment
 
-#### Option 1: Deploy to management group
+#### Option 1: deploy to management group
 ```powershell
 ./Deploy-BulkALZ.ps1 -TenantId "12345678-1234-1234-1234-123456789012" -ManagementGroup "ALZ" -EmailRecipients @("finops@company.com", "alerts@company.com") -NotificationEmail "alerts@company.com"
 ```
 
-#### Option 2: Bulk what-if preview
+#### Option 2: bulk what-if preview
 ```powershell
 ./Deploy-BulkALZ.ps1 -TenantId "12345678-1234-1234-1234-123456789012" -ManagementGroup "ALZ" -EmailRecipients @("finops@company.com") -NotificationEmail "alerts@company.com" -WhatIf
 ```
 
-#### Option 3: Quiet enterprise deployment
+#### Option 3: quiet enterprise deployment
 ```powershell
 ./Deploy-BulkALZ.ps1 -TenantId "12345678-1234-1234-1234-123456789012" -ManagementGroup "ALZ" -EmailRecipients @("finops@company.com") -NotificationEmail "alerts@company.com" -Quiet
 ```
@@ -281,7 +281,7 @@ New-AzSubscriptionDeployment -Name "anomaly-alert-whatif" -Location "West US" -T
 
 ### Custom bulk deployment examples
 
-#### Example 1: Deploy to all subscriptions in a management group
+#### Example 1: deploy to all subscriptions in a management group
 
 ```powershell
 # Set your management group name
@@ -307,7 +307,7 @@ foreach ($sub in $subscriptions) {
 }
 ```
 
-#### Example 2: Deploy to filtered subscriptions
+#### Example 2: deploy to filtered subscriptions
 
 ```powershell
 # Deploy only to production subscriptions (filtering by name pattern)
@@ -325,7 +325,7 @@ foreach ($sub in $subscriptions) {
 }
 ```
 
-#### Example 3: Deploy with what-if validation first
+#### Example 3: deploy with what-if validation first
 
 ```powershell
 # Validate deployments across multiple subscriptions before actual deployment

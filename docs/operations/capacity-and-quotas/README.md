@@ -67,5 +67,5 @@ Across these domains, the distinction between pricing commitments and capacity g
 
 For operational scripts and reporting, see:
 
-- [Get-EAStorageReport.ps1: Storage cost and usage report (EA)](../tools-scripts/get-eastoragerport.md)
+- [Get-EAStorageReport.ps1: Storage cost and usage report (EA)](../tools-scripts/get-eastoragereport.md)
 - [Tools & scripts index](../tools-scripts/README.md) for quota, cost, and automation utilities

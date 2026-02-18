@@ -25,7 +25,7 @@ This matrix lists external links used across the documentation, along with the f
 | <https://github.com/MSBrett/azcapman/tree/main/scripts> | GitHub repository | docs/operations/tools-scripts/README.md |
 | <https://github.com/MSBrett/azcapman/tree/main/scripts/advisor> | Suppress-AdvisorRecommendations.ps1 | docs/operations/tools-scripts/README.md |
 | <https://github.com/MSBrett/azcapman/tree/main/scripts/quota> | `Get-AzVMQuotaUsage.ps1` | docs/operations/quota/README.md |
-| <https://github.com/MSBrett/azcapman/tree/main/scripts/rate> | scripts/rate | docs/operations/tools-scripts/get-eastoragerport.md |
+| <https://github.com/MSBrett/azcapman/tree/main/scripts/rate> | scripts/rate | docs/operations/tools-scripts/get-eastoragereport.md |
 | <https://github.com/microsoft/finops-toolkit/blob/main/src/queries/INDEX.md> | FinOps Toolkit query index | docs/billing/modern/README.md, docs/operations/capacity-reservations/README.md |
 | <https://learn.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations> | Azure Advisor rightsizing and shutdown recommendations use retail (pay-as-you-go) prices | docs/billing/modern/README.md |
 | <https://learn.microsoft.com/en-us/azure/advisor/advisor-workbook-cost-optimization> | Cost Optimization workbook | docs/operations/capacity-planning/README.md |
@@ -108,7 +108,7 @@ This matrix lists external links used across the documentation, along with the f
 | <https://learn.microsoft.com/en-us/azure/quotas/view-quotas> | **Quotas** | docs/operations/quota/README.md |
 | <https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview#configuring-resources-for-availability-zone-support> | physical datacenter zones | docs/operations/glossary.md, docs/operations/quota/README.md, docs/operations/tenant-hygiene/README.md |
 | <https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview#scalability-targets-for-standard-storage-accounts> | per-account throughput and egress limits vary by SKU | docs/operations/non-compute-quotas/README.md |
-| <https://learn.microsoft.com/en-us/azure/storage/common/storage-plan-manage-costs#understand-the-full-billing-model-for-azure-blob-storage> | Azure billing meters | docs/operations/tools-scripts/get-eastoragerport.md |
+| <https://learn.microsoft.com/en-us/azure/storage/common/storage-plan-manage-costs#understand-the-full-billing-model-for-azure-blob-storage> | Azure billing meters | docs/operations/tools-scripts/get-eastoragereport.md |
 | <https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/spot-placement-score> | Spot Placement Score API | docs/operations/quota/README.md |
 | <https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share> | validate zone alignment between producer and consumer subscriptions | docs/operations/capacity-reservations/README.md, docs/operations/quota/README.md |
 | <https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share?tabs=api-1%2Capi-2%2Capi-3%2Capi-4%2Capi-5%2Capi-6%2Cportal-7> | sharing | docs/operations/capacity-reservations/README.md |

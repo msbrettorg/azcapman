@@ -27,9 +27,9 @@ Treat capacity management as a four-step supply chain aligned with [Well-Archite
 | Step | What it does | Azure surfaces |
 |------|-------------|----------------|
 | Forecast | Size scale units from telemetry and business targets | Azure Monitor, capacity planning models, FinOps budgets |
-| Access and quota | Unblock regions, zones, and SKUs; aggregate quota | Region access requests, zonal enablement, quota groups, per-VM quota increases |
-| Reserve | Lock compute supply for critical SKUs | Capacity reservation groups, CRG sharing, overallocation |
-| Govern and ship | Monitor utilization and promote through gates | Quota alerts, budget alerts, anomaly alerts, CI/CD gates |
+| Procure | Unblock regions, zones, and SKUs; aggregate quota | Region access requests, zonal enablement, quota groups, per-VM quota increases |
+| Allocate | Lock compute supply for critical SKUs | Capacity reservation groups, CRG sharing, overallocation |
+| Monitor | Track utilization and promote through gates | Quota alerts, budget alerts, anomaly alerts, CI/CD gates |
 
 Read `references/docs/operations/capacity-planning/README.md` for forecasting details and `references/docs/operations/capacity-governance/README.md` for the governance program design.
 
@@ -61,7 +61,7 @@ Read `references/docs/operations/quota/README.md` for the complete quota operati
 
 **Limitations:**
 - IaaS compute only — doesn't cover storage, networking, or PaaS services
-- One quota group per subscription per VM family per location
+- A subscription can belong to a single quota group at a time ([source](https://learn.microsoft.com/en-us/azure/quotas/quota-groups))
 - Doesn't grant region or zone access — those require separate support requests
 - [Quota transfers](https://learn.microsoft.com/en-us/azure/quotas/transfer-quota-groups) move allocation between member subscriptions but don't change the group total
 
@@ -75,7 +75,7 @@ Read `references/docs/operations/quota-groups/README.md` for the complete refere
 
 **Cost implications:** Reserved capacity is billed whether or not VMs run against it. Pair CRGs with Azure Reservations or savings plans to get both capacity guarantee and pricing discount.
 
-**Sharing:** CRGs can be [shared across subscriptions](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share) within the same tenant. The sharing subscription needs `Microsoft.Compute/capacityReservationGroups/read` and `Microsoft.Compute/capacityReservationGroups/write` permissions.
+**Sharing (preview):** CRGs can be [shared across subscriptions](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share) within the same tenant. The ODCR owner in the consumer subscription needs `Microsoft.Compute/capacityReservationGroups/share/action`. The VM owner in the consumer subscription needs `Microsoft.Compute/capacityReservationGroups/read`, `Microsoft.Compute/capacityReservationGroups/deploy`, `Microsoft.Compute/capacityReservationGroups/capacityReservations/read`, and `Microsoft.Compute/capacityReservationGroups/capacityReservations/deploy`. Portal support isn't available in preview; use CLI, PowerShell, or REST API.
 
 **Overallocation:** [Overallocation](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overallocate) lets you deploy more VMs than the reserved quantity. Excess VMs don't have capacity guarantees but benefit from the reservation when capacity is available.
 
@@ -125,6 +125,7 @@ Three alert types cover the capacity governance space:
 | Deploy-BulkBudgets.ps1 | `references/scripts/budgets/` | Bulk deploy budgets |
 | Suppress-AdvisorRecommendations.ps1 | `references/scripts/advisor/` | Suppress Advisor recommendations |
 | calculator.py | `references/scripts/calculator/` | Safe math evaluation for cost modeling |
+| Serverless SQL workbook | `references/scripts/serverless-sql-storage/` | Azure Monitor workbook for serverless SQL allocated vs. used storage; identifies databases worth shrinking to reclaim billing waste |
 
 Read the README in each script directory for parameter requirements and prerequisites.
 
@@ -163,3 +164,4 @@ The `azure-capacity-manager` agent is a capacity management specialist. It handl
 | Anomaly alerts | `references/scripts/anomaly-alerts/README.md` |
 | Budgets | `references/scripts/budgets/README.md` |
 | Rate optimization | `references/scripts/rate/README.md` |
+| Serverless SQL storage | `references/scripts/serverless-sql-storage/README.md` |

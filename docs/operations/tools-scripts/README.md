@@ -21,14 +21,33 @@ Scripts that extend Azure's native capabilities for ISV capacity management.
 | Script | Description |
 |--------|-------------|
 | [Get-BenefitRecommendations.ps1](get-benefitrecommendations.md) | Extract savings plan recommendations from Cost Management API |
-| [Get-EAStorageReport.ps1](get-eastoragerport.md) | Storage account cost and usage report across an EA billing account |
+| [Get-EAStorageReport.ps1](get-eastoragereport.md) | Storage account cost and usage report across an EA billing account |
 | [Deploy-AnomalyAlert.ps1](deploy-anomalyalert.md) | Deploy cost anomaly alerts to individual subscriptions |
 | [Deploy-BulkALZ.ps1](deploy-bulkalz.md) | Bulk deploy anomaly alerts across management groups |
+
+## Budget management
+
+| Script | Description |
+|--------|-------------|
+| [Deploy-Budget.ps1](deploy-budget.md) | Deploy a cost budget to a single subscription with tag-based amount configuration |
+| [Deploy-BulkBudgets.ps1](deploy-bulkbudgets.md) | Bulk deploy budgets to all subscriptions in a management group |
+
+## Storage analysis
+
+| Tool | Description |
+|------|-------------|
+| [Serverless SQL storage audit](https://github.com/MSBrett/azcapman/tree/main/scripts/serverless-sql-storage) | Azure Monitor workbook that surfaces allocated vs. used storage across Azure SQL serverless databases; identifies `DBCC SHRINKDATABASE` candidates to reclaim billing waste |
 
 ## Advisor recommendations
 
 | Script | Description |
 |--------|-------------|
-| [Suppress-AdvisorRecommendations.ps1](https://github.com/MSBrett/azcapman/tree/main/scripts/advisor) | Suppress specified Azure Advisor recommendation types across a management group for up to 90 days; useful when FinOps teams manage spend centrally. [Source](https://learn.microsoft.com/en-us/azure/advisor/suppress-recommendations?tabs=rest) |
+| [Suppress-AdvisorRecommendations.ps1](suppress-advisorrecommendations.md) | Suppress specified Azure Advisor recommendation types across a management group for up to 90 days; useful when FinOps teams manage spend centrally |
+
+## Utilities
+
+| Tool | Description |
+|------|-------------|
+| [calculator.py](https://github.com/MSBrett/azcapman/tree/main/scripts/calculator) | Python calculator using SymPy for safe evaluation of mathematical expressions from string input; designed for LLM tool use in cost and quota calculations |
 
 **Source**: [GitHub repository](https://github.com/MSBrett/azcapman/tree/main/scripts)

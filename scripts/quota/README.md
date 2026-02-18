@@ -2,7 +2,7 @@
 title: Quota Management
 ---
 
-# Quota Management Scripts
+# Quota management scripts
 
 These scripts are intended to analyze quota usage across subscriptions and regions in scenarios where Quota Groups **have not** been implemented.
 
@@ -33,7 +33,7 @@ Here's what you'll need to get started:
 
 ---
 
-## Available Scripts
+## Available scripts
 
 ### Get-AzVMQuotaUsage.ps1 (Recommended)
 
@@ -63,7 +63,7 @@ What you'll get:
 |...|...|...|westus3|standardFSv2Family|Standard_F2s_v2|True|1,2,3|1,2,3|0|100|
 
 **What each column means:**
-- **TenantId**: Your Azure AD tenant ID
+- **TenantId**: Your Microsoft Entra tenant ID
 - **SubscriptionId**: Your subscription ID
 - **SubscriptionName**: Friendly name you've given your subscription
 - **Location**: Azure region name
@@ -131,7 +131,7 @@ This script provides:
 
 ---
 
-## Manual Quota Analysis Examples
+## Manual quota analysis examples
 
 ### Check your current quota
 
@@ -145,9 +145,9 @@ $Usage = Get-AzVMUsage -Location $Location | Where-Object { $_.Name.Value -eq $V
 
 ---
 
-## Script Parameters
+## Script parameters
 
-### Common Parameters (All Scripts)
+### Common parameters (all scripts)
 
 - **SKUs**: Array of VM SKU names to analyze (e.g., `@('Standard_D2s_v5', 'Standard_E4s_v5')`)
 - **Locations**: Array of Azure regions (e.g., `@('eastus', 'westus2')`)
@@ -174,7 +174,7 @@ You'll need Azure PowerShell installed and signed in to use these scripts.
 
 ## Troubleshooting
 
-### Common Issues
+### Common issues
 
 **Authentication Errors**:
 ```powershell
@@ -201,14 +201,14 @@ Get-AzContext
 - Reduce concurrent operations
 - Add delays between API calls if necessary
 
-### Getting Help
+### Getting help
 
 For issues with these scripts:
-1. Check the [Azure PowerShell documentation](https://docs.microsoft.com/en-us/powershell/azure/)
+1. Check the [Azure PowerShell documentation](https://learn.microsoft.com/en-us/powershell/azure/)
 2. Review Azure subscription and quota limits
 3. Contact Azure support for quota increase requests
 
-## Script Versions
+## Script versions
 
 These scripts are maintained in the [azcapman repository](https://github.com/MSBrett/azcapman). Check for updates regularly to get the latest features and bug fixes.
 

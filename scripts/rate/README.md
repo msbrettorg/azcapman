@@ -2,7 +2,7 @@
 title: Cost Analysis
 ---
 
-# Cost Analysis Scripts
+# Cost analysis scripts
 
 Azure Cost Management tools for analyzing savings plan purchase recommendations and storage costs to optimize your Azure spend.
 
@@ -11,7 +11,7 @@ Azure Cost Management tools for analyzing savings plan purchase recommendations 
 
 ---
 
-## Available Scripts
+## Available scripts
 
 ### Get-BenefitRecommendations.ps1
 
@@ -35,7 +35,7 @@ Queries the Azure Cost Management API to retrieve savings plan purchase recommen
 
 ---
 
-### Output Field Descriptions
+### Output field descriptions
 
 The formatted tables include these key financial metrics:
 
@@ -73,7 +73,7 @@ The formatted tables include these key financial metrics:
 
 ---
 
-## Usage Examples
+## Usage examples
 
 ```powershell
 # Find your billing scope first

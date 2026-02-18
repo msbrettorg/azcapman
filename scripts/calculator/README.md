@@ -1,4 +1,4 @@
-# LLM-Optimized Calculator
+# LLM-optimized calculator
 
 A Python calculator script using **SymPy** for safe evaluation of mathematical expressions from string input—perfect for LLM usage.
 
@@ -60,9 +60,9 @@ python3 calculator.py "pi" --precision 50
 # 3.1415926535897932384626433832795028841971693993751
 ```
 
-## LLM Integration Examples
+## LLM integration examples
 
-### Example 1: Calculator tool for an LLM agent
+### Example 1: calculator tool for an LLM agent
 ```python
 from calculator import calculate
 
@@ -72,7 +72,7 @@ result = calculate(llm_output)
 print(result)  # 37.0000000000000
 ```
 
-### Example 2: Safe math evaluation
+### Example 2: safe math evaluation
 ```python
 # User provides input (potentially unsafe)
 user_input = "sin(pi/6) * 2"
@@ -80,7 +80,7 @@ result = calculate(user_input)
 print(result)  # 1.00000000000000
 ```
 
-### Example 3: Symbolic manipulation
+### Example 3: symbolic manipulation
 ```python
 # Preserve symbolic form
 expr = "(x + 1)^2"
@@ -88,7 +88,7 @@ result = calculate(expr, symbolic=True)
 print(result)  # (x + 1)**2
 ```
 
-## Supported Operations
+## Supported operations
 
 ### Arithmetic
 - Addition: `+`
@@ -127,12 +127,12 @@ python3 calculator.py "2(3 + 4)"   # 14.0000000000000
 4. **Error handling**: Clear error messages for invalid expressions
 5. **High precision**: Configurable decimal precision
 
-## Command-line Options
+## Command-line options
 
 - `--symbolic` or `-s`: Return symbolic result (don't evaluate numerically)
 - `--precision N` or `-p N`: Set decimal precision (default: 15)
 
-## Error Handling
+## Error handling
 
 ```bash
 python3 calculator.py "1/0"
@@ -142,7 +142,7 @@ python3 calculator.py "invalid expression"
 # Error: SyntaxError: invalid syntax
 ```
 
-## Integration with LLM Tools
+## Integration with LLM tools
 
 ### As a function calling tool
 ```json
@@ -182,7 +182,7 @@ def calculate(expression: str, symbolic: bool = False, precision: int = 15) -> s
     """
 ```
 
-## Advanced Examples
+## Advanced examples
 
 ### Complex expressions
 ```bash
@@ -196,7 +196,7 @@ python3 calculator.py "factorial(6) / factorial(4)"    # 30.0000000000000
 python3 calculator.py "1.5e10 + 2.3e9"   # 17300000000.0
 ```
 
-## Why This Design?
+## Why this design?
 
 **Optimized for LLM usage:**
 - LLMs output strings, not Python objects

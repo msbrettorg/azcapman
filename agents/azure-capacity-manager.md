@@ -95,11 +95,11 @@ Azure capacity management follows a four-step supply chain:
 
 1. **Forecast:** Size scale units and deployment stamps from telemetry, business targets, and [Well-Architected capacity planning](https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning). Connect forecasts to [FinOps budgeting](https://learn.microsoft.com/en-us/cloud-computing/finops/framework/) so cost and capacity signals align.
 
-2. **Access and quota:** Get [region access](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process) and [zonal enablement](https://learn.microsoft.com/en-us/troubleshoot/azure/general/zonal-enablement-request-for-restricted-vm-series) approved. Use [quota groups](https://learn.microsoft.com/en-us/azure/quotas/quota-groups) to aggregate quota at the management group scope and avoid stranded VM-family headroom. Request [per-VM quota increases](https://learn.microsoft.com/en-us/azure/quotas/per-vm-quota-requests) when limits don't fit.
+2. **Procure:** Get [region access](https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process) and [zonal enablement](https://learn.microsoft.com/en-us/troubleshoot/azure/general/zonal-enablement-request-for-restricted-vm-series) approved. Use [quota groups](https://learn.microsoft.com/en-us/azure/quotas/quota-groups) to aggregate quota at the management group scope and avoid stranded VM-family headroom. Request [per-VM quota increases](https://learn.microsoft.com/en-us/azure/quotas/per-vm-quota-requests) when limits don't fit.
 
-3. **Reserve:** Design [capacity reservation groups (CRGs)](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) for the SKUs, regions, and zones your stamps need. Configure [sharing](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share) and [overallocation](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overallocate) to match deployment patterns.
+3. **Allocate:** Design [capacity reservation groups (CRGs)](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview) for the SKUs, regions, and zones your stamps need. Configure [sharing](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-group-share) and [overallocation](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overallocate) to match deployment patterns.
 
-4. **Govern and ship:** Wire [quota usage alerts](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) and [cost management guardrails](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending). Promote changes through the same gates—quota, region access, reservations, billing approvals, and CI/CD—per [workload supply chain guidance](https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/workload-supply-chain).
+4. **Monitor:** Wire [quota usage alerts](https://learn.microsoft.com/en-us/azure/quotas/how-to-guide-monitoring-alerting) and [cost management guardrails](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending). Promote changes through the same gates—quota, region access, reservations, billing approvals, and CI/CD—per [workload supply chain guidance](https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/workload-supply-chain).
 
 ## Key distinctions
 
@@ -148,6 +148,7 @@ This agent has access to the full azcapman repository through the skill's symlin
 | Deploy-BulkBudgets.ps1 | `references/scripts/budgets/` | Bulk deploy budgets across subscriptions |
 | Suppress-AdvisorRecommendations.ps1 | `references/scripts/advisor/` | Suppress Advisor recommendation types across a management group |
 | calculator.py | `references/scripts/calculator/` | Safe mathematical expression evaluation for cost calculations |
+| Serverless SQL workbook | `references/scripts/serverless-sql-storage/` | Azure Monitor workbook for serverless SQL allocated vs. used storage analysis; surfaces DBCC SHRINKDATABASE candidates |
 
 When running scripts, read the corresponding README first for parameter requirements and prerequisites.
 

@@ -228,7 +228,7 @@ $action = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument @"
 Register-ScheduledTask -TaskName "WeeklyAnomalyAlerts" -Trigger $trigger -Action $action
 ```
 
-### Azure Automation runbook
+### Azure Automation script
 
 ```powershell
 # Runbook script
